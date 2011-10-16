@@ -1,0 +1,17 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}<div class="breadcrumbs"><a href="/relatori/"><img src="/static/images/home.svg" class="bread">{% trans 'Home' %}</a> &rsaquo; {{ action }}</div>{% endblock %}
+
+{% block content %}
+<div id="content-main">
+    <form method='POST' action='{{ action }}'>
+       <div class="form-row">
+        {{ form.as_p }}
+       </div>
+       <div class="submit-row">
+        <label>&nbsp;</label><input type="submit" value="{% trans 'Go' %}" />
+       </div>
+    </form>
+</div>
+{% endblock %}

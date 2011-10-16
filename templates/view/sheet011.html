@@ -1,0 +1,778 @@
+{% extends "relatori/view.html" %}
+{% block view_template %}
+
+
+<table class="form">
+    
+    <tr>
+        <td class="logo"><img src="/static/images/MoH.jpg" class="logo" /></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="7" class="border2"><h1>REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE<br />MINISTÉRIO DA SAÚDE</h1></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="4" class="border2"><h1>FORMULARIU-9</h1><br />
+            Fulan:
+            <input type="text" name="fulan" size="2" value="{{ fulan }}" class="{{ fulan_style }} ">
+            Tinan:
+            <input type="text" name="tinan" size="4" value="{{ tinan }}" class="{{ tinan_style }}">
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+    
+<table class="form border2">
+    
+    <tr class="border">
+        <td><b>Distritu:</b> {{ distritu }}
+            <input type='hidden' name='district' value='{{ distritu }}'>
+        </td>
+        <td><b>Subdistritu:</b> {{ subdistritu }}
+            <input type='hidden' name='subdistrict' value='{{ subdistritu }}'>
+        </td>
+        <td><b>Fatin:</b> {{ fatin }} 
+            <input type='hidden' name='village' value='{{ fatin }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="3"><b>Fasilidade:</b> {{ facility }} 
+            <input type='hidden' name='name' value='{{ facility.id }}'> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Code:</b> {{ code }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+
+    <tr>
+        <td colspan="9"><div class="spacer"></div></td>
+    </tr>
+    
+    <tr>
+        <td colspan="9"><h2>FARMACIA</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><h2>LISTA AIMORUK NEBE LABELE FALTA</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td>N<sup>o</sup> de ordem</td>
+        <td colspan="3">Aimoruk nia naran</td>
+        <td>Kodigu aimoruk nian</td>
+        <td>Loron aimoruk hotu </td>
+        <td>Loron rekizisaun 1<sup>o</sup></td>
+        <td>Tipu * rekizisaun</td>
+        <td>Loro nebe kompleta fali</td>
+    </tr>
+
+    <tr class="border bold">
+        <td>1</td>
+        <td colspan="3">Amoxicillin 500 mg<sup>(tableta)</sup></td>
+        <td>
+            {{ cells.0 }}
+        </td>
+        <td>
+            {{ cells.1 }}
+        </td>
+        <td>
+            {{ cells.2 }}
+        </td>
+        <td>
+            {{ cells.3 }}
+        </td>
+        <td>
+            {{ cells.4 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>2</td>
+        <td colspan="3">Ampicillin 500 mg<sup>(injecsaun)</sup></td>
+        <td>
+            {{ cells.5 }}
+        </td>
+        <td>
+            {{ cells.6 }}
+        </td>
+        <td>
+            {{ cells.7 }}
+        </td>
+        <td>
+            {{ cells.8 }}
+        </td>
+        <td>
+            {{ cells.9 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>3</td>
+        <td colspan="3">Benzil Penicillin 600 mg<sup>(injecsaun)</sup></td>
+        <td>
+            {{ cells.10 }}
+        </td>
+        <td>
+            {{ cells.11 }}
+        </td>
+        <td>
+            {{ cells.12 }}
+        </td>
+        <td>
+            {{ cells.13 }}
+        </td>
+        <td>
+            {{ cells.14 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>4</td>
+        <td colspan="3">Cotrimoxazol 480 mg<sup>(tableta)</sup></td>
+        <td>
+            {{ cells.15 }}
+        </td>
+        <td>
+            {{ cells.16 }}
+        </td>
+        <td>
+            {{ cells.17 }}
+        </td>
+        <td>
+            {{ cells.18 }}
+        </td>
+        <td>
+            {{ cells.19 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td rowspan="2">5</td>
+        <td colspan="3">Cyprofloxacin 250 mg<sup>(tableta)</sup></td>
+        <td>
+            {{ cells.20 }}
+        </td>
+        <td>
+            {{ cells.21 }}
+        </td>
+        <td>
+            {{ cells.22 }}
+        </td>
+        <td>
+            {{ cells.23 }}
+        </td>
+        <td>
+            {{ cells.24 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td colspan="3">Cyprofloxacin 500 mg<sup>(tableta)</sup></td>
+        <td>
+            {{ cells.25 }}
+        </td>
+        <td>
+            {{ cells.26 }}
+        </td>
+        <td>
+            {{ cells.27 }}
+        </td>
+        <td>
+            {{ cells.28 }}
+        </td>
+        <td>
+            {{ cells.29 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>6</td>
+        <td colspan="3">Metronidazol 500 mg<sup>(tableta)</sup></td>
+        <td>
+            {{ cells.30 }}
+        </td>
+        <td>
+            {{ cells.31 }}
+        </td>
+        <td>
+            {{ cells.32 }}
+        </td>
+        <td>
+            {{ cells.33 }}
+        </td>
+        <td>
+            {{ cells.34 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>7</td>
+        <td colspan="3">Doxyciclin 100 mg<sup>(capsula)</sup></td>
+        <td>
+            {{ cells.35 }}
+        </td>
+        <td>
+            {{ cells.36 }}
+        </td>
+        <td>
+            {{ cells.37 }}
+        </td>
+        <td>
+            {{ cells.38 }}
+        </td>
+        <td>
+            {{ cells.39 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>8</td>
+        <td colspan="3">Chloramphenicol 250 mg<sup>(capsula)</sup></td>
+        <td>
+            {{ cells.40 }}
+        </td>
+        <td>
+            {{ cells.41 }}
+        </td>
+        <td>
+            {{ cells.42 }}
+        </td>
+        <td>
+            {{ cells.43 }}
+        </td>
+        <td>
+            {{ cells.44 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>9</td>
+        <td colspan="3">Chloramphenicol<sup>(injecsaun)</sup></td>
+        <td>
+            {{ cells.45 }}
+        </td>
+        <td>
+            {{ cells.46 }}
+        </td>
+        <td>
+            {{ cells.47 }}
+        </td>
+        <td>
+            {{ cells.48 }}
+        </td>
+        <td>
+            {{ cells.49 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>10</td>
+        <td colspan="3">Arthemeter (Coartem)</td>
+        <td>
+            {{ cells.50 }}
+        </td>
+        <td>
+            {{ cells.51 }}
+        </td>
+        <td>
+            {{ cells.52 }}
+        </td>
+        <td>
+            {{ cells.53 }}
+        </td>
+        <td>
+            {{ cells.54 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>11</td>
+        <td colspan="3">Asa, Aspirin 300 mg<sup>(tableta)</sup></td>
+        <td>
+            {{ cells.55 }}
+        </td>
+        <td>
+            {{ cells.56 }}
+        </td>
+        <td>
+            {{ cells.57 }}
+        </td>
+        <td>
+            {{ cells.58 }}
+        </td>
+        <td>
+            {{ cells.59 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>12</td>
+        <td colspan="3">Paracetamol 500 mg<sup>(tableta)</sup></td>
+        <td>
+            {{ cells.60 }}
+        </td>
+        <td>
+            {{ cells.61 }}
+        </td>
+        <td>
+            {{ cells.62 }}
+        </td>
+        <td>
+            {{ cells.63 }}
+        </td>
+        <td>
+            {{ cells.64 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td rowspan="2">13</td>
+        <td colspan="3">Paracetamol 125 mg<sup>(injecsaun)</sup></td>
+        <td>
+            {{ cells.65 }}
+        </td>
+        <td>
+            {{ cells.66 }}
+        </td>
+        <td>
+            {{ cells.67 }}
+        </td>
+        <td>
+            {{ cells.68 }}
+        </td>
+        <td>
+            {{ cells.69 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td colspan="3">Paracetamol<sup>(sharope)</sup></td>
+        <td>
+            {{ cells.70 }}
+        </td>
+        <td>
+            {{ cells.71 }}
+        </td>
+        <td>
+            {{ cells.72 }}
+        </td>
+        <td>
+            {{ cells.73 }}
+        </td>
+        <td>
+            {{ cells.74 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>14</td>
+        <td colspan="3">Lidocain<sup>(injecsaun)</sup></td>
+        <td>
+            {{ cells.75 }}
+        </td>
+        <td>
+            {{ cells.76 }}
+        </td>
+        <td>
+            {{ cells.77 }}
+        </td>
+        <td>
+            {{ cells.78 }}
+        </td>
+        <td>
+            {{ cells.79 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>15</td>
+        <td colspan="3">Salbutamol<sup>(inhaler)</sup></td>
+        <td>
+            {{ cells.80 }}
+        </td>
+        <td>
+            {{ cells.81 }}
+        </td>
+        <td>
+            {{ cells.82 }}
+        </td>
+        <td>
+            {{ cells.83 }}
+        </td>
+        <td>
+            {{ cells.84 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>16</td>
+        <td colspan="3">Beclometazon<sup>(inhaler)</sup></td>
+        <td>
+            {{ cells.85 }}
+        </td>
+        <td>
+            {{ cells.86 }}
+        </td>
+        <td>
+            {{ cells.87 }}
+        </td>
+        <td>
+            {{ cells.88 }}
+        </td>
+        <td>
+            {{ cells.89 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>17</td>
+        <td colspan="3">Insulin short acting</td>
+        <td>
+            {{ cells.90 }}
+        </td>
+        <td>
+            {{ cells.91 }}
+        </td>
+        <td>
+            {{ cells.92 }}
+        </td>
+        <td>
+            {{ cells.93 }}
+        </td>
+        <td>
+            {{ cells.94 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>18</td>
+        <td colspan="3">Insulin medium acting</td>
+        <td>
+            {{ cells.95 }}
+        </td>
+        <td>
+            {{ cells.96 }}
+        </td>
+        <td>
+            {{ cells.97 }}
+        </td>
+        <td>
+            {{ cells.98 }}
+        </td>
+        <td>
+            {{ cells.99 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>19</td>
+        <td colspan="3">ORS Powder</td>
+        <td>
+            {{ cells.100 }}
+        </td>
+        <td>
+            {{ cells.101 }}
+        </td>
+        <td>
+            {{ cells.102 }}
+        </td>
+        <td>
+            {{ cells.103 }}
+        </td>
+        <td>
+            {{ cells.104 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>20</td>
+        <td colspan="3">Zinc<sup>(tableta)</sup>- ORS</td>
+        <td>
+            {{ cells.105 }}
+        </td>
+        <td>
+            {{ cells.106 }}
+        </td>
+        <td>
+            {{ cells.107 }}
+        </td>
+        <td>
+            {{ cells.108 }}
+        </td>
+        <td>
+            {{ cells.109 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>21</td>
+        <td colspan="3">Atenold<sup>(tableta)</sup> 500 mg</td>
+        <td>
+            {{ cells.110 }}
+        </td>
+        <td>
+            {{ cells.111 }}
+        </td>
+        <td>
+            {{ cells.112 }}
+        </td>
+        <td>
+            {{ cells.113 }}
+        </td>
+        <td>
+            {{ cells.114 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>22</td>
+        <td colspan="3">Hydrochlorthiazide</td>
+        <td>
+            {{ cells.115 }}
+        </td>
+        <td>
+            {{ cells.116 }}
+        </td>
+        <td>
+            {{ cells.117 }}
+        </td>
+        <td>
+            {{ cells.118 }}
+        </td>
+        <td>
+            {{ cells.119 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>23</td>
+        <td colspan="3">Digoxin 62,5 mg<sup>(tableta)</sup></td>
+        <td>
+            {{ cells.120 }}
+        </td>
+        <td>
+            {{ cells.121 }}
+        </td>
+        <td>
+            {{ cells.122 }}
+        </td>
+        <td>
+            {{ cells.123 }}
+        </td>
+        <td>
+            {{ cells.124 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>24</td>
+        <td colspan="3">Enalaphril 2,5 mg<sup>(tableta)</sup></td>
+        <td>
+            {{ cells.125 }}
+        </td>
+        <td>
+            {{ cells.126 }}
+        </td>
+        <td>
+            {{ cells.127 }}
+        </td>
+        <td>
+            {{ cells.128 }}
+        </td>
+        <td>
+            {{ cells.129 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>25</td>
+        <td colspan="3">Captopril 25 mg<sup>(tableta)</sup></td>
+        <td>
+            {{ cells.130 }}
+        </td>
+        <td>
+            {{ cells.131 }}
+        </td>
+        <td>
+            {{ cells.132 }}
+        </td>
+        <td>
+            {{ cells.133 }}
+        </td>
+        <td>
+            {{ cells.134 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>26</td>
+        <td colspan="3">Ferros Sulphate 60 mg<sup>(tableta)</sup></td>
+        <td>
+            {{ cells.135 }}
+        </td>
+        <td>
+            {{ cells.136 }}
+        </td>
+        <td>
+            {{ cells.137 }}
+        </td>
+        <td>
+            {{ cells.138 }}
+        </td>
+        <td>
+            {{ cells.139 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>27</td>
+        <td colspan="3">Folic Acid 400 mg<sup>(tableta)</sup></td>
+        <td>
+            {{ cells.140 }}
+        </td>
+        <td>
+            {{ cells.141 }}
+        </td>
+        <td>
+            {{ cells.142 }}
+        </td>
+        <td>
+            {{ cells.143 }}
+        </td>
+        <td>
+            {{ cells.144 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>28</td>
+        <td colspan="3">Tetanol Toxoid<sup>(Vaccin)</sup></td>
+        <td>
+            {{ cells.145 }}
+        </td>
+        <td>
+            {{ cells.146 }}
+        </td>
+        <td>
+            {{ cells.147 }}
+        </td>
+        <td>
+            {{ cells.148 }}
+        </td>
+        <td>
+            {{ cells.149 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>29</td>
+        <td colspan="3">Magnesium S.<sup>(injecsaun)</sup> 20%,40%,50%</td>
+        <td>
+            {{ cells.150 }}
+        </td>
+        <td>
+            {{ cells.151 }}
+        </td>
+        <td>
+            {{ cells.152 }}
+        </td>
+        <td>
+            {{ cells.153 }}
+        </td>
+        <td>
+            {{ cells.154 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>30</td>
+        <td colspan="3">Calcium Gluconate 100 mg<sup>(injecsaun)</sup></td>
+        <td>
+            {{ cells.155 }}
+        </td>
+        <td>
+            {{ cells.156 }}
+        </td>
+        <td>
+            {{ cells.157 }}
+        </td>
+        <td>
+            {{ cells.158 }}
+        </td>
+        <td>
+            {{ cells.159 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>31</td>
+        <td colspan="3">Hydralazine 20 mg<sup>(injecsaun)</sup></td>
+        <td>
+            {{ cells.160 }}
+        </td>
+        <td>
+            {{ cells.161 }}
+        </td>
+        <td>
+            {{ cells.162 }}
+        </td>
+        <td>
+            {{ cells.163 }}
+        </td>
+        <td>
+            {{ cells.164 }}
+        </td>
+    </tr>
+
+    <tr class="border bold">
+        <td>32</td>
+        <td colspan="3">Physiological sodium cloride (0,9% )</td>
+        <td>
+            {{ cells.165 }}
+        </td>
+        <td>
+            {{ cells.166 }}
+        </td>
+        <td>
+            {{ cells.167 }}
+        </td>
+        <td>
+            {{ cells.168 }}
+        </td>
+        <td>
+            {{ cells.169 }}
+        </td>
+    </tr>
+
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="9"><span class="bold">* R</span> = Ba rekizisaun regular = maximu fulan tolu</td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><span class="bold">E</span> = Ba rekizisaun emergencia = minimu loron rua (2), maximu loron tolu (3)</td>  
+    </tr>
+
+    <tr>
+        <td colspan="9"><span class="bold">PE</span>  = Pedido Extra = Minimu semana ida (1) - Tolu (3)</td>
+    </tr>
+
+</table>
+
+{% endblock %}

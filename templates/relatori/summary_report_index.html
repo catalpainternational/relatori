@@ -1,0 +1,195 @@
+<html>
+    <head>
+        <style type="text/css" media="print, screen">
+            body {
+                font-family : arial;
+            }
+            h1 {
+                font-size : 24pt;
+                font-weight : normal;
+            }
+            h2 {
+                padding-top : 20px;
+                font-size : 18pt;
+                font-weight : normal;
+            }
+            div {
+                position : relative;
+                left: 50px;
+            }
+            table {
+                border : 1px solid grey;
+                border-collapse : collapse;
+                margin-bottom : 20px;
+            }
+            th {
+                background-color : lightgrey;
+                text-align : left;
+                font-size : 12pt;
+                font-weight : normal;
+                padding-top : 5px;
+                padding-left : 10px;
+                padding-right : 10px;
+                border-bottom : 1px solid black;
+            }
+            .pie_container {
+                border : none;
+            }
+            .pie_title {
+                text-align : top;
+                background-color : lightgrey;
+            }
+        </style>
+    </head>
+    <body>
+        <a href='/static/images/HMIS_Report.pdf'><img src="/static/images/summary_header.png"/></a>
+        <div>
+            <h2> {{ facility }} SIS reportajen <strong>January 2011</strong> to <strong>August 2011</strong></h2>
+        </div>
+        <div>
+            <span><h1> Maternal Health </h1></span>
+            <table>
+                <tr><th>K1 Performance by Sub-District</th></tr>
+                <tr>
+                    <td>
+                        <img src="/static/images/tmp/k1.png"/>
+                    </td>
+                </tr>
+            </table>            
+            <table>
+                <tr><th>K1 First ANC Visit &amp; K4 Last ANC visit (after K1, K2 and K3)</th></tr>
+                <tr>
+                    <td>
+                        <img src="/static/images/tmp/k1k4.png"/>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr><th>TT 2+</th></tr>
+                <tr>
+                    <td>
+                        <img src="/static/images/tmp/TT 2+.png"/>
+                    </td>
+                </tr>
+            </table>
+            
+            <table class='pie_container'>
+                <tr>
+                    <td>
+                        <table class="pie_left">
+                            <tr><th> Deliveries Attended by Health Personnel </th></tr>
+                            <tr>
+                                <td>
+                                    <img src="/static/images/tmp/Deliveries attended by health personnel.png"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="pie_right">
+                            <tr><th> PN-1 (Women receiving first post-natal visit) </th></tr>
+                            <tr>
+                                <td>
+                                    <img src="/static/images/tmp/PN-1.png"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <span><h1> Children's Health </h1></span>
+            <table>
+                <tr><th>Percentage of < 5 diarrhea cases treated following IMCI</th></tr>
+                <tr>
+                    <td>
+                        <img src="/static/images/tmp/Labarik  tinan < 5 nebe hetan teben.png"/>
+                    </td>
+                </tr>
+            </table>
+            
+            <table>
+                <tr><th>Percentage of < 5 Pneumonia cases treated following IMCI</th></tr>
+                <tr>
+                    <td>
+                        <img src="/static/images/tmp/Labarik tinan < 5 ho Pneomonia.png"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br/>
+        <div>
+            <span><h1> Immunization </h1></span>            
+            <table>
+                <tr><th>BCG and Sarampo (Year to Date)</th></tr>
+                <tr>
+                    <td>
+                        <img src="/static/images/tmp/BCGSarampo.png"/>
+                    </td>
+                </tr>
+            </table>
+            
+            <table>
+                <tr><th>Polio-3, DPT/HEP.B-1, DPT/HEP.B-3 (Year to Date)</th></tr>
+                <tr>
+                    <td>
+                        <img src="/static/images/tmp/polioDPT-1DPT-3.png"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <span><h1> Nutrition </h1></span>            
+            <table class='pie_container'>
+                <tr>
+                    <td>
+                        <table class="pie_left">
+                            <tr><th> Children with Lisio (0 - 23 months) </th></tr>
+                            <tr>
+                                <td>
+                                    <img src="/static/images/tmp/Labarik nebe mai foun registru.png"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="pie_right">
+                            <tr><th> Children Weighed (0 - 23 months) </th></tr>
+                            <tr>
+                                <td>
+                                    <img src="/static/images/tmp/Children Weighed.png"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr><th> Malnutrition (Year to Date)</th></tr>
+                <tr>
+                    <td>
+                        <img src="/static/images/tmp/weighedmoderatesevere.png"/>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr><th> Vitamin A</th></tr>
+                <tr>
+                    <td>
+                        <img src="/static/images/tmp/Vitamina.png"/>
+                    </td>
+                </tr>
+            </table>
+            
+            <table>
+                <tr><th> Lumbriga </th></tr>
+                <tr>
+                    <td>
+                        <img src="/static/images/tmp/Lumbriga.png"/>
+                    </td>
+                </tr>
+            </table>                
+        </div>
+    </body>
+</html>

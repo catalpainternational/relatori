@@ -1,0 +1,1236 @@
+{% extends "relatori/view.html" %}
+{% block view_template %}
+  <table border="0" cellpadding="0" cellspacing="0" width="619" style="border-collapse:
+
+ collapse;table-layout:fixed;width:466pt">
+   <col width="50" style="mso-width-source:userset;mso-width-alt:1828;width:38pt" />
+   <col width="64" span="2" style="width:48pt" />
+   <col width="82" style="mso-width-source:userset;mso-width-alt:2998;width:62pt" />
+   <col width="74" style="mso-width-source:userset;mso-width-alt:2706;width:56pt" />
+   <col width="64" style="width:48pt" />
+   <col width="77" style="mso-width-source:userset;mso-width-alt:2816;width:58pt" />
+   <col width="72" span="2" style="mso-width-source:userset;mso-width-alt:2633;
+
+ width:54pt" />
+   <tr height="18" style="mso-height-source:userset;height:13.5pt">
+    <td height="18" width="50" style="height:13.5pt;width:38pt" align="left" valign="top">
+     <span style="mso-ignore:vglayout;
+
+  position:absolute;z-index:1;margin-left:4px;margin-top:14px;width:56px;
+
+  height:47px">
+      <img width='53' height='46' src='/static/images/MoH.png'>
+     </span>
+     <span style="mso-ignore:vglayout2">
+      <table cellpadding="0" cellspacing="0">
+       <tr>
+        <td height="18" width="50" style="height:13.5pt;width:38pt">
+        </td>
+       </tr>
+      </table>
+     </span>
+    </td>
+    <td width="64" style="width:48pt">
+    </td>
+    <td class="xl66" width="64" style="width:48pt">
+    </td>
+    <td class="xl66" width="82" style="width:62pt">
+    </td>
+    <td class="xl66" width="74" style="width:56pt">
+    </td>
+    <td class="xl66" width="64" style="width:48pt">
+    </td>
+    <td class="xl66" width="77" style="width:58pt">
+    </td>
+    <td class="xl66" width="72" style="width:54pt">
+    </td>
+    <td class="xl66" width="72" style="width:54pt">
+    </td>
+   </tr>
+   <tr height="18" style="mso-height-source:userset;height:13.5pt">
+    <td height="18" style="height:13.5pt">
+    </td>
+    <td colspan="5" class="xl127">
+     REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE
+    </td>
+    <td class="xl127">
+    </td>
+    <td colspan="2" class="xl371">
+     FORMULARIU-9
+    </td>
+   </tr>
+   <tr height="19" style="mso-height-source:userset;height:14.25pt">
+    <td height="19" style="height:14.25pt">
+    </td>
+    <td class="xl200" colspan="3" style="mso-ignore:colspan">
+     MINISTÉRIO DA SAÚDE
+    </td>
+    <td colspan="2" class="xl200" style="mso-ignore:colspan">
+    </td>
+    <td class="xl95">
+    </td>
+    <td class="xl173">
+     Fulan: {{ fulan }}
+     <span style="mso-spacerun:yes">
+       
+     </span>
+    </td>
+    <td class="xl175">
+     Tinan: {{ tinan }}
+    </td>
+   </tr>
+   <tr height="25" style="mso-height-source:userset;height:18.75pt">
+    <td height="25" colspan="2" style="height:18.75pt;mso-ignore:colspan">
+    </td>
+    <td colspan="5" class="xl66" style="mso-ignore:colspan">
+    </td>
+    <td colspan="2" class="xl70" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="26" style="mso-height-source:userset;height:19.5pt">
+    <td colspan="3" height="26" class="xl398" style="height:19.5pt">
+     Distritu: {{ distritu }}
+    </td>
+    <td colspan="3" class="xl399" style="border-left:none">
+     Subdistritu: {{ subdistritu }}
+    </td>
+    <td colspan="3" class="xl564" style="border-left:none">
+     Fatin: {{ fatin }}
+    </td>
+   </tr>
+   <tr height="29" style="mso-height-source:userset;height:21.75pt">
+    <td height="29" class="xl72" colspan="9" style="height:21.75pt;mso-ignore:colspan;
+
+  border-right:1.0pt solid black">
+     <span style="mso-spacerun:yes">
+     Fasilidade: {{ facility }} <input type='hidden' name='name' value='{{ facility.id }}'> &nbsp;&nbsp;&nbsp; Code: {{ code }}
+     </span>
+     <font class="font12">
+      <span style="mso-spacerun:yes">
+          
+      </span>
+     </font>
+     <font class="font8">
+      <span style="mso-spacerun:yes">
+             
+      </span>
+      <span style="mso-spacerun:yes">
+                 
+      </span>
+      <span style="mso-spacerun:yes">
+                   
+      </span>
+     </font>
+    </td>
+   </tr>
+   <tr height="17" style="height:12.75pt">
+    <td height="17" colspan="9" style="height:12.75pt;mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="26" style="mso-height-source:userset;height:19.5pt">
+    <td colspan="9" height="26" class="xl395" style="height:19.5pt">
+     FARMACIA
+    </td>
+   </tr>
+   <tr height="21" style="mso-height-source:userset;height:15.75pt">
+    <td colspan="9" height="21" class="xl82" style="height:15.75pt">
+     LISTA AIMORUK NEBE
+
+  LABELE FALTA
+    </td>
+   </tr>
+   <tr height="18" style="mso-height-source:userset;height:13.5pt">
+    <td height="18" colspan="9" style="height:13.5pt;mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="51" style="mso-height-source:userset;height:38.25pt">
+    <td height="51" class="xl103" width="50" style="height:38.25pt;width:38pt">
+     N
+     <font class="font19">
+      <sup>
+       o
+      </sup>
+     </font>
+     <font class="font5">
+      de ordem
+     </font>
+    </td>
+    <td colspan="3" class="xl484" style="border-left:none">
+     Aimoruk nia naran
+    </td>
+    <td class="xl226" width="74" style="border-left:none;width:56pt">
+     Kodigu aimoruk
+
+  nian
+    </td>
+    <td class="xl226" width="64" style="border-left:none;width:48pt">
+     Loron aimoruk
+
+  hotu
+    </td>
+    <td class="xl226" width="77" style="border-left:none;width:58pt">
+     Loron rekizisaun
+
+  1
+     <font class="font19">
+      <sup>
+       o
+      </sup>
+     </font>
+    </td>
+    <td class="xl226" width="72" style="border-left:none;width:54pt">
+     Tipu *
+
+  rekizisaun
+    </td>
+    <td class="xl227" width="72" style="border-left:none;width:54pt">
+     Loro nebe
+
+  kompleta fali
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl86" style="height:15.0pt">
+     1
+    </td>
+    <td colspan="3" class="xl514" style="border-left:none">
+     Amoxicillin 500 mg
+     <font class="font40">
+      <sup>
+       (tableta)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.0 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.1 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.2 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.3 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.4 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl87" style="height:15.0pt;border-top:none">
+     2
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Ampicillin 500 mg
+     <font class="font40">
+      <sup>
+       (injecsaun)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.5 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.6 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.7 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.8 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.9 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl86" style="height:15.0pt">
+     3
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Benzil Penicillin 600 mg
+     <font class="font40">
+      <sup>
+       (injecsaun)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.10 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.11 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.12 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.13 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.14 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl87" style="height:15.0pt;border-top:none">
+     4
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Cotrimoxazol 480 mg
+     <font class="font41">
+      <sup>
+       (tableta)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.15 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.16 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.17 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.18 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.19 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td rowspan="2" height="40" class="xl87" style="height:30.0pt;border-top:none">
+     5
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Cyprofloxacin 250 mg
+     <font class="font40">
+      <sup>
+       (tableta)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.20 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.21 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.22 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.23 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.24 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td colspan="3" height="20" class="xl562" style="height:15.0pt;border-left:none">
+     Cyprofloxacin
+
+  500 mg
+     <font class="font40">
+      <sup>
+       (tableta)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.25 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.26 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.27 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.28 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.29 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl87" style="height:15.0pt;border-top:none">
+     6
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Metronidazol 500 mg
+     <font class="font40">
+      <sup>
+       (tableta)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.30 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.31 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.32 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.33 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.34 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl86" style="height:15.0pt">
+     7
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Doxyciclin 100 mg
+     <font class="font40">
+      <sup>
+       (capsula)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.35 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.36 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.37 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.38 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.39 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl87" style="height:15.0pt;border-top:none">
+     8
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Chloramphenicol 250 mg
+     <font class="font40">
+      <sup>
+       (capsula)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.40 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.41 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.42 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.43 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.44 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl86" style="height:15.0pt">
+     9
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Chloramphenicol
+     <font class="font40">
+      <sup>
+       (injecsaun)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.45 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.46 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.47 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.48 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.49 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl87" style="height:15.0pt;border-top:none">
+     10
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Arthemeter (Coartem)
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.50 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.51 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.52 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.53 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.54 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl86" style="height:15.0pt">
+     11
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Asa, Aspirin
+     <span style="mso-spacerun:yes">
+       
+     </span>
+     300 mg
+     <font class="font40">
+      <sup>
+       (tableta)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.55 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.56 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.57 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.58 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.59 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl87" style="height:15.0pt;border-top:none">
+     12
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Paracetamol
+     <span style="mso-spacerun:yes">
+       
+     </span>
+     500 mg
+     <font class="font40">
+      <sup>
+       (tableta)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.60 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.61 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.62 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.63 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.64 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td rowspan="2" height="40" class="xl87" style="height:30.0pt;border-top:none">
+     13
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Paracetamol 125 mg
+     <font class="font40">
+      <sup>
+       (injecsaun)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.65 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.66 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.67 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.68 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.69 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td colspan="3" height="20" class="xl562" style="height:15.0pt;border-left:none">
+     Paracetamol
+     <span style="mso-spacerun:yes">
+       
+     </span>
+     <font class="font40">
+      <sup>
+       (sharope)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.70 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.71 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.72 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.73 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.74 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl86" style="height:15.0pt">
+     14
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Lidocain
+     <font class="font40">
+      <sup>
+       (injecsaun)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.75 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.76 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.77 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.78 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.79 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl87" style="height:15.0pt;border-top:none">
+     15
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Salbutamol
+     <font class="font40">
+      <sup>
+       (inhaler)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.80 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.81 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.82 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.83 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.84 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl86" style="height:15.0pt">
+     16
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Beclometazon
+     <font class="font40">
+      <sup>
+       (inhaler)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.85 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.86 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.87 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.88 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.89 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl87" style="height:15.0pt;border-top:none">
+     17
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Insulin short acting
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.90 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.91 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.92 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.93 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.94 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl86" style="height:15.0pt">
+     18
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Insulin medium acting
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.95 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.96 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.97 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.98 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.99 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl87" style="height:15.0pt;border-top:none">
+     19
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     ORS Powder
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.100 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.101 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.102 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.103 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.104 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl86" style="height:15.0pt">
+     20
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Zinc
+     <font class="font40">
+      <sup>
+       (tableta)
+      </sup>
+     </font>
+     <font class="font8">
+      - ORS
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.105 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.106 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.107 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.108 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.109 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl87" style="height:15.0pt;border-top:none">
+     21
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Atenold
+     <span style="mso-spacerun:yes">
+       
+     </span>
+     <font class="font40">
+      <sup>
+       (tableta)
+      </sup>
+     </font>
+     <font class="font8">
+      500 mg
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.110 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.111 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.112 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.113 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.114 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl86" style="height:15.0pt">
+     22
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Hydrochlorthiazide
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.115 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.116 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.117 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.118 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.119 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl87" style="height:15.0pt;border-top:none">
+     23
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Digoxin 62,5 mg
+     <font class="font40">
+      <sup>
+       (tableta)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.120 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.121 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.122 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.123 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.124 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl86" style="height:15.0pt">
+     24
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Enalaphril 2,5 mg
+     <font class="font40">
+      <sup>
+       (tableta)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.125 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.126 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.127 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.128 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.129 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl87" style="height:15.0pt;border-top:none">
+     25
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Captopril 25 mg
+     <font class="font40">
+      <sup>
+       (tableta)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.130 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.131 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.132 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.133 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.134 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl86" style="height:15.0pt">
+     26
+    </td>
+    <td colspan="3" class="xl558" style="border-right:.5pt solid black;border-left:
+
+  none">
+     Ferros Sulphate 60 mg
+     <font class="font40">
+      <sup>
+       (tableta)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.135 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.136 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.137 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.138 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.139 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl87" style="height:15.0pt;border-top:none">
+     27
+    </td>
+    <td colspan="3" class="xl558" style="border-right:.5pt solid black;border-left:
+
+  none">
+     Folic Acid 400 mg
+     <font class="font40">
+      <sup>
+       (tableta)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.140 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.141 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.142 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.143 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.144 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl86" style="height:15.0pt">
+     28
+    </td>
+    <td colspan="3" class="xl558" style="border-right:.5pt solid black;border-left:
+
+  none">
+     Tetanol Toxoid
+     <span style="mso-spacerun:yes">
+       
+     </span>
+     <font class="font40">
+      <sup>
+       (Vaccin)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.145 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.146 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.147 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.148 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.149 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl87" style="height:15.0pt;border-top:none">
+     29
+    </td>
+    <td colspan="3" class="xl558" style="border-right:.5pt solid black;border-left:
+
+  none">
+     Magnesium S.
+     <font class="font40">
+      <sup>
+       (injecsaun)
+      </sup>
+     </font>
+     <font class="font8">
+      20%,40%,50%
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.150 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.151 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.152 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.153 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.154 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl87" style="height:15.0pt;border-top:none">
+     30
+    </td>
+    <td colspan="3" class="xl561" style="border-right:.5pt solid black;border-left:
+
+  none">
+     Calcium Gluconate 100 mg
+     <font class="font40">
+      <sup>
+       (injecsaun)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.155 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.156 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.157 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.158 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.159 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl87" style="height:15.0pt;border-top:none">
+     31
+    </td>
+    <td colspan="3" class="xl562" style="border-left:none">
+     Hydralazine 20 mg
+     <font class="font19">
+      <sup>
+       (injecsaun)
+      </sup>
+     </font>
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.160 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.161 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.162 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.163 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.164 }}
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td height="20" class="xl88" style="height:15.0pt;border-top:none">
+     32
+    </td>
+    <td colspan="3" class="xl563" width="210" style="border-left:none;width:158pt">
+     Physiological
+
+  sodium cloride (0,9% )
+    </td>
+    <td class="xl97" align="right" style="border-top:none;border-left:none">
+     {{ cells.165 }}
+    </td>
+    <td class="xl97" align="right" style="border-top:none;border-left:none">
+     {{ cells.166 }}
+    </td>
+    <td class="xl97" align="right" style="border-top:none;border-left:none">
+     {{ cells.167 }}
+    </td>
+    <td class="xl97" align="right" style="border-top:none;border-left:none">
+     {{ cells.168 }}
+    </td>
+    <td class="xl98" align="right" style="border-top:none;border-left:none">
+     {{ cells.169 }}
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td height="17" style="height:12.75pt">
+     <span style="mso-spacerun:yes">
+               
+     </span>
+    </td>
+    <td class="xl66" colspan="5" style="mso-ignore:colspan">
+     *
+     <span style="mso-spacerun:yes">
+        
+     </span>
+     R
+     <span style="mso-spacerun:yes">
+       
+     </span>
+     <font class="font0">
+      <span style="mso-spacerun:yes">
+        
+      </span>
+      = Ba rekizisaun regular
+
+  = maximu fulan tolu
+     </font>
+    </td>
+    <td colspan="3" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td height="17" style="height:12.75pt">
+    </td>
+    <td class="xl66" colspan="7" style="mso-ignore:colspan">
+     <span style="mso-spacerun:yes">
+         
+     </span>
+     E
+     <span style="mso-spacerun:yes">
+       
+     </span>
+     <font class="font0">
+      <span style="mso-spacerun:yes">
+        
+      </span>
+      = Ba rekizisaun
+
+  emergencia = minimu loron rua (2), maximu loron tolu (3)
+     </font>
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td height="17" style="height:12.75pt">
+    </td>
+    <td class="xl66" colspan="5" style="mso-ignore:colspan">
+     <span style="mso-spacerun:yes">
+         
+     </span>
+     PE
+     <font class="font0">
+      = Pedido Extra =
+
+  Minimu semana ida (1) - Tolu (3)
+     </font>
+    </td>
+    <td colspan="3" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="0" style="display:none">
+    <td width="50" style="width:38pt">
+    </td>
+    <td width="64" style="width:48pt">
+    </td>
+    <td width="64" style="width:48pt">
+    </td>
+    <td width="82" style="width:62pt">
+    </td>
+    <td width="74" style="width:56pt">
+    </td>
+    <td width="64" style="width:48pt">
+    </td>
+    <td width="77" style="width:58pt">
+    </td>
+    <td width="72" style="width:54pt">
+    </td>
+    <td width="72" style="width:54pt">
+    </td>
+   </tr>
+  </table>
+{% endblock %}

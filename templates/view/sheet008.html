@@ -1,0 +1,427 @@
+{% extends "relatori/view.html" %}
+{% block view_template %}
+
+
+<table class="form">
+    
+    <tr>
+        <td class="logo"><img src="/static/images/MoH.jpg" class="logo" /></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="7" class="border2"><h1>REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE<br />MINISTÉRIO DA SAÚDE</h1></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="4" class="border2"><h1>FORMULARIU-8A</h1><br />
+            Fulan:
+            <input type="text" name="fulan" size="2" value="{{ fulan }}" class="{{ fulan_style }} ">
+            Tinan:
+            <input type="text" name="tinan" size="4" value="{{ tinan }}" class="{{ tinan_style }}">
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+    
+<table class="form border2">
+    
+    <tr class="border">
+        <td><b>Distritu:</b> {{ distritu }}
+            <input type='hidden' name='district' value='{{ distritu }}'>
+        </td>
+        <td><b>Subdistritu:</b> {{ subdistritu }}
+            <input type='hidden' name='subdistrict' value='{{ subdistritu }}'>
+        </td>
+        <td><b>Fatin:</b> {{ fatin }} 
+            <input type='hidden' name='village' value='{{ fatin }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="3"><b>Fasilidade:</b> {{ facility }} 
+            <input type='hidden' name='name' value='{{ facility.id }}'> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Code:</b> {{ code }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+
+    <tr>
+        <td colspan="11"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="11"><h2>TUBERCULOSE</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="11"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="11"><h2>KONTROLA MEAR TASAK</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="11"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="5" rowspan="3">Examina mear tasak</td>
+        <td colspan="6">Numeru kontrola</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td colspan="2">Sample 1</td>
+        <td colspan="2">Sample 2</td>
+        <td colspan="2">Sample 3</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+    </tr>
+
+    <tr class="border">
+        <td>1</td>
+        <td colspan="4">Numeru mear tasak nebe mak examina</td>
+        <td>
+            {{ cells.0 }}
+        </td>
+        <td>
+            {{ cells.1 }}
+        </td>
+        <td>
+            {{ cells.2 }}
+        </td>
+        <td>
+            {{ cells.3 }}
+        </td>
+        <td>
+            {{ cells.4 }}
+        </td>
+        <td>
+            {{ cells.5 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>2</td>
+        <td colspan="4">Numeru mear tasak nebe positivu</td>
+        <td>
+            {{ cells.6 }}
+        </td>
+        <td>
+            {{ cells.7 }}
+        </td>
+        <td>
+            {{ cells.8 }}
+        </td>
+        <td>
+            {{ cells.9 }}
+        </td>
+        <td>
+            {{ cells.10 }}
+        </td>
+        <td>
+            {{ cells.11 }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="11"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="11"><h2>MORAS NEBE IHA KONTROLA NIA LARAN, TUIR SITUASAUN NEBE REGISTADU</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="11"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="5" rowspan="3">Numeru kasu</td>
+        <td colspan="6">Grupu idade</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td colspan="2">Tinan 0-14</td>
+        <td colspan="2">Tinan 15-49</td>
+        <td colspan="2">&#8805; tinan 50</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+    </tr>
+
+    <tr class="border">
+        <td>1</td>
+        <td colspan="2" rowspan="4">TB pulmaun: kontrola mear tasak positivu</td>
+        <td colspan="2">Kasu foun</td>
+        <td>
+            {{ cells.12 }}
+        </td>
+        <td>
+            {{ cells.13 }}
+        </td>
+        <td>
+            {{ cells.14 }}
+        </td>
+        <td>
+            {{ cells.15 }}
+        </td>
+        <td>
+            {{ cells.16 }}
+        </td>
+        <td>
+            {{ cells.17 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>2</td>
+        <td colspan="2">Rekaida <span class="small bold">(Kambuh)</span></td>
+        <td>
+            {{ cells.18 }}
+        </td>
+        <td>
+            {{ cells.19 }}
+        </td>
+        <td>
+            {{ cells.20 }}
+        </td>
+        <td>
+            {{ cells.21 }}
+        </td>
+        <td>
+            {{ cells.22 }}
+        </td>
+        <td>
+            {{ cells.23 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>3</td>
+        <td colspan="2">Fila Fali Hafoin Tratamento</td>
+        <td>
+            {{ cells.24 }}
+        </td>
+        <td>
+            {{ cells.25 }}
+        </td>
+        <td>
+            {{ cells.26 }}
+        </td>
+        <td>
+            {{ cells.27 }}
+        </td>
+        <td>
+            {{ cells.28 }}
+        </td>
+        <td>
+            {{ cells.29 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>4</td>
+        <td colspan="2">Hafoin Falla Tratamento</td>
+        <td>
+            {{ cells.30 }}
+        </td>
+        <td>
+            {{ cells.31 }}
+        </td>
+        <td>
+            {{ cells.32 }}
+        </td>
+        <td>
+            {{ cells.33 }}
+        </td>
+        <td>
+            {{ cells.34 }}
+        </td>
+        <td>
+            {{ cells.35 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>5*</td>
+        <td colspan="4">TB pulmaun: kontrola mear tasak negativu</td>
+        <td>
+            {{ cells.36 }}
+        </td>
+        <td>
+            {{ cells.37 }}
+        </td>
+        <td>
+            {{ cells.38 }}
+        </td>
+        <td>
+            {{ cells.39 }}
+        </td>
+        <td>
+            {{ cells.40 }}
+        </td>
+        <td>
+            {{ cells.41 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>6*</td>
+        <td colspan="4">Tuberculose extra-pulmaun</td>
+        <td>
+            {{ cells.42 }}
+        </td>
+        <td>
+            {{ cells.43 }}
+        </td>
+        <td>
+            {{ cells.44 }}
+        </td>
+        <td>
+            {{ cells.45 }}
+        </td>
+        <td>
+            {{ cells.46 }}
+        </td>
+        <td>
+            {{ cells.47 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>7</td>
+        <td colspan="4">Transfere tama</td>
+        <td>
+            {{ cells.48 }}
+        </td>
+        <td>
+            {{ cells.49 }}
+        </td>
+        <td>
+            {{ cells.50 }}
+        </td>
+        <td>
+            {{ cells.51 }}
+        </td>
+        <td>
+            {{ cells.52 }}
+        </td>
+        <td>
+            {{ cells.53 }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="11"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="11"><h2>KAZU MEAR TASAK POSITIVU FOUN: TUIR GRUPU IDADE NO SEXU</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="11"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="4">SEXU <sup>OTAS</sup></td>
+        <td>0-14</td>
+        <td>15-24</td>
+        <td>25-34</td>
+        <td>35-44</td>
+        <td>45-54</td>
+        <td>55-64</td>
+        <td>65 e +</td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="4">Mane</td>
+        <td>
+            {{ cells.54 }}
+        </td>
+        <td>
+            {{ cells.55 }}
+        </td>
+        <td>
+            {{ cells.56 }}
+        </td>
+        <td>
+            {{ cells.57 }}
+        </td>
+        <td>
+            {{ cells.58 }}
+        </td>
+        <td>
+            {{ cells.59 }}
+        </td>
+        <td>
+            {{ cells.60 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="4">Feto</td>
+        <td>
+            {{ cells.61 }}
+        </td>
+        <td>
+            {{ cells.62 }}
+        </td>
+        <td>
+            {{ cells.63 }}
+        </td>
+        <td>
+            {{ cells.64 }}
+        </td>
+        <td>
+            {{ cells.65 }}
+        </td>
+        <td>
+            {{ cells.66 }}
+        </td>
+        <td>
+            {{ cells.67 }}
+        </td>
+    </tr>
+    
+</table>
+
+{% endblock %}

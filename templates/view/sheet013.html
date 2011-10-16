@@ -1,0 +1,1125 @@
+{% extends "relatori/view.html" %}
+{% block view_template %}
+
+
+<table class="form">
+    
+    <tr>
+        <td class="logo"><img src="/static/images/MoH.jpg" class="logo" /></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="7" class="border2"><h1>REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE<br />MINISTÉRIO DA SAÚDE</h1></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="4" class="border2"><h1>FORMULARIU- 11</h1><br />
+            Fulan:
+            <input type="text" name="fulan" size="2" value="{{ fulan }}" class="{{ fulan_style }} ">
+            Tinan:
+            <input type="text" name="tinan" size="4" value="{{ tinan }}" class="{{ tinan_style }}">
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+    
+<table class="form border2">
+    
+    <tr class="border">
+        <td><b>Distritu:</b> {{ distritu }}
+            <input type='hidden' name='district' value='{{ distritu }}'>
+        </td>
+        <td><b>Subdistritu:</b> {{ subdistritu }}
+            <input type='hidden' name='subdistrict' value='{{ subdistritu }}'>
+        </td>
+        <td><b>Fatin:</b> {{ fatin }} 
+            <input type='hidden' name='village' value='{{ fatin }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="3"><b>Fasilidade:</b> {{ facility }} 
+            <input type='hidden' name='name' value='{{ facility.id }}'> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Code:</b> {{ code }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+
+    <tr>
+        <td colspan="16"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="16"><h2>RELATORIO MENSAL SAUDE AMBIENTAL</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="16"><h3>Saude Ambiente iha Kumunidade</h3></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td rowspan="3" class="w100">Sub Distrito/CSC</td>
+        <td rowspan="3">Total Uma Visita</td>
+        <td colspan="7">Saneamento</td>
+        <td rowspan="3">Asesu Be Mos</td>
+        <td colspan="6">Kontrola Vector</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td colspan="3">Kategoria</td>
+        <td rowspan="2">Sintina Privado</td>
+        <td rowspan="2">Luhan Animal</td>
+        <td rowspan="2">Drainase</td>
+        <td rowspan="2">Foer Fatin</td>
+        <td rowspan="2">PSN</td>
+        <td rowspan="2">PSN</td>
+        <td rowspan="2">Abate</td>
+        <td rowspan="2">Fogging</td>
+        <td rowspan="2">IRS</td>
+        <td rowspan="2">Muskiteiro</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.0 }}
+        </td>
+        <td>
+            {{ cells.1 }}
+        </td>
+        <td>
+            {{ cells.2 }}
+        </td>
+        <td>
+            {{ cells.3 }}
+        </td>
+        <td>
+            {{ cells.4 }}
+        </td>
+        <td>
+            {{ cells.5 }}
+        </td>
+        <td>
+            {{ cells.6 }}
+        </td>
+        <td>
+            {{ cells.7 }}
+        </td>
+        <td>
+            {{ cells.8 }}
+        </td>
+        <td>
+            {{ cells.9 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.10 }}
+        </td>
+        <td>
+            {{ cells.11 }}
+        </td>
+        <td>
+            {{ cells.12 }}
+        </td>
+        <td>
+            {{ cells.13 }}
+        </td>
+        <td>
+            {{ cells.14 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.15 }}
+        </td>
+        <td>
+            {{ cells.16 }}
+        </td>
+        <td>
+            {{ cells.17 }}
+        </td>
+        <td>
+            {{ cells.18 }}
+        </td>
+        <td>
+            {{ cells.19 }}
+        </td>
+        <td>
+            {{ cells.20 }}
+        </td>
+        <td>
+            {{ cells.21 }}
+        </td>
+        <td>
+            {{ cells.22 }}
+        </td>
+        <td>
+            {{ cells.23 }}
+        </td>
+        <td>
+            {{ cells.24 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.25 }}
+        </td>
+        <td>
+            {{ cells.26 }}
+        </td>
+        <td>
+            {{ cells.27 }}
+        </td>
+        <td>
+            {{ cells.28 }}
+        </td>
+        <td>
+            {{ cells.29 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.30 }}
+        </td>
+        <td>
+            {{ cells.31 }}
+        </td>
+        <td>
+            {{ cells.32 }}
+        </td>
+        <td>
+            {{ cells.33 }}
+        </td>
+        <td>
+            {{ cells.34 }}
+        </td>
+        <td>
+            {{ cells.35 }}
+        </td>
+        <td>
+            {{ cells.36 }}
+        </td>
+        <td>
+            {{ cells.37 }}
+        </td>
+        <td>
+            {{ cells.38 }}
+        </td>
+        <td>
+            {{ cells.39 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.40 }}
+        </td>
+        <td>
+            {{ cells.41 }}
+        </td>
+        <td>
+            {{ cells.42 }}
+        </td>
+        <td>
+            {{ cells.43 }}
+        </td>
+        <td>
+            {{ cells.44 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.45 }}
+        </td>
+        <td>
+            {{ cells.46 }}
+        </td>
+        <td>
+            {{ cells.47 }}
+        </td>
+        <td>
+            {{ cells.48 }}
+        </td>
+        <td>
+            {{ cells.49 }}
+        </td>
+        <td>
+            {{ cells.50 }}
+        </td>
+        <td>
+            {{ cells.51 }}
+        </td>
+        <td>
+            {{ cells.52 }}
+        </td>
+        <td>
+            {{ cells.53 }}
+        </td>
+        <td>
+            {{ cells.54 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.55 }}
+        </td>
+        <td>
+            {{ cells.56 }}
+        </td>
+        <td>
+            {{ cells.57 }}
+        </td>
+        <td>
+            {{ cells.58 }}
+        </td>
+        <td>
+            {{ cells.59 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.60 }}
+        </td>
+        <td>
+            {{ cells.61 }}
+        </td>
+        <td>
+            {{ cells.62 }}
+        </td>
+        <td>
+            {{ cells.63 }}
+        </td>
+        <td>
+            {{ cells.64 }}
+        </td>
+        <td>
+            {{ cells.65 }}
+        </td>
+        <td>
+            {{ cells.66 }}
+        </td>
+        <td>
+            {{ cells.67 }}
+        </td>
+        <td>
+            {{ cells.68 }}
+        </td>
+        <td>
+            {{ cells.69 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.70 }}
+        </td>
+        <td>
+            {{ cells.71 }}
+        </td>
+        <td>
+            {{ cells.72 }}
+        </td>
+        <td>
+            {{ cells.73 }}
+        </td>
+        <td>
+            {{ cells.74 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.75 }}
+        </td>
+        <td>
+            {{ cells.76 }}
+        </td>
+        <td>
+            {{ cells.77 }}
+        </td>
+        <td>
+            {{ cells.78 }}
+        </td>
+        <td>
+            {{ cells.79 }}
+        </td>
+        <td>
+            {{ cells.80 }}
+        </td>
+        <td>
+            {{ cells.81 }}
+        </td>
+        <td>
+            {{ cells.82 }}
+        </td>
+        <td>
+            {{ cells.83 }}
+        </td>
+        <td>
+            {{ cells.84 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.85 }}
+        </td>
+        <td>
+            {{ cells.86 }}
+        </td>
+        <td>
+            {{ cells.87 }}
+        </td>
+        <td>
+            {{ cells.88 }}
+        </td>
+        <td>
+            {{ cells.89 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.90 }}
+        </td>
+        <td>
+            {{ cells.91 }}
+        </td>
+        <td>
+            {{ cells.92 }}
+        </td>
+        <td>
+            {{ cells.93 }}
+        </td>
+        <td>
+            {{ cells.94 }}
+        </td>
+        <td>
+            {{ cells.95 }}
+        </td>
+        <td>
+            {{ cells.96 }}
+        </td>
+        <td>
+            {{ cells.97 }}
+        </td>
+        <td>
+            {{ cells.98 }}
+        </td>
+        <td>
+            {{ cells.99 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.100 }}
+        </td>
+        <td>
+            {{ cells.101 }}
+        </td>
+        <td>
+            {{ cells.102 }}
+        </td>
+        <td>
+            {{ cells.103 }}
+        </td>
+        <td>
+            {{ cells.104 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.105 }}
+        </td>
+        <td>
+            {{ cells.106 }}
+        </td>
+        <td>
+            {{ cells.107 }}
+        </td>
+        <td>
+            {{ cells.108 }}
+        </td>
+        <td>
+            {{ cells.109 }}
+        </td>
+        <td>
+            {{ cells.110 }}
+        </td>
+        <td>
+            {{ cells.111 }}
+        </td>
+        <td>
+            {{ cells.112 }}
+        </td>
+        <td>
+            {{ cells.113 }}
+        </td>
+        <td>
+            {{ cells.114 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.115 }}
+        </td>
+        <td>
+            {{ cells.116 }}
+        </td>
+        <td>
+            {{ cells.117 }}
+        </td>
+        <td>
+            {{ cells.118 }}
+        </td>
+        <td>
+            {{ cells.119 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.120 }}
+        </td>
+        <td>
+            {{ cells.121 }}
+        </td>
+        <td>
+            {{ cells.122 }}
+        </td>
+        <td>
+            {{ cells.123 }}
+        </td>
+        <td>
+            {{ cells.124 }}
+        </td>
+        <td>
+            {{ cells.125 }}
+        </td>
+        <td>
+            {{ cells.126 }}
+        </td>
+        <td>
+            {{ cells.127 }}
+        </td>
+        <td>
+            {{ cells.128 }}
+        </td>
+        <td>
+            {{ cells.129 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.130 }}
+        </td>
+        <td>
+            {{ cells.131 }}
+        </td>
+        <td>
+            {{ cells.132 }}
+        </td>
+        <td>
+            {{ cells.133 }}
+        </td>
+        <td>
+            {{ cells.134 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.135 }}
+        </td>
+        <td>
+            {{ cells.136 }}
+        </td>
+        <td>
+            {{ cells.137 }}
+        </td>
+        <td>
+            {{ cells.138 }}
+        </td>
+        <td>
+            {{ cells.139 }}
+        </td>
+        <td>
+            {{ cells.140 }}
+        </td>
+        <td>
+            {{ cells.141 }}
+        </td>
+        <td>
+            {{ cells.142 }}
+        </td>
+        <td>
+            {{ cells.143 }}
+        </td>
+        <td>
+            {{ cells.144 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.145 }}
+        </td>
+        <td>
+            {{ cells.146 }}
+        </td>
+        <td>
+            {{ cells.147 }}
+        </td>
+        <td>
+            {{ cells.148 }}
+        </td>
+        <td>
+            {{ cells.149 }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="16"></td>
+    </tr>
+
+    <tr>
+        <td colspan="16"><h3>Saude Ambiente iha Fatin Publiko (Facilidade de Saude, SISCa, Escola, Mercado)</h3></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td rowspan="3" class="w100">Tipo Fatin Publico</td>
+        <td rowspan="3">Total Intituisaun Visita</td>
+        <td colspan="6">Saneamento</td>
+        <td rowspan="3">Asesu Be Mos</td>
+        <td colspan="5">Kontrola Vector</td>
+        <td>Ba Escola</td>
+        <td>Ba SISCa</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td colspan="3">Kategoria</td>
+        <td rowspan="2">Toilet Publico</td>
+        <td rowspan="2">Foer Fatin</td>
+        <td rowspan="2">Drainase</td>
+        <td rowspan="2">PSN</td>
+        <td rowspan="2">Abate</td>
+        <td rowspan="2">Fogging</td>
+        <td rowspan="2">IRS</td>
+        <td rowspan="2">Abate</td>
+        <td rowspan="2">Iha LES</td>
+        <td>Servico</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>Meja 4</td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.150 }}
+        </td>
+        <td>
+            {{ cells.151 }}
+        </td>
+        <td>
+            {{ cells.152 }}
+        </td>
+        <td>
+            {{ cells.153 }}
+        </td>
+        <td>
+            {{ cells.154 }}
+        </td>
+        <td>
+            {{ cells.155 }}
+        </td>
+        <td>
+            {{ cells.156 }}
+        </td>
+        <td>
+            {{ cells.157 }}
+        </td>
+        <td>
+            {{ cells.158 }}
+        </td>
+        <td>
+            {{ cells.159 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.160 }}
+        </td>
+        <td>
+            {{ cells.161 }}
+        </td>
+        <td>
+            {{ cells.162 }}
+        </td>
+        <td>
+            {{ cells.163 }}
+        </td>
+        <td>
+            {{ cells.164 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.165 }}
+        </td>
+        <td>
+            {{ cells.166 }}
+        </td>
+        <td>
+            {{ cells.167 }}
+        </td>
+        <td>
+            {{ cells.168 }}
+        </td>
+        <td>
+            {{ cells.169 }}
+        </td>
+        <td>
+            {{ cells.170 }}
+        </td>
+        <td>
+            {{ cells.171 }}
+        </td>
+        <td>
+            {{ cells.172 }}
+        </td>
+        <td>
+            {{ cells.173 }}
+        </td>
+        <td>
+            {{ cells.174 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.175 }}
+        </td>
+        <td>
+            {{ cells.176 }}
+        </td>
+        <td>
+            {{ cells.177 }}
+        </td>
+        <td>
+            {{ cells.178 }}
+        </td>
+        <td>
+            {{ cells.179 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.180 }}
+        </td>
+        <td>
+            {{ cells.181 }}
+        </td>
+        <td>
+            {{ cells.182 }}
+        </td>
+        <td>
+            {{ cells.183 }}
+        </td>
+        <td>
+            {{ cells.184 }}
+        </td>
+        <td>
+            {{ cells.185 }}
+        </td>
+        <td>
+            {{ cells.186 }}
+        </td>
+        <td>
+            {{ cells.187 }}
+        </td>
+        <td>
+            {{ cells.188 }}
+        </td>
+        <td>
+            {{ cells.189 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.190 }}
+        </td>
+        <td>
+            {{ cells.191 }}
+        </td>
+        <td>
+            {{ cells.192 }}
+        </td>
+        <td>
+            {{ cells.193 }}
+        </td>
+        <td>
+            {{ cells.194 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.195 }}
+        </td>
+        <td>
+            {{ cells.196 }}
+        </td>
+        <td>
+            {{ cells.197 }}
+        </td>
+        <td>
+            {{ cells.198 }}
+        </td>
+        <td>
+            {{ cells.199 }}
+        </td>
+        <td>
+            {{ cells.200 }}
+        </td>
+        <td>
+            {{ cells.201 }}
+        </td>
+        <td>
+            {{ cells.202 }}
+        </td>
+        <td>
+            {{ cells.203 }}
+        </td>
+        <td>
+            {{ cells.204 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.205 }}
+        </td>
+        <td>
+            {{ cells.206 }}
+        </td>
+        <td>
+            {{ cells.207 }}
+        </td>
+        <td>
+            {{ cells.208 }}
+        </td>
+        <td>
+            {{ cells.209 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.210 }}
+        </td>
+        <td>
+            {{ cells.211 }}
+        </td>
+        <td>
+            {{ cells.212 }}
+        </td>
+        <td>
+            {{ cells.213 }}
+        </td>
+        <td>
+            {{ cells.214 }}
+        </td>
+        <td>
+            {{ cells.215 }}
+        </td>
+        <td>
+            {{ cells.216 }}
+        </td>
+        <td>
+            {{ cells.217 }}
+        </td>
+        <td>
+            {{ cells.218 }}
+        </td>
+        <td>
+            {{ cells.219 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.220 }}
+        </td>
+        <td>
+            {{ cells.221 }}
+        </td>
+        <td>
+            {{ cells.222 }}
+        </td>
+        <td>
+            {{ cells.223 }}
+        </td>
+        <td>
+            {{ cells.224 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.225 }}
+        </td>
+        <td>
+            {{ cells.226 }}
+        </td>
+        <td>
+            {{ cells.227 }}
+        </td>
+        <td>
+            {{ cells.228 }}
+        </td>
+        <td>
+            {{ cells.229 }}
+        </td>
+        <td>
+            {{ cells.230 }}
+        </td>
+        <td>
+            {{ cells.231 }}
+        </td>
+        <td>
+            {{ cells.232 }}
+        </td>
+        <td>
+            {{ cells.233 }}
+        </td>
+        <td>
+            {{ cells.234 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.235 }}
+        </td>
+        <td>
+            {{ cells.236 }}
+        </td>
+        <td>
+            {{ cells.237 }}
+        </td>
+        <td>
+            {{ cells.238 }}
+        </td>
+        <td>
+            {{ cells.239 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.240 }}
+        </td>
+        <td>
+            {{ cells.241 }}
+        </td>
+        <td>
+            {{ cells.242 }}
+        </td>
+        <td>
+            {{ cells.243 }}
+        </td>
+        <td>
+            {{ cells.244 }}
+        </td>
+        <td>
+            {{ cells.245 }}
+        </td>
+        <td>
+            {{ cells.246 }}
+        </td>
+        <td>
+            {{ cells.247 }}
+        </td>
+        <td>
+            {{ cells.248 }}
+        </td>
+        <td>
+            {{ cells.249 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.250 }}
+        </td>
+        <td>
+            {{ cells.251 }}
+        </td>
+        <td>
+            {{ cells.252 }}
+        </td>
+        <td>
+            {{ cells.253 }}
+        </td>
+        <td>
+            {{ cells.254 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.255 }}
+        </td>
+        <td>
+            {{ cells.256 }}
+        </td>
+        <td>
+            {{ cells.257 }}
+        </td>
+        <td>
+            {{ cells.258 }}
+        </td>
+        <td>
+            {{ cells.259 }}
+        </td>
+        <td>
+            {{ cells.260 }}
+        </td>
+        <td>
+            {{ cells.261 }}
+        </td>
+        <td>
+            {{ cells.262 }}
+        </td>
+        <td>
+            {{ cells.263 }}
+        </td>
+        <td>
+            {{ cells.264 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.265 }}
+        </td>
+        <td>
+            {{ cells.266 }}
+        </td>
+        <td>
+            {{ cells.267 }}
+        </td>
+        <td>
+            {{ cells.268 }}
+        </td>
+        <td>
+            {{ cells.269 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.270 }}
+        </td>
+        <td>
+            {{ cells.271 }}
+        </td>
+        <td>
+            {{ cells.272 }}
+        </td>
+        <td>
+            {{ cells.273 }}
+        </td>
+        <td>
+            {{ cells.274 }}
+        </td>
+        <td>
+            {{ cells.275 }}
+        </td>
+        <td>
+            {{ cells.276 }}
+        </td>
+        <td>
+            {{ cells.277 }}
+        </td>
+        <td>
+            {{ cells.278 }}
+        </td>
+        <td>
+            {{ cells.279 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.280 }}
+        </td>
+        <td>
+            {{ cells.281 }}
+        </td>
+        <td>
+            {{ cells.282 }}
+        </td>
+        <td>
+            {{ cells.283 }}
+        </td>
+        <td>
+            {{ cells.284 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.285 }}
+        </td>
+        <td>
+            {{ cells.286 }}
+        </td>
+        <td>
+            {{ cells.287 }}
+        </td>
+        <td>
+            {{ cells.288 }}
+        </td>
+        <td>
+            {{ cells.289 }}
+        </td>
+        <td>
+            {{ cells.290 }}
+        </td>
+        <td>
+            {{ cells.291 }}
+        </td>
+        <td>
+            {{ cells.292 }}
+        </td>
+        <td>
+            {{ cells.293 }}
+        </td>
+        <td>
+            {{ cells.294 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.295 }}
+        </td>
+        <td>
+            {{ cells.296 }}
+        </td>
+        <td>
+            {{ cells.297 }}
+        </td>
+        <td>
+            {{ cells.298 }}
+        </td>
+        <td>
+            {{ cells.299 }}
+        </td>
+    </tr>
+
+</table>
+
+{% endblock %}

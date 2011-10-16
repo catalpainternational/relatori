@@ -1,0 +1,708 @@
+{% extends "relatori/view.html" %}
+{% block view_template %}
+  <table border="0" cellpadding="0" cellspacing="0" width="717" style="border-collapse:
+
+ collapse;table-layout:fixed;width:539pt">
+   <col width="32" style="mso-width-source:userset;mso-width-alt:1170;width:24pt" />
+   <col width="66" span="4" style="mso-width-source:userset;mso-width-alt:2413;
+
+ width:50pt" />
+   <col width="55" span="4" style="mso-width-source:userset;mso-width-alt:2011;
+
+ width:41pt" />
+   <col width="73" style="mso-width-source:userset;mso-width-alt:2669;width:55pt" />
+   <col width="64" span="2" style="width:48pt" />
+   <tr height="17" style="height:12.75pt">
+    <td height="17" width="32" style="height:12.75pt;width:24pt" align="left" valign="top">
+     <span style="mso-ignore:vglayout;
+
+  position:absolute;z-index:1;margin-left:0px;margin-top:6px;width:57px;
+
+  height:48px">
+      <img width='53' height='46' src='/static/images/MoH.png'>
+     </span>
+     <span style="mso-ignore:vglayout2">
+      <table cellpadding="0" cellspacing="0">
+       <tr>
+        <td height="17" width="32" style="height:12.75pt;width:24pt">
+        </td>
+       </tr>
+      </table>
+     </span>
+    </td>
+    <td width="66" style="width:50pt">
+    </td>
+    <td class="xl66" width="66" style="width:50pt">
+    </td>
+    <td class="xl66" width="66" style="width:50pt">
+    </td>
+    <td class="xl66" width="66" style="width:50pt">
+    </td>
+    <td class="xl66" width="55" style="width:41pt">
+    </td>
+    <td class="xl66" width="55" style="width:41pt">
+    </td>
+    <td class="xl66" width="55" style="width:41pt">
+    </td>
+    <td class="xl66" width="55" style="width:41pt">
+    </td>
+    <td class="xl66" width="73" style="width:55pt">
+    </td>
+    <td class="xl66" width="64" style="width:48pt">
+    </td>
+    <td width="64" style="width:48pt">
+    </td>
+   </tr>
+   <tr height="18" style="height:13.5pt">
+    <td height="18" colspan="2" style="height:13.5pt;mso-ignore:colspan">
+    </td>
+    <td colspan="6" class="xl371">
+     REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE
+    </td>
+    <td class="xl191" style="border-left:none">
+    </td>
+    <td colspan="2" class="xl411">
+     FORMULARIU-8A
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="18" style="height:13.5pt">
+    <td height="18" colspan="2" style="height:13.5pt;mso-ignore:colspan">
+    </td>
+    <td colspan="6" class="xl372">
+     MINISTÉRIO DA SAÚDE
+    </td>
+    <td class="xl192" style="border-left:none">
+     &nbsp;
+    </td>
+    <td class="xl68">
+     Fulan: {{ fulan }}
+     <span style="mso-spacerun:yes">
+       
+     </span>
+    </td>
+    <td class="xl128">
+     Tinan: {{ tinan }}
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="24" style="height:18.0pt">
+    <td height="24" colspan="2" style="height:18.0pt;mso-ignore:colspan">
+    </td>
+    <td colspan="5" class="xl66" style="mso-ignore:colspan">
+    </td>
+    <td class="xl69">
+    </td>
+    <td class="xl66">
+    </td>
+    <td colspan="2" class="xl70" style="mso-ignore:colspan">
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="28" style="mso-height-source:userset;height:21.0pt">
+    <td colspan="3" height="28" class="xl398" style="height:21.0pt">
+     Distritu: {{ distritu }}
+    </td>
+    <td colspan="4" class="xl399" style="border-left:none">
+     Subdistritu: {{ subdistritu }}
+    </td>
+    <td colspan="4" class="xl400" style="border-left:none">
+     Fatin: {{ fatin }}
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="36" style="mso-height-source:userset;height:27.0pt">
+    <td height="36" class="xl72" colspan="10" style="height:27.0pt;mso-ignore:colspan">
+     Fasilidade: {{ facility }} <input type='hidden' name='name' value='{{ facility.id }}'> &nbsp;&nbsp;&nbsp; Code: {{ code }}
+     <span style="mso-spacerun:yes">
+        
+     </span>
+     <font class="font12">
+      <span style="mso-spacerun:yes">
+            
+      </span>
+     </font>
+     <font class="font8">
+      <span style="mso-spacerun:yes">
+            
+      </span>
+      <span style="mso-spacerun:yes">
+               
+      </span>
+      <span style="mso-spacerun:yes">
+                        
+      </span>
+     </font>
+    </td>
+    <td class="xl77" style="border-top:none">
+     &nbsp;
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="17" style="height:12.75pt">
+    <td height="17" colspan="12" style="height:12.75pt;mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="height:12.75pt">
+    <td height="17" colspan="12" style="height:12.75pt;mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="24" style="height:18.0pt">
+    <td colspan="11" height="24" class="xl193" style="height:18.0pt">
+     TUBERCULOSE
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="24" style="height:18.0pt">
+    <td height="24" colspan="11" class="xl193" style="height:18.0pt;mso-ignore:colspan">
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="20" style="height:15.0pt">
+    <td colspan="11" height="20" class="xl507" style="height:15.0pt">
+     KONTROLA MEAR
+
+  TASAK
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="17" style="height:12.75pt">
+    <td height="17" colspan="12" style="height:12.75pt;mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td colspan="5" rowspan="3" height="51" class="xl518" width="296" style="height:38.25pt;
+
+  width:224pt">
+     Examina mear tasak
+    </td>
+    <td colspan="6" class="xl389" style="border-left:none">
+     Numeru kontrola
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="17" style="height:12.75pt">
+    <td colspan="2" height="17" class="xl497" style="height:12.75pt;border-left:none">
+     Sample
+
+  1
+    </td>
+    <td colspan="2" class="xl497" style="border-left:none">
+     Sample 2
+    </td>
+    <td colspan="2" class="xl517" style="border-left:none">
+     Sample 3
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="17" style="height:12.75pt">
+    <td height="17" class="xl134" style="height:12.75pt;border-top:none;border-left:
+
+  none">
+     M
+    </td>
+    <td class="xl134" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl134" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl134" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl134" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl135" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:17.1pt">
+    <td height="22" class="xl113" style="height:17.1pt">
+     1
+    </td>
+    <td colspan="4" class="xl514" style="border-left:none">
+     Numeru mear tasak nebe mak
+
+  examina
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.0 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.1 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.2 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.3 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.4 }}
+    </td>
+    <td class="xl322" style="border-left:none">
+     {{ cells.5 }}
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:17.1pt">
+    <td height="22" class="xl115" style="height:17.1pt;border-top:none">
+     2
+    </td>
+    <td colspan="4" class="xl515" style="border-left:none">
+     Numeru mear tasak nebe
+
+  positivu
+    </td>
+    <td class="xl323" style="border-top:none;border-left:none">
+     {{ cells.6 }}
+    </td>
+    <td class="xl323" style="border-top:none;border-left:none">
+     {{ cells.7 }}
+    </td>
+    <td class="xl323" style="border-top:none;border-left:none">
+     {{ cells.8 }}
+    </td>
+    <td class="xl323" style="border-top:none;border-left:none">
+     {{ cells.9 }}
+    </td>
+    <td class="xl323" style="border-top:none;border-left:none">
+     {{ cells.10 }}
+    </td>
+    <td class="xl324" style="border-top:none;border-left:none">
+     {{ cells.11 }}
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="17" style="height:12.75pt">
+    <td height="17" colspan="5" style="height:12.75pt;mso-ignore:colspan">
+    </td>
+    <td class="xl93">
+    </td>
+    <td colspan="6" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="height:12.75pt">
+    <td height="17" colspan="5" style="height:12.75pt;mso-ignore:colspan">
+    </td>
+    <td class="xl93">
+    </td>
+    <td colspan="6" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="34" style="height:25.5pt;mso-xlrowspan:2">
+    <td height="34" colspan="12" style="height:25.5pt;mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td colspan="11" height="20" class="xl507" style="height:15.0pt">
+     MORAS NEBE IHA
+
+  KONTROLA NIA LARAN, TUIR SITUASAUN NEBE REGISTADU
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="17" style="height:12.75pt">
+    <td height="17" colspan="12" style="height:12.75pt;mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="height:12.75pt">
+    <td colspan="5" rowspan="3" height="51" class="xl516" style="height:38.25pt">
+     Numeru
+
+  kasu
+    </td>
+    <td colspan="6" class="xl389">
+     Grupu idade
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="17" style="height:12.75pt">
+    <td colspan="2" height="17" class="xl497" style="height:12.75pt">
+     Tinan 0-14
+    </td>
+    <td colspan="2" class="xl497" style="border-left:none">
+     Tinan 15-49
+    </td>
+    <td colspan="2" class="xl517" style="border-left:none">
+     &#8805; tinan 50
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="17" style="height:12.75pt">
+    <td height="17" class="xl134" style="height:12.75pt;border-top:none">
+     M
+    </td>
+    <td class="xl134" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl134" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl134" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl134" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl135" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:17.1pt">
+    <td height="22" class="xl113" style="height:17.1pt">
+     1
+    </td>
+    <td colspan="2" rowspan="4" class="xl509" width="132" style="width:100pt">
+     TB pulmaun:
+
+  kontrola mear tasak positivu
+    </td>
+    <td colspan="2" class="xl510" style="border-left:none">
+     Kasu foun
+    </td>
+    <td class="xl321">
+     {{ cells.12 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.13 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.14 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.15 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.16 }}
+    </td>
+    <td class="xl322" style="border-left:none">
+     {{ cells.17 }}
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:17.1pt">
+    <td height="22" class="xl114" style="height:17.1pt;border-top:none">
+     2
+    </td>
+    <td colspan="2" class="xl511" style="border-left:none">
+     Rekaida
+     <font class="font36">
+      (Kambuh)
+     </font>
+    </td>
+    <td class="xl321">
+     {{ cells.18 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.19 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.20 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.21 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.22 }}
+    </td>
+    <td class="xl322" style="border-left:none">
+     {{ cells.23 }}
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="38" style="mso-height-source:userset;height:28.5pt">
+    <td height="38" class="xl87" style="height:28.5pt;border-top:none">
+     3
+    </td>
+    <td colspan="2" class="xl512" width="132" style="border-left:none;width:100pt">
+     Fila
+
+  Fali Hafoin Tratamento
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.24 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.25 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.26 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.27 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.28 }}
+    </td>
+    <td class="xl322" style="border-left:none">
+     {{ cells.29 }}
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:17.1pt">
+    <td height="22" class="xl87" style="height:17.1pt;border-top:none">
+     4
+    </td>
+    <td colspan="2" class="xl511" style="border-left:none">
+     Hafoin Falla Tratamento
+    </td>
+    <td class="xl321">
+     {{ cells.30 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.31 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.32 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.33 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.34 }}
+    </td>
+    <td class="xl322" style="border-left:none">
+     {{ cells.35 }}
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:17.1pt">
+    <td height="22" class="xl114" style="height:17.1pt;border-top:none">
+     5*
+    </td>
+    <td colspan="4" class="xl513" style="border-left:none">
+     TB pulmaun: kontrola mear
+
+  tasak negativu
+    </td>
+    <td class="xl321">
+     {{ cells.36 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.37 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.38 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.39 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.40 }}
+    </td>
+    <td class="xl322" style="border-left:none">
+     {{ cells.41 }}
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:17.1pt">
+    <td height="22" class="xl114" style="height:17.1pt;border-top:none">
+     6*
+    </td>
+    <td colspan="4" class="xl505" style="border-left:none">
+     Tuberculose extra-pulmaun
+    </td>
+    <td class="xl321">
+     {{ cells.42 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.43 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.44 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.45 }}
+    </td>
+    <td class="xl321" style="border-left:none">
+     {{ cells.46 }}
+    </td>
+    <td class="xl322" style="border-left:none">
+     {{ cells.47 }}
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:17.1pt">
+    <td height="22" class="xl115" style="height:17.1pt;border-top:none">
+     7
+    </td>
+    <td colspan="4" class="xl506" style="border-left:none">
+     Transfere tama
+    </td>
+    <td class="xl323" style="border-top:none">
+     {{ cells.48 }}
+    </td>
+    <td class="xl323" style="border-top:none;border-left:none">
+     {{ cells.49 }}
+    </td>
+    <td class="xl323" style="border-top:none;border-left:none">
+     {{ cells.50 }}
+    </td>
+    <td class="xl323" style="border-top:none;border-left:none">
+     {{ cells.51 }}
+    </td>
+    <td class="xl323" style="border-top:none;border-left:none">
+     {{ cells.52 }}
+    </td>
+    <td class="xl324" style="border-top:none;border-left:none">
+     {{ cells.53 }}
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="17" style="height:12.75pt">
+    <td height="17" colspan="11" style="height:12.75pt;mso-ignore:colspan">
+    </td>
+    <td>
+     <span style="mso-spacerun:yes">
+       
+     </span>
+    </td>
+   </tr>
+   <tr height="51" style="height:38.25pt;mso-xlrowspan:3">
+    <td height="51" colspan="12" style="height:38.25pt;mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="20" style="height:15.0pt">
+    <td colspan="11" height="20" class="xl507" style="height:15.0pt">
+     <span style="mso-spacerun:yes">
+         
+     </span>
+     KAZU MEAR TASAK POSITIVU FOUN: TUIR GRUPU
+
+  IDADE NO SEXU
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr height="17" style="height:12.75pt">
+    <td height="17" colspan="12" style="height:12.75pt;mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="28" style="height:21.0pt">
+    <td height="28" style="height:21.0pt">
+    </td>
+    <td colspan="2" class="xl508">
+     SEXU
+     <span style="mso-spacerun:yes">
+                 
+     </span>
+     <font class="font37">
+      <sup>
+       OTAS
+      </sup>
+     </font>
+    </td>
+    <td class="xl194" style="border-left:none">
+     0-14
+    </td>
+    <td class="xl194" style="border-left:none">
+     15-24
+    </td>
+    <td class="xl194" style="border-left:none">
+     25-34
+    </td>
+    <td class="xl194" style="border-left:none">
+     35-44
+    </td>
+    <td class="xl194" style="border-left:none">
+     45-54
+    </td>
+    <td class="xl194" style="border-left:none">
+     55-64
+    </td>
+    <td class="xl195" style="border-left:none">
+     65 e +
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:17.1pt">
+    <td height="22" style="height:17.1pt">
+    </td>
+    <td colspan="2" class="xl106">
+     Mane
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.54 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.55 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.56 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.57 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.58 }}
+    </td>
+    <td class="xl182" align="right" style="border-left:none">
+     {{ cells.59 }}
+    </td>
+    <td class="xl196" align="right" style="border-left:none">
+     {{ cells.60 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:17.1pt">
+    <td height="22" style="height:17.1pt">
+    </td>
+    <td colspan="2" class="xl109">
+     Feto
+    </td>
+    <td class="xl97" align="right" style="border-top:none;border-left:none">
+     {{ cells.61 }}
+    </td>
+    <td class="xl97" align="right" style="border-top:none;border-left:none">
+     {{ cells.62 }}
+    </td>
+    <td class="xl97" align="right" style="border-top:none;border-left:none">
+     {{ cells.63 }}
+    </td>
+    <td class="xl97" align="right" style="border-top:none;border-left:none">
+     {{ cells.64 }}
+    </td>
+    <td class="xl97" align="right" style="border-top:none;border-left:none">
+     {{ cells.65 }}
+    </td>
+    <td class="xl97" align="right" style="border-top:none;border-left:none">
+     {{ cells.66 }}
+    </td>
+    <td class="xl98" align="right" style="border-top:none;border-left:none">
+     {{ cells.67 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+  </table>
+{% endblock %}

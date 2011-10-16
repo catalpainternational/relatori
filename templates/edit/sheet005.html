@@ -1,0 +1,385 @@
+{% extends "relatori/edit.html" %}
+{% block edit_template %}
+
+
+<table class="form">
+    
+    <tr>
+        <td class="logo"><img src="/static/images/MoH.jpg" class="logo" /></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="7" class="border2"><h1>REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE<br />MINISTÉRIO DA SAÚDE</h1></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="4" class="border2"><h1>FORMULÁRIU-4</h1><br />
+            Fulan:
+            <input type="text" name="fulan" size="2" value="{{ fulan }}" class="{{ fulan_style }} ">
+            Tinan:
+            <input type="text" name="tinan" size="4" value="{{ tinan }}" class="{{ tinan_style }}">
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+    
+<table class="form border2">
+    
+    <tr class="border">
+        <td><b>Distritu:</b> {{ distritu }}
+            <input type='hidden' name='district' value='{{ distritu }}'>
+        </td>
+        <td><b>Subdistritu:</b> {{ subdistritu }}
+            <input type='hidden' name='subdistrict' value='{{ subdistritu }}'>
+        </td>
+        <td><b>Fatin:</b> {{ fatin }} 
+            <input type='hidden' name='village' value='{{ fatin }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="3"><b>Fasilidade:</b> {{ facility }} 
+            <input type='hidden' name='name' value='{{ facility.id }}'> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Code:</b> {{ code }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+
+    <tr>
+        <td colspan="20"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="20"><h2>FORMATO RELATORIO MENSAL NUTRISAUN</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="20"><h2>SAÚDE LABARIK</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="20"><div class="spacer"></div></td>
+    </tr>
+
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="8" rowspan="2">Parametru ba controla pesu labarik nian</td>
+        <td colspan="12">Grupu Fulan</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td colspan="4">0 - 23</td>
+        <td colspan="4">24 - 59</td>
+        <td colspan="4">Total (0 - 59)</td>
+    </tr>
+
+    <tr class="border">
+        <td class="grey">a</td>
+        <td colspan="7" class="grey">Target populasi labarik tinan 5 mai kraik</td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.0' size=2 value='{{ cells.0 }}' class='{{ cell_styles.0 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.1' size=2 value='{{ cells.1 }}' class='{{ cell_styles.1 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.2' size=2 value='{{ cells.2 }}' class='{{ cell_styles.2 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>b</td>
+        <td colspan="7">Labarik nebe iha ona LISIO</td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.3' size=2 value='{{ cells.3 }}' class='{{ cell_styles.3 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.4' size=2 value='{{ cells.4 }}' class='{{ cell_styles.4 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.5' size=2 value='{{ cells.5 }}' class='{{ cell_styles.5 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>c</td>
+        <td colspan="7">Labarik nebe mai foun registru iha fulan ne'e</td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.6' size=2 value='{{ cells.6 }}' class='{{ cell_styles.6 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.7' size=2 value='{{ cells.7 }}' class='{{ cell_styles.7 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.8' size=2 value='{{ cells.8 }}' class='{{ cell_styles.8 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>d</td>
+        <td colspan="7">b + c</td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.9' size=2 value='{{ cells.9 }}' class='{{ cell_styles.9 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.10' size=2 value='{{ cells.10 }}' class='{{ cell_styles.10 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.11' size=2 value='{{ cells.11 }}' class='{{ cell_styles.11 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>e</td>
+        <td colspan="7">Labarik nebe mai tetu fulan ne'e</td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.12' size=2 value='{{ cells.12 }}' class='{{ cell_styles.12 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.13' size=2 value='{{ cells.13 }}' class='{{ cell_styles.13 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.14' size=2 value='{{ cells.14 }}' class='{{ cell_styles.14 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>f</td>
+        <td colspan="7">Labarik todan Normal (iha kor verde) N</td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.15' size=2 value='{{ cells.15 }}' class='{{ cell_styles.15 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.16' size=2 value='{{ cells.16 }}' class='{{ cell_styles.16 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.17' size=2 value='{{ cells.17 }}' class='{{ cell_styles.17 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>g</td>
+        <td colspan="7">Labarik todan Menus (iha kor kinur) M</td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.18' size=2 value='{{ cells.18 }}' class='{{ cell_styles.18 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.19' size=2 value='{{ cells.19 }}' class='{{ cell_styles.19 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.20' size=2 value='{{ cells.20 }}' class='{{ cell_styles.20 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>h</td>
+        <td colspan="7">Labarik todan Menus Aat Liu (iha linha mean nia okos) MAL</td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.21' size=2 value='{{ cells.21 }}' class='{{ cell_styles.21 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.22' size=2 value='{{ cells.22 }}' class='{{ cell_styles.22 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.23' size=2 value='{{ cells.23 }}' class='{{ cell_styles.23 }}'>
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="20"><div class="spacer"></div></td>
+    </tr>
+</table>    
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="8" rowspan="2">Parametru ba Vitamin A</td>
+        <td colspan="12">Grupu Fulan</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td colspan="4">6 - 11</td>
+        <td colspan="4">12 to'o 59</td>
+        <td colspan="4">Total (6 - 59)</td>
+    </tr>
+
+    <tr class="border">
+        <td class="grey">i</td>
+        <td colspan="7" class="grey">Target populasaun</td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.24' size=2 value='{{ cells.24 }}' class='{{ cell_styles.24 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.25' size=2 value='{{ cells.25 }}' class='{{ cell_styles.25 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.26' size=2 value='{{ cells.26 }}' class='{{ cell_styles.26 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>j</td>
+        <td colspan="7">Distribuisaun Vitamina A</td>
+        <td colspan="4">
+            <input type='text' name='cell.27' size=2 value='{{ cells.27 }}' class='{{ cell_styles.27 }}'>
+        </td>
+        <td colspan="4">
+            <input type='text' name='cell.28' size=2 value='{{ cells.28 }}' class='{{ cell_styles.28 }}'>
+        </td>
+        <td colspan="4">
+            <input type='text' name='cell.29' size=2 value='{{ cells.29 }}' class='{{ cell_styles.29 }}'>
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="20"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+
+    <tr class="border green center bold">
+        <td colspan="8" rowspan="2">Parametru ba controla Lumbriga</td>
+        <td colspan="12">Grupu Idade</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td colspan="4">Fulan 6 - 11</td>
+        <td colspan="4">Fulan 12 to'o 59</td>
+        <td colspan="4">Total 6 - 59</td>
+    </tr>
+    
+    <tr class="border">
+        <td class="grey">k</td>
+        <td colspan="7" class="grey">Target populasaun</td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.30' size=2 value='{{ cells.30 }}' class='{{ cell_styles.30 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.31' size=2 value='{{ cells.31 }}' class='{{ cell_styles.31 }}'>
+        </td>
+        <td colspan="4" class="grey">
+            <input type='text' name='cell.32' size=2 value='{{ cells.32 }}' class='{{ cell_styles.32 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>l</td>
+        <td colspan="7">Distribuisaun Aimoruk Lumbriga</td>
+        <td colspan="4">
+            <input type='text' name='cell.33' size=2 value='{{ cells.33 }}' class='{{ cell_styles.33 }}'>
+        </td>
+        <td colspan="4">
+            <input type='text' name='cell.34' size=2 value='{{ cells.34 }}' class='{{ cell_styles.34 }}'>
+        </td>
+        <td colspan="4">
+            <input type='text' name='cell.35' size=2 value='{{ cells.35 }}' class='{{ cell_styles.35 }}'>
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="20"><div class="spacer"></div></td>
+    </tr>
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="20">NB:</td>
+    </tr>
+
+    <tr class="small">
+        <td colspan="8">1. Total labarik (fulan 0-23) nebe mate iha fulan ne'e</td>
+        <td colspan="2" class="border2">
+            <input type='text' name='cell.36' size=2 value='{{ cells.36 }}' class='{{ cell_styles.36 }}'>
+        </td>
+        <td colspan="10"></td>
+    </tr>
+
+    <tr class="small">
+        <td colspan="8">2. Total labarik (fulan 24-59) nebe mate iha fulan ne'e</td>
+        <td colspan="2" class="border2">
+            <input type='text' name='cell.37' size=2 value='{{ cells.37 }}' class='{{ cell_styles.37 }}'>
+        </td>
+        <td colspan="10"></td>
+    </tr>
+
+    <tr class="small">
+        <td colspan="8">3. Total labarik nebe idade liu ona fulan 23 iha fulan ida ne'e</td>
+        <td colspan="2" class="border2">
+            <input type='text' name='cell.38' size=2 value='{{ cells.38 }}' class='{{ cell_styles.38 }}'>
+        </td>
+        <td colspan="10"></td>
+    </tr>
+
+    <tr class="small">
+        <td colspan="8">4. Total labarik nebe idade liu ona fulan 59 iha fulan ida ne'e</td>
+        <td colspan="2" class="border2">
+            <input type='text' name='cell.39' size=2 value='{{ cells.39 }}' class='{{ cell_styles.39 }}'>
+        </td>
+        <td colspan="10"></td>
+    </tr>
+
+    <tr class="small">
+        <td colspan="8">5. Total labarik nebe muda hela fatin (idade fulan 0-23) iha fulan ida ne'e</td>
+        <td colspan="2" class="border2">
+            <input type='text' name='cell.40' size=2 value='{{ cells.40 }}' class='{{ cell_styles.40 }}'>
+        </td>
+        <td colspan="10"></td>
+    </tr>
+
+    <tr class="small">
+        <td colspan="8">6. Total labarik nebe muda hela fatin (idade fulan 24-59) iha fulan ida ne'e</td>
+        <td colspan="2" class="border2">
+            <input type='text' name='cell.41' size=2 value='{{ cells.41 }}' class='{{ cell_styles.41 }}'>
+        </td>
+        <td colspan="10"></td>
+    </tr>
+
+    <tr>
+        <td colspan="20"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="20" class="small">Informasaun konaba items nen iha leten labele repete fali iha fulan oin mai.</td>
+    </tr>
+
+    <tr>
+        <td colspan="20"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="20">Nota :</td>
+    </tr>
+
+    <tr>
+        <td colspan="20">Se karik Labarik Mate, muda fatin ou to'o ona idade tinan 5, ita tenki fo marka ba labarik nia naran iha registo</td>
+    </tr>
+
+    <tr>
+        <td colspan="20">no keta konta (hatama ba relatorio) ba fulan ne'e ou fulan tuir nian.</td>
+    </tr>
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,447 @@
+{% extends "relatori/view.html" %}
+{% block view_template %}
+
+
+<table class="form">
+    
+    <tr>
+        <td class="logo"><img src="/static/images/MoH.jpg" class="logo" /></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="7" class="border2"><h1>REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE<br />MINISTÉRIO DA SAÚDE</h1></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="4" class="border2"><h1>FORMULARIU-5</h1><br />
+            Fulan:
+            <input type="text" name="fulan" size="2" value="{{ fulan }}" class="{{ fulan_style }} ">
+            Tinan:
+            <input type="text" name="tinan" size="4" value="{{ tinan }}" class="{{ tinan_style }}">
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+    
+<table class="form border2">
+    
+    <tr class="border">
+        <td><b>Distritu:</b> {{ distritu }}
+            <input type='hidden' name='district' value='{{ distritu }}'>
+        </td>
+        <td><b>Subdistritu:</b> {{ subdistritu }}
+            <input type='hidden' name='subdistrict' value='{{ subdistritu }}'>
+        </td>
+        <td><b>Fatin:</b> {{ fatin }} 
+            <input type='hidden' name='village' value='{{ fatin }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="3"><b>Fasilidade:</b> {{ facility }} 
+            <input type='hidden' name='name' value='{{ facility.id }}'> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Code:</b> {{ code }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="14"><h2>SAUDE LABARIK / VACCINASAUN</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="6" rowspan="3">Vaccina nebe registrado ba labarik</td>
+        <td colspan="8">Grupu Tinan</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td colspan="4">&lt; tinan 1</td>
+        <td colspan="4">Tinan 1 - 4</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td colspan="2">M</td>
+        <td colspan="2">F</td>
+        <td colspan="2">M</td>
+        <td colspan="2">F</td>
+    </tr>
+
+    <tr class="border">
+        <td>1</td>
+        <td colspan="5">BCG</td>
+        <td colspan="2">
+            {{ cells.0 }}
+        </td>
+        <td colspan="2">
+            {{ cells.1 }}
+        </td>
+        <td colspan="2" class="off"></td>
+        <td colspan="2" class="off"></td>
+    </tr>
+
+    <tr class="border">
+        <td>2</td>
+        <td colspan="5">DPT/<span class="small bold">Hep.B-1</span></td>
+        <td colspan="2">
+            {{ cells.2 }}
+        </td>
+        <td colspan="2">
+            {{ cells.3 }}
+        </td>
+        <td colspan="2">
+            {{ cells.4 }}
+        </td>
+        <td colspan="2">
+            {{ cells.5 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>3</td>
+        <td colspan="5">DPT/<span class="small bold">Hep.B-2</span></td>
+        <td colspan="2">
+            {{ cells.6 }}
+        </td>
+        <td colspan="2">
+            {{ cells.7 }}
+        </td>
+        <td colspan="2">
+            {{ cells.8 }}
+        </td>
+        <td colspan="2">
+            {{ cells.9 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>4</td>
+        <td colspan="5">DPT/<span class="small bold">Hep.B-3</span></td>
+        <td colspan="2">
+            {{ cells.10 }}
+        </td>
+        <td colspan="2">
+            {{ cells.11 }}
+        </td>
+        <td colspan="2">
+            {{ cells.12 }}
+        </td>
+        <td colspan="2">
+            {{ cells.13 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>5</td>
+        <td colspan="5">Polio<span class="small bold">-0 </span>
+            {{ cells.14 }}
+        </td>
+        <td colspan="2">
+            {{ cells.15 }}
+        </td>
+        <td colspan="2">
+            {{ cells.16 }}
+        </td>
+        <td colspan="2">
+            {{ cells.17 }}
+        </td>
+        <td colspan="2">
+            {{ cells.18 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>6</td>
+        <td colspan="5">Polio<span class="small bold">-1</span></td>
+        <td colspan="2">
+            {{ cells.19 }}
+        </td>
+        <td colspan="2">
+            {{ cells.20 }}
+        </td>
+        <td colspan="2">
+            {{ cells.21 }}
+        </td>
+        <td colspan="2">
+            {{ cells.22 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>7</td>
+        <td colspan="5">Polio<span class="small bold">-2</span></td>
+        <td colspan="2">
+            {{ cells.23 }}
+        </td>
+        <td colspan="2">
+            {{ cells.24 }}
+        </td>
+        <td colspan="2">
+            {{ cells.25 }}
+        </td>
+        <td colspan="2">
+            {{ cells.26 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>8</td>
+        <td colspan="5">Polio<span class="small bold">-3</span></td>
+        <td colspan="2">
+            {{ cells.27 }}
+        </td>
+        <td colspan="2">
+            {{ cells.28 }}
+        </td>
+        <td colspan="2">
+            {{ cells.29 }}
+        </td>
+        <td colspan="2">
+            {{ cells.30 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>12</td>
+        <td colspan="5">Sarampo</td>
+        <td colspan="2">
+            {{ cells.31 }}
+        </td>
+        <td colspan="2">
+            {{ cells.32 }}
+        </td>
+        <td colspan="2">
+            {{ cells.33 }}
+        </td>
+        <td colspan="2">
+            {{ cells.34 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>13</td>
+        <td colspan="5">Seluk</td>
+        <td colspan="2">
+            {{ cells.35 }}
+        </td>
+        <td colspan="2">
+            {{ cells.36 }}
+        </td>
+        <td colspan="2">
+            {{ cells.37 }}
+        </td>
+        <td colspan="2">
+            {{ cells.38 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>14</td>
+        <td colspan="5">Vaccin. Completo</td>
+        <td colspan="2">
+            {{ cells.39 }}
+        </td>
+        <td colspan="2">
+            {{ cells.40 }}
+        </td>
+        <td colspan="2">
+            {{ cells.41 }}
+        </td>
+        <td colspan="2">
+            {{ cells.42 }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="14"><h2>VACCINASAUN BA FETO HO IDADE PRODUCTIVA</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="4">Vaccina nebe registrado</td>
+        <td colspan="5">Inan isin rua</td>
+        <td colspan="5">Inan nebe laos isin rua</td>
+    </tr>
+
+    <tr class="border">
+        <td>1</td>
+        <td colspan="3">TT1</td>
+        <td colspan="5">
+            {{ cells.43 }}
+        </td>
+        <td colspan="5">
+            {{ cells.44 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>2</td>
+        <td colspan="3">TT2</td>
+        <td colspan="5">
+            {{ cells.45 }}
+        </td>
+        <td colspan="5">
+            {{ cells.46 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>3</td>
+        <td colspan="3">TT3</td>
+        <td colspan="5">
+            {{ cells.47 }}
+        </td>
+        <td colspan="5">
+            {{ cells.48 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>4</td>
+        <td colspan="3">TT4</td>
+        <td colspan="5">
+            {{ cells.49 }}
+        </td>
+        <td colspan="5">
+            {{ cells.50 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>5</td>
+        <td colspan="3">TT5</td>
+        <td colspan="5">
+            {{ cells.51 }}
+        </td>
+        <td colspan="5">
+            {{ cells.52 }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="4" rowspan="2">Total vaccina nebe Usa (Vials)</td>
+        <td colspan="2">BCG</td>
+        <td colspan="2">DTP</td>
+        <td colspan="2">Sarampo</td>
+        <td colspan="2">Polio</td>
+        <td colspan="2">TT</td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="2">
+            {{ cells.53 }}
+        </td>
+        <td colspan="2">
+            {{ cells.54 }}
+        </td>
+        <td colspan="2">
+            {{ cells.55 }}
+        </td>
+        <td colspan="2">
+            {{ cells.56 }}
+        </td>
+        <td colspan="2">
+            {{ cells.57 }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="4" rowspan="2">Total vaccina <br /><span class="small bold">nebe at (VVM at,ect) / expiry (Vials)</span></td>
+        <td colspan="2">BCG</td>
+        <td colspan="2">DTP</td>
+        <td colspan="2">Sarampo</td>
+        <td colspan="2">Polio</td>
+        <td colspan="2">TT</td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="2">
+            {{ cells.58 }}
+        </td>
+        <td colspan="2">
+            {{ cells.59 }}
+        </td>
+        <td colspan="2">
+            {{ cells.60 }}
+        </td>
+        <td colspan="2">
+            {{ cells.61 }}
+        </td>
+        <td colspan="2">
+            {{ cells.62 }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="14">Nota :</td>
+    </tr>
+
+    <tr>
+        <td colspan="14" class="small">Vacina kompleto signifika katak Labarik sira simu ona vacina hotu hahu hosi Vacina BCG no remata ho vacina Sarampu.</td>
+    </tr>
+
+</table>
+
+{% endblock %}

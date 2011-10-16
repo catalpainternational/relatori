@@ -1,0 +1,1221 @@
+{% extends "relatori/view.html" %}
+{% block view_template %}
+<table border="0" cellpadding="0" cellspacing="0" width="705" style="border-collapse:
+
+ collapse;table-layout:fixed;width:533pt">
+   <col width="25" style="mso-width-source:userset;mso-width-alt:914;width:19pt" />
+   <col width="45" style="mso-width-source:userset;mso-width-alt:1645;width:34pt" />
+   <col width="49" style="mso-width-source:userset;mso-width-alt:1792;width:37pt" />
+   <col width="37" span="14" style="mso-width-source:userset;mso-width-alt:1353;
+
+ width:28pt" />
+   <col width="31" style="mso-width-source:userset;mso-width-alt:1133;width:23pt" />
+   <col width="37" span="8" style="mso-width-source:userset;mso-width-alt:1353;
+
+ width:28pt" />
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td height="17" width="25" style="height:12.75pt;width:19pt">
+    </td>
+    <td width="45" style="width:34pt" align="left" valign="top">
+     <span style="mso-ignore:vglayout;
+
+  position:absolute;z-index:1;margin-left:5px;margin-top:12px;width:56px;
+
+  height:51px">
+      <img width='53' height='46' src='/static/images/MoH.png'>
+     </span>
+     <span style="mso-ignore:vglayout2">
+      <table cellpadding="0" cellspacing="0">
+       <tr>
+        <td height="17" width="45" style="height:12.75pt;width:34pt">
+        </td>
+       </tr>
+      </table>
+     </span>
+    </td>
+    <td class="xl66" width="49" style="width:37pt">
+    </td>
+    <td class="xl66" width="37" style="width:28pt">
+    </td>
+    <td class="xl66" width="37" style="width:28pt">
+    </td>
+    <td class="xl66" width="37" style="width:28pt">
+    </td>
+    <td class="xl66" width="37" style="width:28pt">
+    </td>
+    <td class="xl66" width="37" style="width:28pt">
+    </td>
+    <td class="xl66" width="37" style="width:28pt">
+    </td>
+    <td class="xl66" width="37" style="width:28pt">
+    </td>
+    <td class="xl66" width="37" style="width:28pt">
+    </td>
+    <td class="xl66" width="37" style="width:28pt">
+    </td>
+    <td width="37" style="width:28pt">
+    </td>
+    <td width="37" style="width:28pt">
+    </td>
+    <td width="37" style="width:28pt">
+    </td>
+    <td width="37" style="width:28pt">
+    </td>
+    <td width="37" style="width:28pt">
+    </td>
+    <td class="xl67" width="31" style="width:23pt">
+    </td>
+    <td width="37" style="width:28pt">
+    </td>
+   </tr>
+   <tr height="18" style="mso-height-source:userset;height:13.5pt">
+    <td height="18" colspan="3" style="height:13.5pt;mso-ignore:colspan">
+    </td>
+    <td colspan="10" class="xl370">
+     REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE
+    </td>
+    <td>
+    </td>
+    <td colspan="5" class="xl371">
+     FORMULÁRIU-1
+    </td>
+   </tr>
+   <tr height="19" style="mso-height-source:userset;height:14.25pt">
+    <td height="19" colspan="3" style="height:14.25pt;mso-ignore:colspan">
+    </td>
+    <td colspan="10" class="xl372">
+     MINISTÉRIO DA SAÚDE
+    </td>
+    <td>
+    </td>
+    <td colspan="2" class="xl68">
+     Fulan: {{ fulan }}
+     <span style="mso-spacerun:yes">
+       
+     </span>
+    </td>
+    <td colspan="3" class="xl373">
+     <span style="mso-spacerun:yes">
+        
+     </span>
+     Tinan: {{ tinan }}
+    </td>
+   </tr>
+   <tr height="26" style="mso-height-source:userset;height:19.5pt">
+    <td height="26" colspan="2" style="height:19.5pt;mso-ignore:colspan">
+    </td>
+    <td colspan="5" class="xl66" style="mso-ignore:colspan">
+    </td>
+    <td class="xl69">
+    </td>
+    <td class="xl66">
+    </td>
+    <td colspan="2" class="xl70" style="mso-ignore:colspan">
+    </td>
+    <td class="xl66">
+    </td>
+    <td colspan="4" style="mso-ignore:colspan">
+    </td>
+    <td class="xl71">
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="26" style="mso-height-source:userset;height:19.5pt">
+    <td colspan="5" height="26" class="xl374" style="height:19.5pt">
+     Distritu: {{ distritu }}
+    </td>
+    <td colspan="7" class="xl375" style="border-left:none">
+     Subdistritu: {{ subdistritu }}
+    </td>
+    <td colspan="7" class="xl376">
+     Fatin: {{ fatin }}
+    </td>
+   </tr>
+   <tr height="34" style="mso-height-source:userset;height:25.5pt">
+    <td colspan="19" height="34" class="xl72" style="border-right:1.0pt solid black;
+
+  height:25.5pt">
+     <span style="mso-spacerun:yes">
+     Fasilidade: {{ facility }} <input type='hidden' name='name' value='{{ facility.id }}'> &nbsp;&nbsp;&nbsp; Code: {{ code }}
+     </span>
+    </td>
+   </tr>
+   <tr height="18" style="mso-height-source:userset;height:13.5pt">
+    <td height="18" class="xl78" style="height:13.5pt">
+    </td>
+    <td colspan="16" class="xl66" style="mso-ignore:colspan">
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="18" style="mso-height-source:userset;height:13.5pt">
+    <td height="18" class="xl78" style="height:13.5pt">
+    </td>
+    <td colspan="16" class="xl66" style="mso-ignore:colspan">
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td height="17" colspan="19" style="height:12.75pt;mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="24" style="mso-height-source:userset;height:18.0pt">
+    <td colspan="19" height="24" class="xl193" style="height:18.0pt">
+     PRESTASAUN SERVISU
+    </td>
+   </tr>
+   <tr height="21" style="mso-height-source:userset;height:15.75pt">
+    <td height="21" class="xl79" style="height:15.75pt">
+    </td>
+    <td colspan="18" class="xl80" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:16.5pt">
+    <td height="22" class="xl81" style="height:16.5pt">
+    </td>
+    <td>
+    </td>
+    <td class="xl82">
+     Pasiente externa
+    </td>
+    <td colspan="16" class="xl81" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td colspan="3" rowspan="3" height="56" class="xl367" width="119" style="height:42.0pt;
+
+  width:90pt">
+     Konsulta
+     <span style="mso-spacerun:yes">
+                
+     </span>
+     halau
+
+  tamba:
+    </td>
+    <td colspan="4" class="xl368" style="border-left:none">
+     &lt; tinan 1
+    </td>
+    <td colspan="4" class="xl368" style="border-left:none">
+     Tinan 1 - 4
+    </td>
+    <td colspan="4" class="xl368" style="border-left:none">
+     Tinan 5 - 14
+    </td>
+    <td colspan="4" class="xl369" style="border-left:none">
+     Tinan 15 e +
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td colspan="2" height="17" class="xl83" style="height:12.75pt;border-left:none">
+     Foun
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Tuan
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Foun
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Tuan
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Foun
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Tuan
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Foun
+    </td>
+    <td colspan="2" class="xl365" style="border-left:none">
+     Tuan
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:16.5pt">
+    <td height="22" class="xl84" style="height:16.5pt;border-top:none;border-left:
+
+  none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl85" style="border-top:none;border-left:none">
+     F
+    </td>
+   </tr>
+   <tr height="34" style="mso-height-source:userset;height:25.5pt">
+    <td height="34" class="xl86" style="height:25.5pt">
+     1
+    </td>
+    <td colspan="2" class="xl366" width="94" style="border-left:none;width:71pt">
+     Moras
+
+  nebe bele daet
+    </td>
+    <td class="xl359" style="border-top:none;border-left:none">
+     {{ cells.0 }}
+    </td>
+    <td class="xl359" style="border-top:none;border-left:none">
+     {{ cells.1 }}
+    </td>
+    <td class="xl359" style="border-top:none;border-left:none">
+     {{ cells.2 }}
+    </td>
+    <td class="xl359" style="border-top:none;border-left:none">
+     {{ cells.3 }}
+    </td>
+    <td class="xl359" style="border-top:none;border-left:none">
+     {{ cells.4 }}
+    </td>
+    <td class="xl359" style="border-top:none;border-left:none">
+     {{ cells.5 }}
+    </td>
+    <td class="xl359" style="border-top:none;border-left:none">
+     {{ cells.6 }}
+    </td>
+    <td class="xl359" style="border-top:none;border-left:none">
+     {{ cells.7 }}
+    </td>
+    <td class="xl359" style="border-top:none;border-left:none">
+     {{ cells.8 }}
+    </td>
+    <td class="xl359" style="border-top:none;border-left:none">
+     {{ cells.9 }}
+    </td>
+    <td class="xl359" style="border-top:none;border-left:none">
+     {{ cells.10 }}
+    </td>
+    <td class="xl359" style="border-top:none;border-left:none">
+     {{ cells.11 }}
+    </td>
+    <td class="xl359" style="border-top:none;border-left:none">
+     {{ cells.12 }}
+    </td>
+    <td class="xl359" style="border-top:none;border-left:none">
+     {{ cells.13 }}
+    </td>
+    <td class="xl359" style="border-top:none;border-left:none">
+     {{ cells.14 }}
+    </td>
+    <td class="xl352" style="border-top:none;border-left:none">
+     {{ cells.15 }}
+    </td>
+   </tr>
+   <tr height="34" style="mso-height-source:userset;height:25.5pt">
+    <td height="34" class="xl87" style="height:25.5pt;border-top:none">
+     2
+    </td>
+    <td colspan="2" class="xl360" width="94" style="border-left:none;width:71pt">
+     Moras
+
+  nebe
+     <span style="mso-spacerun:yes">
+           
+     </span>
+     la bele daet
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.16 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.17 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.18 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.19 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.20 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.21 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.22 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.23 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.24 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.25 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.26 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.27 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.28 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.29 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.30 }}
+    </td>
+    <td class="xl353" style="border-top:none;border-left:none">
+     {{ cells.31 }}
+    </td>
+   </tr>
+   <tr height="34" style="mso-height-source:userset;height:25.5pt">
+    <td height="34" class="xl88" style="height:25.5pt;border-top:none">
+     3
+    </td>
+    <td colspan="2" class="xl362" width="94" style="border-left:none;width:71pt">
+     Seluk
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.32 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.33 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.34 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.35 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.36 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.37 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.38 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.39 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.40 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.41 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.42 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.43 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.44 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.45 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.46 }}
+    </td>
+    <td class="xl354" style="border-top:none;border-left:none">
+     {{ cells.47 }}
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:16.5pt">
+    <td height="22" class="xl89" style="height:16.5pt">
+    </td>
+    <td colspan="2" class="xl90" style="mso-ignore:colspan">
+    </td>
+    <td colspan="16" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:16.5pt">
+    <td height="22" colspan="2" style="height:16.5pt;mso-ignore:colspan">
+    </td>
+    <td class="xl91">
+    </td>
+    <td colspan="2" class="xl92" style="mso-ignore:colspan">
+    </td>
+    <td colspan="3" style="mso-ignore:colspan">
+    </td>
+    <td class="xl93">
+    </td>
+    <td class="xl94">
+    </td>
+    <td class="xl93">
+    </td>
+    <td class="xl94">
+    </td>
+    <td colspan="7" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:16.5pt">
+    <td height="22" class="xl81" style="height:16.5pt">
+    </td>
+    <td>
+    </td>
+    <td class="xl82">
+     Pasiente externa
+    </td>
+    <td colspan="16" class="xl81" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td colspan="3" rowspan="3" height="56" class="xl367" width="119" style="height:42.0pt;
+
+  width:90pt">
+     Konsulta
+     <span style="mso-spacerun:yes">
+                    
+     </span>
+     halau
+     <span style="mso-spacerun:yes">
+       
+     </span>
+     tamba:
+    </td>
+    <td colspan="4" class="xl368" style="border-left:none">
+     &lt; tinan 1
+    </td>
+    <td colspan="4" class="xl368" style="border-left:none">
+     Tinan 1 - 4
+    </td>
+    <td colspan="4" class="xl368" style="border-left:none">
+     Tinan 5 - 14
+    </td>
+    <td colspan="4" class="xl369" style="border-left:none">
+     Tinan 15 e +
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td colspan="2" height="17" class="xl83" style="height:12.75pt;border-left:none">
+     Foun
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Tuan
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Foun
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Tuan
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Foun
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Tuan
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Foun
+    </td>
+    <td colspan="2" class="xl365" style="border-left:none">
+     Tuan
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:16.5pt">
+    <td height="22" class="xl84" style="height:16.5pt;border-top:none;border-left:
+
+  none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl85" style="border-top:none;border-left:none">
+     F
+    </td>
+   </tr>
+   <tr height="34" style="mso-height-source:userset;height:25.5pt">
+    <td height="34" class="xl86" style="height:25.5pt">
+     1
+    </td>
+    <td colspan="2" class="xl366" width="94" style="border-left:none;width:71pt">
+     Saude
+
+  mental
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.48 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.49 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.50 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.51 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.52 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.53 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.54 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.55 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.56 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.57 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.58 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.59 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.60 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.61 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.62 }}
+    </td>
+    <td class="xl352" style="border-top:none;border-left:none">
+     {{ cells.63 }}
+    </td>
+   </tr>
+   <tr height="34" style="mso-height-source:userset;height:25.5pt">
+    <td height="34" class="xl87" style="height:25.5pt;border-top:none">
+     2
+    </td>
+    <td colspan="2" class="xl360" width="94" style="border-left:none;width:71pt">
+     Saude
+
+  ibun ho nehan
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.64 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.65 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.66 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.67 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.68 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.69 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.70 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.71 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.72 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.73 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.74 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.75 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.76 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.77 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.78 }}
+    </td>
+    <td class="xl353" style="border-top:none;border-left:none">
+     {{ cells.79 }}
+    </td>
+   </tr>
+   <tr height="34" style="mso-height-source:userset;height:25.5pt">
+    <td height="34" class="xl88" style="height:25.5pt;border-top:none">
+     3
+    </td>
+    <td colspan="2" class="xl362" width="94" style="border-left:none;width:71pt">
+     Saude
+
+  matan
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.80 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.81 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.82 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.83 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.84 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.85 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.86 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.87 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.88 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.89 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.90 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.91 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.92 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.93 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.94 }}
+    </td>
+    <td class="xl354" style="border-top:none;border-left:none">
+     {{ cells.95 }}
+    </td>
+   </tr>
+   <tr height="60" style="height:45.0pt;mso-xlrowspan:3">
+    <td height="60" colspan="19" style="height:45.0pt;mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td height="17" colspan="8" style="height:12.75pt;mso-ignore:colspan">
+    </td>
+    <td class="xl95">
+    </td>
+    <td class="xl94">
+    </td>
+    <td class="xl95">
+    </td>
+    <td class="xl96">
+    </td>
+    <td class="xl95">
+    </td>
+    <td>
+    </td>
+    <td colspan="2" class="xl93" style="mso-ignore:colspan">
+    </td>
+    <td colspan="3" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:16.5pt">
+    <td colspan="19" height="22" class="xl193" style="height:16.5pt">
+     INTERNAMENTU
+
+  CENTRO SAUDE
+    </td>
+   </tr>
+   <tr height="21" style="mso-height-source:userset;height:15.75pt">
+    <td height="21" class="xl81" style="height:15.75pt">
+    </td>
+    <td>
+    </td>
+    <td class="xl82">
+     Pasiente interna
+    </td>
+    <td colspan="16" class="xl81" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td colspan="3" rowspan="3" height="56" class="xl367" width="119" style="height:42.0pt;
+
+  width:90pt">
+     Internamentu
+     <span style="mso-spacerun:yes">
+               
+     </span>
+     halau
+
+  tamba:
+    </td>
+    <td colspan="4" class="xl368" style="border-left:none">
+     &lt; tinan 1
+    </td>
+    <td colspan="4" class="xl368" style="border-left:none">
+     Tinan 1 - 4
+    </td>
+    <td colspan="4" class="xl368" style="border-left:none">
+     Tinan 5 - 14
+    </td>
+    <td colspan="4" class="xl369" style="border-left:none">
+     Tinan 15 e +
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td colspan="2" height="17" class="xl83" style="height:12.75pt;border-left:none">
+     Foun
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Tuan
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Foun
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Tuan
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Foun
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Tuan
+    </td>
+    <td colspan="2" class="xl83" style="border-left:none">
+     Foun
+    </td>
+    <td colspan="2" class="xl365" style="border-left:none">
+     Tuan
+    </td>
+   </tr>
+   <tr height="22" style="mso-height-source:userset;height:16.5pt">
+    <td height="22" class="xl84" style="height:16.5pt;border-top:none;border-left:
+
+  none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     F
+    </td>
+    <td class="xl84" style="border-top:none;border-left:none">
+     M
+    </td>
+    <td class="xl85" style="border-top:none;border-left:none">
+     F
+    </td>
+   </tr>
+   <tr height="34" style="mso-height-source:userset;height:25.5pt">
+    <td height="34" class="xl86" style="height:25.5pt">
+     1
+    </td>
+    <td colspan="2" class="xl366" width="94" style="border-left:none;width:71pt">
+     Moras
+
+  nebe bele daet
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.96 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.97 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.98 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.99 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.100 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.101 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.102 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.103 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.104 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.105 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.106 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.107 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.108 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.109 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.110 }}
+    </td>
+    <td class="xl352" style="border-top:none;border-left:none">
+     {{ cells.111 }}
+    </td>
+   </tr>
+   <tr height="34" style="mso-height-source:userset;height:25.5pt">
+    <td height="34" class="xl87" style="height:25.5pt;border-top:none">
+     2
+    </td>
+    <td colspan="2" class="xl360" width="94" style="border-left:none;width:71pt">
+     Moras
+
+  nebe
+     <span style="mso-spacerun:yes">
+           
+     </span>
+     la bele daet
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.112 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.113 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.114 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.115 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.116 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.117 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.118 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.119 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.120 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.121 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.122 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.123 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.124 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.125 }}
+    </td>
+    <td class="xl320" style="border-top:none;border-left:none">
+     {{ cells.126 }}
+    </td>
+    <td class="xl353" style="border-top:none;border-left:none">
+     {{ cells.127 }}
+    </td>
+   </tr>
+   <tr height="34" style="mso-height-source:userset;height:25.5pt">
+    <td height="34" class="xl87" style="height:25.5pt;border-top:none">
+     3
+    </td>
+    <td colspan="2" class="xl360" width="94" style="border-left:none;width:71pt">
+     Seluk
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.128 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.129 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.130 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.131 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.132 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.133 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.134 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.135 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.136 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.137 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.138 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.139 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.140 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.141 }}
+    </td>
+    <td class="xl339" style="border-left:none">
+     {{ cells.142 }}
+    </td>
+    <td class="xl355" style="border-left:none">
+     {{ cells.143 }}
+    </td>
+   </tr>
+   <tr height="11" style="mso-height-source:userset;height:8.25pt">
+    <td colspan="19" height="11" class="xl361" style="height:8.25pt">
+     &nbsp;
+    </td>
+   </tr>
+   <tr height="34" style="mso-height-source:userset;height:25.5pt">
+    <td height="34" class="xl88" style="height:25.5pt;border-top:none">
+     4
+    </td>
+    <td colspan="2" class="xl362" width="94" style="border-left:none;width:71pt">
+     Total
+
+  loron baixa
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.144 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.145 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.146 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.147 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.148 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.149 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.150 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.151 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.152 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.153 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.154 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.155 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.156 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.157 }}
+    </td>
+    <td class="xl351" style="border-top:none;border-left:none">
+     {{ cells.158 }}
+    </td>
+    <td class="xl354" style="border-top:none;border-left:none">
+     {{ cells.159 }}
+    </td>
+   </tr>
+   <tr height="21" style="mso-height-source:userset;height:15.75pt">
+    <td height="21" class="xl81" style="height:15.75pt">
+    </td>
+    <td>
+    </td>
+    <td class="xl82">
+    </td>
+    <td colspan="16" class="xl81" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <!--tr height="18" style="mso-height-source:userset;height:13.5pt">
+    <td height="18" colspan="2" class="xl96" style="height:13.5pt;mso-ignore:colspan">
+    </td>
+    <td class="xl99" colspan="7" style="mso-ignore:colspan">
+     <span style="mso-spacerun:yes">
+            
+     </span>
+     Total Kama ba moras nebe interna
+
+  =
+     <span style="mso-spacerun:yes">
+       
+     </span>
+    </td>
+    <td colspan="2" class="xl363">
+     &nbsp;
+    </td>
+    <td class="xl100">
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+    <td colspan="5" class="xl100" style="mso-ignore:colspan">
+    </td>
+   </tr-->
+   <!--tr height="18" style="mso-height-source:userset;height:13.5pt">
+    <td height="18" colspan="3" class="xl96" style="height:13.5pt;mso-ignore:colspan">
+    </td>
+    <td class="xl100">
+    </td>
+    <td class="xl100">
+     Total moras alta
+    </td>
+    <td colspan="3" class="xl100" style="mso-ignore:colspan">
+    </td>
+    <td class="xl101">
+     =
+    </td>
+    <td colspan="2" class="xl364">
+     &nbsp;
+    </td>
+    <td colspan="8" class="xl100" style="mso-ignore:colspan">
+    </td>
+   </tr-->
+  </table>
+{% endblock %}

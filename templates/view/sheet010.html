@@ -1,0 +1,721 @@
+{% extends "relatori/view.html" %}
+{% block view_template %}
+
+
+<table class="form">
+    
+    <tr>
+        <td class="logo"><img src="/static/images/MoH.jpg" class="logo" /></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="7" class="border2"><h1>REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE<br />MINISTÉRIO DA SAÚDE</h1></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="4" class="border2"><h1>FORMULÁRIU--7</h1><br />
+            Fulan:
+            <input type="text" name="fulan" size="2" value="{{ fulan }}" class="{{ fulan_style }} ">
+            Tinan:
+            <input type="text" name="tinan" size="4" value="{{ tinan }}" class="{{ tinan_style }}">
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+    
+<table class="form border2">
+    
+    <tr class="border">
+        <td><b>Distritu:</b> {{ distritu }}
+            <input type='hidden' name='district' value='{{ distritu }}'>
+        </td>
+        <td><b>Subdistritu:</b> {{ subdistritu }}
+            <input type='hidden' name='subdistrict' value='{{ subdistritu }}'>
+        </td>
+        <td><b>Fatin:</b> {{ fatin }} 
+            <input type='hidden' name='village' value='{{ fatin }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="3"><b>Fasilidade:</b> {{ facility }} 
+            <input type='hidden' name='name' value='{{ facility.id }}'> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Code:</b> {{ code }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+
+    <tr>
+        <td colspan="18"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="18"><h2>M A L A R I A</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="18"><div class="spacer"></div></td>
+    </tr>
+
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="7" rowspan="3">Item</td>
+        <td colspan="10">Grupu Tinan</td>
+        <td colspan="1" rowspan="3">Gravida</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td colspan="2">Tinan &lt; 1</td>
+        <td colspan="2">Tinan 1- 4</td>
+        <td colspan="2">Tinan 5 - 14</td>
+        <td colspan="2">Tinan &gt; 15</td>
+        <td colspan="2">TOTAL</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+    </tr>
+
+    <tr>
+        <td colspan="18" class="grey"></td>
+    </tr>
+
+    <tr class="border">
+        <td>1</td>
+        <td colspan="6">Suspeito Malaria</td>
+        <td>
+            {{ cells.0 }}
+        </td>
+        <td>
+            {{ cells.1 }}
+        </td>
+        <td>
+            {{ cells.2 }}
+        </td>
+        <td>
+            {{ cells.3 }}
+        </td>
+        <td>
+            {{ cells.4 }}
+        </td>
+        <td>
+            {{ cells.5 }}
+        </td>
+        <td>
+            {{ cells.6 }}
+        </td>
+        <td>
+            {{ cells.7 }}
+        </td>
+        <td>
+            {{ cells.8 }}
+        </td>
+        <td>
+            {{ cells.9 }}
+        </td>
+        <td>
+            {{ cells.10 }}
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="18" class="grey bold">Malaria Konfirmadu (Microscopio)</td>
+    </tr>
+
+    <tr class="border">
+        <td>2</td>
+        <td colspan="6">P. Falciparum</td>
+        <td>
+            {{ cells.11 }}
+        </td>
+        <td>
+            {{ cells.12 }}
+        </td>
+        <td>
+            {{ cells.13 }}
+        </td>
+        <td>
+            {{ cells.14 }}
+        </td>
+        <td>
+            {{ cells.15 }}
+        </td>
+        <td>
+            {{ cells.16 }}
+        </td>
+        <td>
+            {{ cells.17 }}
+        </td>
+        <td>
+            {{ cells.18 }}
+        </td>
+        <td>
+            {{ cells.19 }}
+        </td>
+        <td>
+            {{ cells.20 }}
+        </td>
+        <td>
+            {{ cells.21 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>3</td>
+        <td colspan="6">P. Vivax</td>
+        <td>
+            {{ cells.22 }}
+        </td>
+        <td>
+            {{ cells.23 }}
+        </td>
+        <td>
+            {{ cells.24 }}
+        </td>
+        <td>
+            {{ cells.25 }}
+        </td>
+        <td>
+            {{ cells.26 }}
+        </td>
+        <td>
+            {{ cells.27 }}
+        </td>
+        <td>
+            {{ cells.28 }}
+        </td>
+        <td>
+            {{ cells.29 }}
+        </td>
+        <td>
+            {{ cells.30 }}
+        </td>
+        <td>
+            {{ cells.31 }}
+        </td>
+        <td>
+            {{ cells.32 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>4</td>
+        <td colspan="6">P. Mista (PF + PV)</td>
+        <td>
+            {{ cells.33 }}
+        </td>
+        <td>
+            {{ cells.34 }}
+        </td>
+        <td>
+            {{ cells.35 }}
+        </td>
+        <td>
+            {{ cells.36 }}
+        </td>
+        <td>
+            {{ cells.37 }}
+        </td>
+        <td>
+            {{ cells.38 }}
+        </td>
+        <td>
+            {{ cells.39 }}
+        </td>
+        <td>
+            {{ cells.40 }}
+        </td>
+        <td>
+            {{ cells.41 }}
+        </td>
+        <td>
+            {{ cells.42 }}
+        </td>
+        <td>
+            {{ cells.43 }}
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="18" class="grey bold">Malaria Konfirmadu (Rapid Diagnostiko Test/RDT)</td>
+    </tr>
+
+    <tr class="border">
+        <td>5</td>
+        <td colspan="6">P. Falciparum</td>
+        <td>
+            {{ cells.44 }}
+        </td>
+        <td>
+            {{ cells.45 }}
+        </td>
+        <td>
+            {{ cells.46 }}
+        </td>
+        <td>
+            {{ cells.47 }}
+        </td>
+        <td>
+            {{ cells.48 }}
+        </td>
+        <td>
+            {{ cells.49 }}
+        </td>
+        <td>
+            {{ cells.50 }}
+        </td>
+        <td>
+            {{ cells.51 }}
+        </td>
+        <td>
+            {{ cells.52 }}
+        </td>
+        <td>
+            {{ cells.53 }}
+        </td>
+        <td>
+            {{ cells.54 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>6</td>
+        <td colspan="6">P. Vivax</td>
+        <td>
+            {{ cells.55 }}
+        </td>
+        <td>
+            {{ cells.56 }}
+        </td>
+        <td>
+            {{ cells.57 }}
+        </td>
+        <td>
+            {{ cells.58 }}
+        </td>
+        <td>
+            {{ cells.59 }}
+        </td>
+        <td>
+            {{ cells.60 }}
+        </td>
+        <td>
+            {{ cells.61 }}
+        </td>
+        <td>
+            {{ cells.62 }}
+        </td>
+        <td>
+            {{ cells.63 }}
+        </td>
+        <td>
+            {{ cells.64 }}
+        </td>
+        <td>
+            {{ cells.65 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>7</td>
+        <td colspan="6">Mista (PF + PV)</td>
+        <td>
+            {{ cells.66 }}
+        </td>
+        <td>
+            {{ cells.67 }}
+        </td>
+        <td>
+            {{ cells.68 }}
+        </td>
+        <td>
+            {{ cells.69 }}
+        </td>
+        <td>
+            {{ cells.70 }}
+        </td>
+        <td>
+            {{ cells.71 }}
+        </td>
+        <td>
+            {{ cells.72 }}
+        </td>
+        <td>
+            {{ cells.73 }}
+        </td>
+        <td>
+            {{ cells.74 }}
+        </td>
+        <td>
+            {{ cells.75 }}
+        </td>
+        <td>
+            {{ cells.76 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>8</td>
+        <td colspan="6">Positvo RDT seluk</td>
+        <td>
+            {{ cells.77 }}
+        </td>
+        <td>
+            {{ cells.78 }}
+        </td>
+        <td>
+            {{ cells.79 }}
+        </td>
+        <td>
+            {{ cells.80 }}
+        </td>
+        <td>
+            {{ cells.81 }}
+        </td>
+        <td>
+            {{ cells.82 }}
+        </td>
+        <td>
+            {{ cells.83 }}
+        </td>
+        <td>
+            {{ cells.84 }}
+        </td>
+        <td>
+            {{ cells.85 }}
+        </td>
+        <td>
+            {{ cells.86 }}
+        </td>
+        <td>
+            {{ cells.87 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="7" class="bold">Total (1+2+3+4+5+6+7+8)</td>
+        <td>
+            {{ cells.88 }}
+        </td>
+        <td>
+            {{ cells.89 }}
+        </td>
+        <td>
+            {{ cells.90 }}
+        </td>
+        <td>
+            {{ cells.91 }}
+        </td>
+        <td>
+            {{ cells.92 }}
+        </td>
+        <td>
+            {{ cells.93 }}
+        </td>
+        <td>
+            {{ cells.94 }}
+        </td>
+        <td>
+            {{ cells.95 }}
+        </td>
+        <td>
+            {{ cells.96 }}
+        </td>
+        <td>
+            {{ cells.97 }}
+        </td>
+        <td>
+            {{ cells.98 }}
+        </td>
+    </tr>
+
+    <tr class="grey bold">
+        <td colspan="18"><div class="spacer"></div></td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="7" class="bold">Total Kunsultasaun</td>
+        <td colspan="2">
+            {{ cells.99 }}
+        </td>
+        <td colspan="2">
+            {{ cells.100 }}
+        </td>
+        <td colspan="2">
+            {{ cells.101 }}
+        </td>
+        <td colspan="2">
+            {{ cells.102 }}
+        </td>
+        <td colspan="2">
+            {{ cells.103 }}
+        </td>
+        <td class="grey"></td>
+    </tr>
+
+    <tr class="grey bold">
+        <td colspan="18"><div class="spacer"></div></td>
+    </tr>
+
+    <tr class="border">
+        <td>1</td>
+        <td colspan="6">Total Pasiente Internamento/Baixa</td>
+        <td>
+            {{ cells.104 }}
+        </td>
+        <td>
+            {{ cells.105 }}
+        </td>
+        <td>
+            {{ cells.106 }}
+        </td>
+        <td>
+            {{ cells.107 }}
+        </td>
+        <td>
+            {{ cells.108 }}
+        </td>
+        <td>
+            {{ cells.109 }}
+        </td>
+        <td>
+            {{ cells.110 }}
+        </td>
+        <td>
+            {{ cells.111 }}
+        </td>
+        <td>
+            {{ cells.112 }}
+        </td>
+        <td>
+            {{ cells.113 }}
+        </td>
+        <td>
+            {{ cells.114 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>2</td>
+        <td colspan="6">Total kazu Malaria Internamento/Baixa</td>
+        <td>
+            {{ cells.115 }}
+        </td>
+        <td>
+            {{ cells.116 }}
+        </td>
+        <td>
+            {{ cells.117 }}
+        </td>
+        <td>
+            {{ cells.118 }}
+        </td>
+        <td>
+            {{ cells.119 }}
+        </td>
+        <td>
+            {{ cells.120 }}
+        </td>
+        <td>
+            {{ cells.121 }}
+        </td>
+        <td>
+            {{ cells.122 }}
+        </td>
+        <td>
+            {{ cells.123 }}
+        </td>
+        <td>
+            {{ cells.124 }}
+        </td>
+        <td>
+            {{ cells.125 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>3</td>
+        <td colspan="6">Total Malaria Grave hosi Internamento/Baixa</td>
+        <td>
+            {{ cells.126 }}
+        </td>
+        <td>
+            {{ cells.127 }}
+        </td>
+        <td>
+            {{ cells.128 }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+            {{ cells.129 }}
+        </td>
+        <td>
+            {{ cells.130 }}
+        </td>
+        <td>
+            {{ cells.131 }}
+        </td>
+        <td>
+            {{ cells.132 }}
+        </td>
+        <td>
+            {{ cells.133 }}
+        </td>
+        <td>
+            {{ cells.134 }}
+        </td>
+        <td>
+            {{ cells.135 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>4</td>
+        <td colspan="6">Total Pasien nebe mate hosi internamento/Baixa</td>
+        <td>
+            {{ cells.136 }}
+        </td>
+        <td>
+            {{ cells.137 }}
+        </td>
+        <td>
+            {{ cells.138 }}
+        </td>
+        <td>
+            {{ cells.139 }}
+        </td>
+        <td>
+            {{ cells.140 }}
+        </td>
+        <td>
+            {{ cells.141 }}
+        </td>
+        <td>
+            {{ cells.142 }}
+        </td>
+        <td>
+            {{ cells.143 }}
+        </td>
+        <td>
+            {{ cells.144 }}
+        </td>
+        <td>
+            {{ cells.145 }}
+        </td>
+        <td>
+            {{ cells.146 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>5</td>
+        <td colspan="6">Total Pasien mate tamba Malaria hosi internamento/baixa</td>
+        <td>
+            {{ cells.147 }}
+        </td>
+        <td>
+            {{ cells.148 }}
+        </td>
+        <td>
+            {{ cells.149 }}
+        </td>
+        <td>
+            {{ cells.150 }}
+        </td>
+        <td>
+            {{ cells.151 }}
+        </td>
+        <td>
+            {{ cells.152 }}
+        </td>
+        <td>
+            {{ cells.153 }}
+        </td>
+        <td>
+            {{ cells.154 }}
+        </td>
+        <td>
+            {{ cells.155 }}
+        </td>
+        <td>
+            {{ cells.156 }}
+        </td>
+        <td>
+            {{ cells.157 }}
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="9" class="grey bold"></td>
+        <td colspan="9" class="bold">Total</td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="9">Examinasaun Slide Malaria</td>
+        <td colspan="9">
+            {{ cells.158 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="9">Rapid Tes Malaria/RDT nebe Usa</td>
+        <td colspan="9">
+            {{ cells.159 }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="18"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="18" class="bold">Nota :</td>
+    </tr>
+
+    <tr>
+        <td colspan="18" class="small">1. Prenche nebe Persisa deit</td>
+    </tr>
+
+    <tr>
+        <td colspan="18" class="small">2. Kazu malaria iha Gravida konklui mos iha relatorio Grupo idade</td>
+    </tr>
+
+    <tr>
+        <td colspan="18" class="small">3. Resultado Test RDT labele relata hamutuk ho Resultadu konfirmasaun Laboratorium</td>
+    </tr>
+
+    <tr>
+        <td colspan="18" class="small">4. Relatorio kona ba Pasiente Internamento/Baixa prenche deit hosi Centro Saude nebe Atende Internamento</td>
+    </tr>
+
+    <tr>
+        <td colspan="18" class="small">5. Relatorio examinasaun slide refere ba total pasiente nebe hasai ran (Sediaan darah), laos utilisasaun slide.</td>
+    </tr>
+
+    <tr>
+        <td colspan="18" class="small">Exemplo Slide ida usa ba pasiente rua, tenke relata kona ba usa slide rua la'os ida</td>
+    </tr>
+
+</table>
+
+{% endblock %}

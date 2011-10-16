@@ -1,0 +1,536 @@
+{% extends "relatori/edit.html" %}
+{% block edit_template %}
+
+<script type="text/javascript" src="http://jquery.com/src/jquery-latest.js"></script>
+
+<table class="form">
+    
+    <tr>
+        <td class="logo"><img src="/static/images/MoH.jpg" class="logo" /></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="7" class="border2"><h1>REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE<br />MINISTÉRIO DA SAÚDE</h1></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="4" class="border2"><h1>FORMULARIU-2B</h1><br />
+            Fulan:
+            <input type="text" name="fulan" size="2" value="{{ fulan }}" class="{{ fulan_style }} ">
+            Tinan:
+            <input type="text" name="tinan" size="4" value="{{ tinan }}" class="{{ tinan_style }}">
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+    
+<table class="form border2">
+    
+    <tr class="border">
+        <td><b>Distritu:</b> {{ distritu }}
+            <input type='hidden' name='district' value='{{ distritu }}'>
+        </td>
+        <td><b>Subdistritu:</b> {{ subdistritu }}
+            <input type='hidden' name='subdistrict' value='{{ subdistritu }}'>
+        </td>
+        <td><b>Fatin:</b> {{ fatin }} 
+            <input type='hidden' name='village' value='{{ fatin }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="3"><b>Fasilidade:</b> {{ facility }} 
+            <input type='hidden' name='name' value='{{ facility.id }}'> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Code:</b> {{ code }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="28"><div class="spacer"></div></td>
+    </tr>
+    
+    <tr>
+        <td colspan="28"><h2>SAUDE MATERNA - PLANEAMENTU FAMILIAR</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="28"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="6">Total Visitor</td>
+        <td rowspan="3" class="small bt"><img src="/static/images/nunka.png" alt="Nunka Usa" /></td>
+        <td colspan="3" rowspan="2">Konseling</td>
+        <td rowspan="2">STI</td>
+        <td colspan="17">Metode Planeamento Familiar</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td colspan="3" class="rotate">Mane</td>
+        <td colspan="3" class="rotate">Feto</td>
+        <td colspan="3" class="rotate">POP</td>
+        <td colspan="3" class="rotate">COP</td>
+        <td colspan="2" class="rotate">Injetavel</td>
+        <td colspan="2" class="rotate">Implant</td>
+        <td colspan="2" class="rotate">IUD</td>
+        <td colspan="3" class="rotate">Kondom</td>
+        <td rowspan="2" class="rotate small bt"><img src="/static/images/vasectomi.png" alt="Vasectomi" /></td>
+        <td rowspan="2" class="rotate small bt"><img src="/static/images/tubectomi.png" alt="Tubectomi" /></td>
+    </tr>
+
+    <tr class="border green center bold small">
+        <td>15-24</td>
+        <td>25+</td>
+        <td><img src="/static/images/kaben.png" alt="Kaben" /></td>
+        <td>15-24</td>
+        <td>25+</td>
+        <td><img src="/static/images/kaben.png" alt="Kaben" /></td>
+        <td class="bt"><img src="/static/images/pf.png" alt="PF" /></td>
+        <td class="bt"><img src="/static/images/sti.png" alt="STI" /></td>
+        <td class="bt"><img src="/static/images/pnc.png" alt="PNC" /></td>
+        <td class="bt"><img src="/static/images/digtrat.png" alt="Dig/trat" /></td>
+        <td class="bt"><img src="/static/images/foun.png" alt="Foun" /></td>
+        <td class="bt"><img src="/static/images/tuan.png" alt="Tuan" /></td>
+        <td class="bt"><img src="/static/images/siklu.png" alt="Siklu" /></td>
+        <td class="bt"><img src="/static/images/foun.png" alt="Foun" /></td>
+        <td class="bt"><img src="/static/images/tuan.png" alt="Tuan" /></td>
+        <td class="bt"><img src="/static/images/siklu.png" alt="Siklu" /></td>
+        <td class="bt"><img src="/static/images/foun.png" alt="Foun" /></td>
+        <td class="bt"><img src="/static/images/tuan.png" alt="Tuan" /></td>
+        <td class="bt"><img src="/static/images/foun.png" alt="Foun" /></td>
+        <td class="bt"><img src="/static/images/tuan.png" alt="Tuan" /></td>
+        <td class="bt"><img src="/static/images/foun.png" alt="Foun" /></td>
+        <td class="bt"><img src="/static/images/tuan.png" alt="Tuan" /></td>
+        <td class="bt"><img src="/static/images/foun.png" alt="Foun" /></td>
+        <td class="bt"><img src="/static/images/tuan.png" alt="Tuan" /></td>
+        <td class="bt"><img src="/static/images/pcs.png" alt="PCS" /></td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            <input type='text' name='cell.0' size=2 value='{{ cells.0 }}' class='{{ cell_styles.0 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.1' size=2 value='{{ cells.1 }}' class='{{ cell_styles.1 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.2' size=2 value='{{ cells.2 }}' class='{{ cell_styles.2 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.3' size=2 value='{{ cells.3 }}' class='{{ cell_styles.3 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.4' size=2 value='{{ cells.4 }}' class='{{ cell_styles.4 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.5' size=2 value='{{ cells.5 }}' class='{{ cell_styles.5 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.6' size=2 value='{{ cells.6 }}' class='{{ cell_styles.6 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.7' size=2 value='{{ cells.7 }}' class='{{ cell_styles.7 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.8' size=2 value='{{ cells.8 }}' class='{{ cell_styles.8 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.9' size=2 value='{{ cells.9 }}' class='{{ cell_styles.9 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.10' size=2 value='{{ cells.10 }}' class='{{ cell_styles.10 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.11' size=2 value='{{ cells.11 }}' class='{{ cell_styles.11 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.12' size=2 value='{{ cells.12 }}' class='{{ cell_styles.12 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.13' size=2 value='{{ cells.13 }}' class='{{ cell_styles.13 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.14' size=2 value='{{ cells.14 }}' class='{{ cell_styles.14 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.15' size=2 value='{{ cells.15 }}' class='{{ cell_styles.15 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.16' size=2 value='{{ cells.16 }}' class='{{ cell_styles.16 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.17' size=2 value='{{ cells.17 }}' class='{{ cell_styles.17 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.18' size=2 value='{{ cells.18 }}' class='{{ cell_styles.18 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.19' size=2 value='{{ cells.19 }}' class='{{ cell_styles.19 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.20' size=2 value='{{ cells.20 }}' class='{{ cell_styles.20 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.21' size=2 value='{{ cells.21 }}' class='{{ cell_styles.21 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.22' size=2 value='{{ cells.22 }}' class='{{ cell_styles.22 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.23' size=2 value='{{ cells.23 }}' class='{{ cell_styles.23 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.24' size=2 value='{{ cells.24 }}' class='{{ cell_styles.24 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.25' size=2 value='{{ cells.25 }}' class='{{ cell_styles.25 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.26' size=2 value='{{ cells.26 }}' class='{{ cell_styles.26 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.27' size=2 value='{{ cells.27 }}' class='{{ cell_styles.27 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            <input type='text' name='cell.28' size=2 value='{{ cells.28 }}' class='{{ cell_styles.28 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.29' size=2 value='{{ cells.29 }}' class='{{ cell_styles.29 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.30' size=2 value='{{ cells.30 }}' class='{{ cell_styles.30 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.31' size=2 value='{{ cells.31 }}' class='{{ cell_styles.31 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.32' size=2 value='{{ cells.32 }}' class='{{ cell_styles.32 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.33' size=2 value='{{ cells.33 }}' class='{{ cell_styles.33 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.34' size=2 value='{{ cells.34 }}' class='{{ cell_styles.34 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.35' size=2 value='{{ cells.35 }}' class='{{ cell_styles.35 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.36' size=2 value='{{ cells.36 }}' class='{{ cell_styles.36 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.37' size=2 value='{{ cells.37 }}' class='{{ cell_styles.37 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.38' size=2 value='{{ cells.38 }}' class='{{ cell_styles.38 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.39' size=2 value='{{ cells.39 }}' class='{{ cell_styles.39 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.40' size=2 value='{{ cells.40 }}' class='{{ cell_styles.40 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.41' size=2 value='{{ cells.41 }}' class='{{ cell_styles.41 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.42' size=2 value='{{ cells.42 }}' class='{{ cell_styles.42 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.43' size=2 value='{{ cells.43 }}' class='{{ cell_styles.43 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.44' size=2 value='{{ cells.44 }}' class='{{ cell_styles.44 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.45' size=2 value='{{ cells.45 }}' class='{{ cell_styles.45 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.46' size=2 value='{{ cells.46 }}' class='{{ cell_styles.46 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.47' size=2 value='{{ cells.47 }}' class='{{ cell_styles.47 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.48' size=2 value='{{ cells.48 }}' class='{{ cell_styles.48 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.49' size=2 value='{{ cells.49 }}' class='{{ cell_styles.49 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.50' size=2 value='{{ cells.50 }}' class='{{ cell_styles.50 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.51' size=2 value='{{ cells.51 }}' class='{{ cell_styles.51 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.52' size=2 value='{{ cells.52 }}' class='{{ cell_styles.52 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.53' size=2 value='{{ cells.53 }}' class='{{ cell_styles.53 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.54' size=2 value='{{ cells.54 }}' class='{{ cell_styles.54 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.55' size=2 value='{{ cells.55 }}' class='{{ cell_styles.55 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            <input type='text' name='cell.56' size=2 value='{{ cells.56 }}' class='{{ cell_styles.56 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.57' size=2 value='{{ cells.57 }}' class='{{ cell_styles.57 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.58' size=2 value='{{ cells.58 }}' class='{{ cell_styles.58 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.59' size=2 value='{{ cells.59 }}' class='{{ cell_styles.59 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.60' size=2 value='{{ cells.60 }}' class='{{ cell_styles.60 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.61' size=2 value='{{ cells.61 }}' class='{{ cell_styles.61 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.62' size=2 value='{{ cells.62 }}' class='{{ cell_styles.62 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.63' size=2 value='{{ cells.63 }}' class='{{ cell_styles.63 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.64' size=2 value='{{ cells.64 }}' class='{{ cell_styles.64 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.65' size=2 value='{{ cells.65 }}' class='{{ cell_styles.65 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.66' size=2 value='{{ cells.66 }}' class='{{ cell_styles.66 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.67' size=2 value='{{ cells.67 }}' class='{{ cell_styles.67 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.68' size=2 value='{{ cells.68 }}' class='{{ cell_styles.68 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.69' size=2 value='{{ cells.69 }}' class='{{ cell_styles.69 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.70' size=2 value='{{ cells.70 }}' class='{{ cell_styles.70 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.71' size=2 value='{{ cells.71 }}' class='{{ cell_styles.71 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.72' size=2 value='{{ cells.72 }}' class='{{ cell_styles.72 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.73' size=2 value='{{ cells.73 }}' class='{{ cell_styles.73 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.74' size=2 value='{{ cells.74 }}' class='{{ cell_styles.74 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.75' size=2 value='{{ cells.75 }}' class='{{ cell_styles.75 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.76' size=2 value='{{ cells.76 }}' class='{{ cell_styles.76 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.77' size=2 value='{{ cells.77 }}' class='{{ cell_styles.77 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.78' size=2 value='{{ cells.78 }}' class='{{ cell_styles.78 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.79' size=2 value='{{ cells.79 }}' class='{{ cell_styles.79 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.80' size=2 value='{{ cells.80 }}' class='{{ cell_styles.80 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.81' size=2 value='{{ cells.81 }}' class='{{ cell_styles.81 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.82' size=2 value='{{ cells.82 }}' class='{{ cell_styles.82 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.83' size=2 value='{{ cells.83 }}' class='{{ cell_styles.83 }}'>
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="28"><div class="spacer"></div></td>
+    </tr>
+
+    <tr class="top">
+        <td></td>
+        <td colspan="8">
+            
+            <table>
+                <tr class="border green center bold">
+                    <td colspan="2">Total Uzario nebe kontinua</td>
+                </tr>
+                <tr class="border">
+                    <td>POPs:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>COPc:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Injectavel:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Implant:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>IUDs:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Kondoms:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Vasectomi:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Tobectomi:</td>
+                    <td>………………………………</td>
+                </tr>
+            </table>
+            
+        </td>
+        <td></td>
+        <td colspan="8">
+            <table>
+                <tr class="border green center bold">
+                    <td colspan="2">Total Uzario nebe kontinua</td>
+                </tr>
+                <tr class="border">
+                    <td>POPs:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>COPc:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Injectavel:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Implant:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>IUDs:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Kondoms:</td>
+                    <td>………………………………</td>
+                </tr>
+            </table>
+        </td>
+        <td></td>
+        <td colspan="8">
+            <table>
+                <tr class="border green center bold">
+                    <td colspan="2">Total Uzario nebe kontinua</td>
+                </tr>
+                <tr class="border">
+                    <td>POPs:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>COPc:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Injectavel:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Implant:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>IUDs:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Kondoms:</td>
+                    <td>………………………………</td>
+                </tr>
+            </table>
+        </td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td colspan="28"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td>Nota :</td>
+        <td>PF</td>
+        <td></td>
+        <td colspan="4">Planeamento Familiar</td>
+        <td colspan="3"></td>
+        <td colspan="4">Ante Natal Care</td>
+        <td colspan="4"></td>
+        <td colspan="2">POP</td>
+        <td colspan="5">Progesteron Only Pil</td>
+        <td colspan="3"></td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td>STI</td>
+        <td></td>
+        <td colspan="5">Sexual Transmitted Infection</td>
+        <td colspan="2"></td>
+        <td colspan="4">Post Natal Care</td>
+        <td colspan="4"></td>
+        <td colspan="2">COP</td>
+        <td colspan="5">Combined Oral Pil</td>
+        <td colspan="3"></td>
+    </tr>
+
+    <tr>
+        <td colspan="18"></td>
+        <td colspan="2">IUD</td>
+        <td colspan="5">Intra Uterine Device</td>
+        <td colspan="3"></td>
+    </tr>
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,1126 @@
+{% extends "relatori/view.html" %}
+{% block view_template %}
+  <table border="0" cellpadding="0" cellspacing="0" width="792" style="border-collapse:
+
+ collapse;table-layout:fixed;width:594pt">
+   <col width="24" style="mso-width-source:userset;mso-width-alt:877;width:18pt" />
+   <col width="40" span="12" style="mso-width-source:userset;mso-width-alt:1462;
+
+ width:30pt" />
+   <col width="55" style="mso-width-source:userset;mso-width-alt:2011;width:41pt" />
+   <col width="50" style="mso-width-source:userset;mso-width-alt:1828;width:38pt" />
+   <col width="55" style="mso-width-source:userset;mso-width-alt:2011;width:41pt" />
+   <col width="64" span="2" style="width:48pt" />
+   <tr height="17" style="height:12.75pt">
+    <td height="17" width="24" style="height:12.75pt;width:18pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="55" style="width:41pt">
+    </td>
+    <td width="50" style="width:38pt">
+    </td>
+    <td width="55" style="width:41pt">
+    </td>
+    <td width="64" style="width:48pt">
+    </td>
+    <td width="64" style="width:48pt">
+    </td>
+   </tr>
+   <tr height="18" style="height:13.5pt">
+    <td height="18" style="height:13.5pt" align="left" valign="top">
+     <span style="mso-ignore:vglayout;
+
+  position:absolute;z-index:1;margin-left:4px;margin-top:0px;width:53px;
+
+  height:46px">
+      <img width='53' height='46' src='/static/images/MoH.png'>
+     </span>
+     <span style="mso-ignore:vglayout2">
+      <table cellpadding="0" cellspacing="0">
+       <tr>
+        <td height="18" width="24" style="height:13.5pt;width:18pt">
+        </td>
+       </tr>
+      </table>
+     </span>
+    </td>
+    <td>
+    </td>
+    <td colspan="10" class="xl370">
+     REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE
+    </td>
+    <td>
+    </td>
+    <td colspan="3" class="xl371">
+     FORMULARIU-2A
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="18" style="height:13.5pt">
+    <td height="18" colspan="2" style="height:13.5pt;mso-ignore:colspan">
+    </td>
+    <td colspan="10" class="xl372">
+     MINISTÉRIO DA SAÚDE
+    </td>
+    <td>
+    </td>
+    <td colspan="3" class="xl397">
+      Fulan: {{ fulan }}
+     <span style="mso-spacerun:yes">
+       
+     </span>
+     Tinan: {{ tinan }}
+     <span style="mso-spacerun:yes">
+       
+     </span>
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td height="17" colspan="7" style="height:12.75pt;mso-ignore:colspan">
+    </td>
+    <td class="xl102">
+    </td>
+    <td>
+    </td>
+    <td colspan="2" class="xl70" style="mso-ignore:colspan">
+    </td>
+    <td colspan="7" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="21" style="mso-height-source:userset;height:15.75pt">
+    <td colspan="5" height="21" class="xl398" style="height:15.75pt">
+     Distritu: {{ distritu }}
+    </td>
+    <td colspan="6" class="xl399" style="border-left:none">
+     Subdistritu: {{ subdistritu }}
+    </td>
+    <td colspan="5" class="xl400" style="border-left:none">
+     Fatin: {{ fatin }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="25" style="mso-height-source:userset;height:18.75pt">
+    <td colspan="16" height="25" class="xl394" style="height:18.75pt">
+     <span style="mso-spacerun:yes">
+     Fasilidade: {{ facility }} <input type='hidden' name='name' value='{{ facility.id }}'> &nbsp;&nbsp;&nbsp; Code: {{ code }}
+     </span>
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="21" style="mso-height-source:userset;height:15.75pt">
+    <td height="21" colspan="18" style="height:15.75pt;mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="28" style="mso-height-source:userset;height:21.0pt">
+    <td colspan="16" height="28" class="xl395" style="height:21.0pt">
+     SAUDE
+
+  MATERNU-INFANTIL
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="12" style="mso-height-source:userset;height:9.0pt">
+    <td height="12" colspan="18" style="height:9.0pt;mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td colspan="13" rowspan="2" height="33" class="xl103" width="504" style="height:24.75pt;
+
+  width:378pt">
+     Isin rua nebe seguru cuidadu pre natal
+     <span style="mso-spacerun:yes">
+                                                                                                               
+     </span>
+     <font class="font15">
+      (numeru absolutu)
+     </font>
+    </td>
+    <td colspan="3" class="xl380" style="border-left:none">
+     Idade inan isin rua
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="13" style="mso-height-source:userset;height:9.75pt">
+    <td height="13" class="xl104" style="height:9.75pt;border-top:none;border-left:
+
+  none">
+     &lt;19
+    </td>
+    <td class="xl104" style="border-top:none;border-left:none">
+     19-34
+    </td>
+    <td class="xl105" style="border-top:none;border-left:none">
+     &#8805;35
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl106" style="height:12.95pt">
+     1
+    </td>
+    <td colspan="12" class="xl396" style="border-left:none">
+     Consulta isin rua
+
+  (cuidados pre-natais)
+    </td>
+    <td align="right">
+     {{ cells.0 }}
+    </td>
+    <td align="right">
+     {{ cells.1 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.2 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl108" style="height:12.95pt;border-top:none">
+     2
+    </td>
+    <td colspan="12" class="xl387" width="480" style="border-left:none;width:360pt">
+     Feto
+
+  isin rua nebe consulta ba dala uluk (K1)
+    </td>
+    <td align="right">
+     {{ cells.3 }}
+    </td>
+    <td align="right">
+     {{ cells.4 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.5 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl108" style="height:12.95pt;border-top:none">
+     3
+    </td>
+    <td colspan="12" class="xl387" width="480" style="border-left:none;width:360pt">
+     Feto
+
+  isin rua nebe consulta ba dala hat (K4)
+    </td>
+    <td align="right">
+     {{ cells.6 }}
+    </td>
+    <td align="right">
+     {{ cells.7 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.8 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl108" style="height:12.95pt;border-top:none">
+     4
+    </td>
+    <td colspan="12" class="xl387" width="480" style="border-left:none;width:360pt">
+     Feto
+
+  isin rua ho test sifilis positivo
+    </td>
+    <td align="right">
+     {{ cells.9 }}
+    </td>
+    <td align="right">
+     {{ cells.10 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.11 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl108" style="height:12.95pt;border-top:none">
+     5
+    </td>
+    <td colspan="12" class="xl387" width="480" style="border-left:none;width:360pt">
+     Feto
+
+  isin rua ho anemia grave (Hb&lt;7g/l)
+    </td>
+    <td align="right">
+     {{ cells.12 }}
+    </td>
+    <td align="right">
+     {{ cells.13 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.14 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl108" style="height:12.95pt;border-top:none">
+     6
+    </td>
+    <td colspan="12" class="xl387" width="480" style="border-left:none;width:360pt">
+     Feto
+
+  isin rua nebe simu aimoruk suplementu aumenta ran (90 X 3)
+    </td>
+    <td align="right">
+     {{ cells.15 }}
+    </td>
+    <td align="right">
+     {{ cells.16 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.17 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl109" style="height:12.95pt;border-top:none">
+     7
+    </td>
+    <td colspan="12" class="xl393" width="480" style="border-left:none;width:360pt">
+     Feto
+
+  isin rua nebe refere ba fasilidade saude aas tan ho komplikasaun
+    </td>
+    <td class="xl301" align="right" style="border-left:none">
+     {{ cells.18 }}
+    </td>
+    <td class="xl122" align="right">
+     {{ cells.19 }}
+    </td>
+    <td class="xl123" align="right">
+     {{ cells.20 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="20" style="mso-height-source:userset;height:15.0pt">
+    <td colspan="16" height="20" class="xl93" style="height:15.0pt">
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td colspan="13" rowspan="2" height="32" class="xl103" width="504" style="height:24.0pt;
+
+  width:378pt">
+     Partus ho bebe foin moris, tuir grupu tinan inan nian
+     <span style="mso-spacerun:yes">
+                                                      
+     </span>
+     <font class="font15">
+      (numeru absolutu)
+     </font>
+    </td>
+    <td colspan="3" class="xl380" style="border-left:none">
+     Idade inan nian
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="15" style="mso-height-source:userset;height:11.25pt">
+    <td height="15" class="xl104" style="height:11.25pt;border-top:none;border-left:
+
+  none">
+     &lt;19
+    </td>
+    <td class="xl104" style="border-top:none;border-left:none">
+     19-34
+    </td>
+    <td class="xl105" style="border-top:none;border-left:none">
+     &#8805;35
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl110" style="height:12.95pt;border-top:none">
+     8
+    </td>
+    <td colspan="12" class="xl392" width="480" style="border-left:none;width:360pt">
+     Partus
+
+  nebe hetan asistencia husi pessoal saude iha uma
+    </td>
+    <td align="right">
+     {{ cells.21 }}
+    </td>
+    <td align="right">
+     {{ cells.22 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.23 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl108" style="height:12.95pt;border-top:none">
+     9
+    </td>
+    <td colspan="12" class="xl387" width="480" style="border-left:none;width:360pt">
+     Partus
+
+  nebe hetan asistencia husi pessoal saude iha fasilidade saude
+    </td>
+    <td align="right">
+     {{ cells.24 }}
+    </td>
+    <td align="right">
+     {{ cells.25 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.26 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl108" style="height:12.95pt;border-top:none">
+     10
+    </td>
+    <td colspan="12" class="xl387" width="480" style="border-left:none;width:360pt">
+     Feto
+
+  nebe refere ba fasilidade saude nebe aas tan partu ho komplikasaun
+    </td>
+    <td align="right">
+     {{ cells.27 }}
+    </td>
+    <td align="right">
+     {{ cells.28 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.29 }}
+    </td>
+    <td>
+    </td>
+    <td>
+     <span style="mso-spacerun:yes">
+       
+     </span>
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl111" style="height:12.95pt;border-top:none">
+     11
+    </td>
+    <td colspan="12" class="xl391" style="border-left:none">
+     Feto nebe mate durante
+
+  periodu isin rua, partu, post natal to'o loron 42
+    </td>
+    <td align="right">
+     {{ cells.30 }}
+    </td>
+    <td align="right">
+     {{ cells.31 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.32 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl111" style="height:12.95pt;border-top:none">
+     12
+    </td>
+    <td colspan="12" class="xl387" width="480" style="border-left:none;width:360pt">
+     Numeru
+
+  bebe foin moris
+    </td>
+    <td align="right">
+     {{ cells.33 }}
+    </td>
+    <td align="right">
+     {{ cells.34 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.35 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl111" style="height:12.95pt;border-top:none">
+     13
+    </td>
+    <td colspan="12" class="xl391" style="border-left:none">
+     Numeru bebe nebe mate
+
+  wainhira partu (&#8805; isin rua semana 22 ou + 500gr)
+     <span style="mso-spacerun:yes">
+       
+     </span>
+    </td>
+    <td align="right">
+     {{ cells.36 }}
+    </td>
+    <td align="right">
+     {{ cells.37 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.38 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl111" style="height:12.95pt;border-top:none">
+     14
+    </td>
+    <td colspan="12" class="xl391" style="border-left:none">
+     Numeru bebe foin moris
+
+  nebe mate molok loron 7 (loron 0-6)
+    </td>
+    <td align="right">
+     {{ cells.39 }}
+    </td>
+    <td align="right">
+     {{ cells.40 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.41 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl111" style="height:12.95pt;border-top:none">
+     15
+    </td>
+    <td colspan="12" class="xl391" style="border-left:none">
+     Numeru bebe foin moris
+
+  nebe mate husi semana rua too hat (loron 7-28)
+    </td>
+    <td align="right">
+     {{ cells.42 }}
+    </td>
+    <td align="right">
+     {{ cells.43 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.44 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl112" style="height:12.95pt;border-top:none">
+     16
+    </td>
+    <td colspan="12" class="xl388" style="border-left:none">
+     Numeru bebe foin moris ho
+
+  pezu menus husi
+     <span style="mso-spacerun:yes">
+       
+     </span>
+     2,500 grama
+    </td>
+    <td class="xl301" align="right" style="border-left:none">
+     {{ cells.45 }}
+    </td>
+    <td class="xl122" align="right">
+     {{ cells.46 }}
+    </td>
+    <td class="xl123" align="right">
+     {{ cells.47 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="23" style="mso-height-source:userset;height:17.25pt">
+    <td colspan="16" height="23" class="xl95" style="height:17.25pt">
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="15" style="mso-height-source:userset;height:11.25pt">
+    <td colspan="13" rowspan="2" height="32" class="xl103" width="504" style="height:24.0pt;
+
+  width:378pt">
+     Feto post natal
+     <span style="mso-spacerun:yes">
+                                                                                                                            
+     </span>
+     <font class="font15">
+      (numeru absolutu)
+     </font>
+    </td>
+    <td colspan="3" class="xl380" style="border-left:none">
+     Idade inan nian
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td height="17" class="xl104" style="height:12.75pt;border-top:none;border-left:
+
+  none">
+     &lt;19
+    </td>
+    <td class="xl104" style="border-top:none;border-left:none">
+     19-34
+    </td>
+    <td class="xl105" style="border-top:none;border-left:none">
+     &#8805;35
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl113" style="height:12.95pt">
+     17
+    </td>
+    <td colspan="12" class="xl390" width="480" style="border-left:none;width:360pt">
+     Konsulta
+
+  post natal iha 1a semana depois partu (PN-1)
+    </td>
+    <td align="right">
+     {{ cells.48 }}
+    </td>
+    <td align="right">
+     {{ cells.49 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.50 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl114" style="height:12.95pt;border-top:none">
+     18
+    </td>
+    <td colspan="12" class="xl387" width="480" style="border-left:none;width:360pt">
+     Konsulta
+
+  post natal husi semana ida too nen depois partu (PN-2)
+    </td>
+    <td align="right">
+     {{ cells.51 }}
+    </td>
+    <td align="right">
+     {{ cells.52 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.53 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl114" style="height:12.95pt;border-top:none">
+     19
+    </td>
+    <td colspan="12" class="xl387" width="480" style="border-left:none;width:360pt">
+     Feto
+
+  post natal nebe simu Vit A no aimoruk suplementu aumenta ran - (90)
+    </td>
+    <td align="right">
+     {{ cells.54 }}
+    </td>
+    <td align="right">
+     {{ cells.55 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.56 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl114" style="height:12.95pt;border-top:none">
+     20
+    </td>
+    <td colspan="12" class="xl387" width="480" style="border-left:none;width:360pt">
+     Feto
+
+  post natal refere ba fasilidade saude nebe aas ho komplikasaun
+    </td>
+    <td align="right">
+     {{ cells.57 }}
+    </td>
+    <td align="right">
+     {{ cells.58 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.59 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl114" style="height:12.95pt;border-top:none">
+     21
+    </td>
+    <td colspan="12" class="xl387" width="480" style="border-left:none;width:360pt">
+     Bebe
+
+  foin moris nebe konsulta iha 1a semana (KN-1)
+    </td>
+    <td align="right">
+     {{ cells.60 }}
+    </td>
+    <td align="right">
+     {{ cells.61 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.62 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl114" style="height:12.95pt;border-top:none">
+     22
+    </td>
+    <td colspan="12" class="xl387" width="480" style="border-left:none;width:360pt">
+     Bebe
+
+  foin moris nebe konsulta husi semana ida too hat (KN-2)
+    </td>
+    <td align="right">
+     {{ cells.63 }}
+    </td>
+    <td align="right">
+     {{ cells.64 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.65 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td height="17" class="xl115" style="height:12.95pt;border-top:none">
+     23
+    </td>
+    <td colspan="12" class="xl388" style="border-left:none">
+     Bebe foin moris refere ba
+
+  facilidade saude nebe aas ho komplikasaun
+    </td>
+    <td class="xl301" align="right" style="border-left:none">
+     {{ cells.66 }}
+    </td>
+    <td class="xl122" align="right">
+     {{ cells.67 }}
+    </td>
+    <td class="xl123" align="right">
+     {{ cells.68 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="23" style="mso-height-source:userset;height:17.25pt">
+    <td colspan="16" height="23" class="xl89" style="height:17.25pt">
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="15" style="mso-height-source:userset;height:11.25pt">
+    <td colspan="13" rowspan="2" height="30" class="xl103" width="504" style="height:22.5pt;
+
+  width:378pt">
+     Emergencia no obstetrikas
+     <span style="mso-spacerun:yes">
+                                                                                                              
+     </span>
+     <font class="font15">
+      (numeru absolutu)
+     </font>
+    </td>
+    <td colspan="3" class="xl389" style="border-left:none">
+     Idade feto nian
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="15" style="mso-height-source:userset;height:11.25pt">
+    <td height="15" class="xl104" style="height:11.25pt;border-top:none;border-left:
+
+  none">
+     &lt;19
+    </td>
+    <td class="xl104" style="border-top:none;border-left:none">
+     19-34
+    </td>
+    <td class="xl105" style="border-top:none;border-left:none">
+     &#8805;35
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td rowspan="5" height="85" class="xl382" style="height:64.75pt">
+     24
+    </td>
+    <td colspan="6" rowspan="5" class="xl383" width="240" style="width:180pt">
+     Emergencia
+
+  no obstetricas tamba:
+    </td>
+    <td colspan="6" class="xl384">
+     a)
+     <span style="mso-spacerun:yes">
+       
+     </span>
+     hemorragias
+     <span style="mso-spacerun:yes">
+       
+     </span>
+    </td>
+    <td align="right">
+     {{ cells.69 }}
+    </td>
+    <td align="right">
+     {{ cells.70 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.71 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td colspan="6" height="17" class="xl385" width="240" style="height:12.95pt;
+
+  width:180pt">
+     b)
+     <span style="mso-spacerun:yes">
+       
+     </span>
+     preeclampsia grave no
+
+  eclampsia
+    </td>
+    <td align="right">
+     {{ cells.72 }}
+    </td>
+    <td align="right">
+     {{ cells.73 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.74 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td colspan="6" height="17" class="xl385" width="240" style="height:12.95pt;
+
+  width:180pt">
+     c)
+     <span style="mso-spacerun:yes">
+       
+     </span>
+     complicasaun abortu
+    </td>
+    <td align="right">
+     {{ cells.75 }}
+    </td>
+    <td align="right">
+     {{ cells.76 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.77 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td colspan="6" height="17" class="xl385" width="240" style="height:12.95pt;
+
+  width:180pt">
+     d)
+     <span style="mso-spacerun:yes">
+       
+     </span>
+     prosesu partu nebe
+
+  kleur
+    </td>
+    <td align="right">
+     {{ cells.78 }}
+    </td>
+    <td align="right">
+     {{ cells.79 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.80 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.95pt">
+    <td colspan="6" height="17" class="xl386" width="240" style="height:12.95pt;
+
+  width:180pt">
+     e)
+     <span style="mso-spacerun:yes">
+       
+     </span>
+     puerperal sepsis
+    </td>
+    <td class="xl301" align="right" style="border-left:none">
+     {{ cells.81 }}
+    </td>
+    <td class="xl122" align="right">
+     {{ cells.82 }}
+    </td>
+    <td class="xl123" align="right">
+     {{ cells.83 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="24" style="mso-height-source:userset;height:18.0pt">
+    <td colspan="16" height="24" class="xl96" style="height:18.0pt">
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td colspan="13" rowspan="2" height="32" class="xl103" width="504" style="height:24.0pt;
+
+  width:378pt">
+     Kausa (penyebab) Mortalidade Inan Isin rua no Partus
+     <span style="mso-spacerun:yes">
+                                                                                                             
+     </span>
+     <font class="font15">
+      (numeru absoluta)
+     </font>
+    </td>
+    <td colspan="3" class="xl380" style="border-left:none">
+     Idade inan nian
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="15" style="mso-height-source:userset;height:11.25pt">
+    <td height="15" class="xl104" style="height:11.25pt;border-top:none;border-left:
+
+  none">
+     &lt;19
+    </td>
+    <td class="xl104" style="border-top:none;border-left:none">
+     19-34
+    </td>
+    <td class="xl105" style="border-top:none;border-left:none">
+     &#8805;35
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td height="17" class="xl116" align="right" style="height:12.75pt">
+     25
+    </td>
+    <td colspan="12" class="xl381" style="border-left:none">
+     Hemorragias
+     <span style="mso-spacerun:yes">
+       
+     </span>
+    </td>
+    <td align="right">
+     {{ cells.84 }}
+    </td>
+    <td align="right">
+     {{ cells.85 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.86 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td height="17" class="xl117" align="right" style="height:12.75pt;border-top:none">
+     26
+    </td>
+    <td colspan="12" class="xl378" style="border-left:none">
+     Eclampsia
+    </td>
+    <td align="right">
+     {{ cells.87 }}
+    </td>
+    <td align="right">
+     {{ cells.88 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.89 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td height="17" class="xl117" align="right" style="height:12.75pt;border-top:none">
+     27
+    </td>
+    <td colspan="12" class="xl377" width="480" style="border-left:none;width:360pt">
+     Puerperal
+
+  sepsis
+    </td>
+    <td align="right">
+     {{ cells.90 }}
+    </td>
+    <td align="right">
+     {{ cells.91 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.92 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td height="17" class="xl117" align="right" style="height:12.75pt;border-top:none">
+     28
+    </td>
+    <td colspan="12" class="xl377" width="480" style="border-left:none;width:360pt">
+     Prosesu
+
+  partu nebe kleur (obstruct Labour)
+    </td>
+    <td align="right">
+     {{ cells.93 }}
+    </td>
+    <td align="right">
+     {{ cells.94 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.95 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td height="17" class="xl117" align="right" style="height:12.75pt;border-top:none">
+     29
+    </td>
+    <td colspan="12" class="xl378" style="border-left:none">
+     Komplikasaun Abortus
+     <span style="mso-spacerun:yes">
+       
+     </span>
+    </td>
+    <td align="right">
+     {{ cells.96 }}
+    </td>
+    <td align="right">
+     {{ cells.97 }}
+    </td>
+    <td class="xl107" align="right">
+     {{ cells.98 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="17" style="mso-height-source:userset;height:12.75pt">
+    <td height="17" class="xl118" align="right" style="height:12.75pt;border-top:none">
+     32
+    </td>
+    <td colspan="12" class="xl379" style="border-left:none">
+     Selu-seluk tan
+    </td>
+    <td class="xl301" align="right" style="border-left:none">
+     {{ cells.99 }}
+    </td>
+    <td class="xl122" align="right">
+     {{ cells.100 }}
+    </td>
+    <td class="xl123" align="right">
+     {{ cells.101 }}
+    </td>
+    <td colspan="2" style="mso-ignore:colspan">
+    </td>
+   </tr>
+   <tr height="0" style="display:none">
+    <td width="24" style="width:18pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="40" style="width:30pt">
+    </td>
+    <td width="55" style="width:41pt">
+    </td>
+    <td width="50" style="width:38pt">
+    </td>
+    <td width="55" style="width:41pt">
+    </td>
+    <td width="64" style="width:48pt">
+    </td>
+    <td width="64" style="width:48pt">
+    </td>
+   </tr>
+  </table>
+</div>
+{% endblock %}

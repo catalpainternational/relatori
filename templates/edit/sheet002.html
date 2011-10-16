@@ -1,0 +1,644 @@
+{% extends "relatori/edit.html" %}
+{% block edit_template %}
+
+
+<table class="form">
+    
+    <tr>
+        <td class="logo"><img src="/static/images/MoH.jpg" class="logo" /></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="7" class="border2"><h1>REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE<br />MINISTÉRIO DA SAÚDE</h1></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="4" class="border2"><h1>FORMULARIU-2A</h1><br />
+            Fulan:
+            <input type="text" name="fulan" size="2" value="{{ fulan }}" class="{{ fulan_style }} ">
+            Tinan:
+            <input type="text" name="tinan" size="4" value="{{ tinan }}" class="{{ tinan_style }}">
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+    
+<table class="form border2">
+    
+    <tr class="border">
+        <td><b>Distritu:</b> {{ distritu }}
+            <input type='hidden' name='district' value='{{ distritu }}'>
+        </td>
+        <td><b>Subdistritu:</b> {{ subdistritu }}
+            <input type='hidden' name='subdistrict' value='{{ subdistritu }}'>
+        </td>
+        <td><b>Fatin:</b> {{ fatin }} 
+            <input type='hidden' name='village' value='{{ fatin }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="3"><b>Fasilidade:</b> {{ facility }} 
+            <input type='hidden' name='name' value='{{ facility.id }}'> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Code:</b> {{ code }}
+        </td>
+    </tr>
+
+</table>
+
+<table class="form">
+
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+    <tr>
+        <td colspan="16"><h2>SAUDE MATERNU-INFANTIL</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="16"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="13" rowspan="2">Isin rua nebe seguru cuidadu pre natal <br />(numeru absolutu)</td>
+        <td colspan="3">Idade inan isin rua</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>&lt;19</td>
+        <td>19-34</td>
+        <td>&#8805;35</td>
+    </tr>
+
+    <tr class="border">
+        <td>1</td>
+        <td colspan="12">Consulta isin rua (cuidados pre-natais)</td>
+        <td>
+            <input type='text' name='cell.0' size=2 value='{{ cells.0 }}' class='{{ cell_styles.0 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.1' size=2 value='{{ cells.1 }}' class='{{ cell_styles.1 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.2' size=2 value='{{ cells.2 }}' class='{{ cell_styles.2 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>2</td>
+        <td colspan="12">Feto isin rua nebe consulta ba dala uluk (K1)</td>
+        <td>
+            <input type='text' name='cell.3' size=2 value='{{ cells.3 }}' class='{{ cell_styles.3 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.4' size=2 value='{{ cells.4 }}' class='{{ cell_styles.4 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.5' size=2 value='{{ cells.5 }}' class='{{ cell_styles.5 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>3</td>
+        <td colspan="12">Feto isin rua nebe consulta ba dala hat (K4)</td>
+        <td>
+            <input type='text' name='cell.6' size=2 value='{{ cells.6 }}' class='{{ cell_styles.6 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.7' size=2 value='{{ cells.7 }}' class='{{ cell_styles.7 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.8' size=2 value='{{ cells.8 }}' class='{{ cell_styles.8 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>4</td>
+        <td colspan="12">Feto isin rua ho test sifilis positivo</td>
+        <td>
+            <input type='text' name='cell.9' size=2 value='{{ cells.9 }}' class='{{ cell_styles.9 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.10' size=2 value='{{ cells.10 }}' class='{{ cell_styles.10 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.11' size=2 value='{{ cells.11 }}' class='{{ cell_styles.11 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>5</td>
+        <td colspan="12">Feto isin rua ho anemia grave (Hb&lt;7g/l)</td>
+        <td>
+            <input type='text' name='cell.12' size=2 value='{{ cells.12 }}' class='{{ cell_styles.12 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.13' size=2 value='{{ cells.13 }}' class='{{ cell_styles.13 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.14' size=2 value='{{ cells.14 }}' class='{{ cell_styles.14 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>6</td>
+        <td colspan="12">Feto isin rua nebe simu aimoruk suplementu aumenta ran (90 X 3)</td>
+        <td>
+            <input type='text' name='cell.15' size=2 value='{{ cells.15 }}' class='{{ cell_styles.15 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.16' size=2 value='{{ cells.16 }}' class='{{ cell_styles.16 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.17' size=2 value='{{ cells.17 }}' class='{{ cell_styles.17 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>7</td>
+        <td colspan="12">Feto isin rua nebe refere ba fasilidade saude aas tan ho komplikasaun</td>
+        <td>
+            <input type='text' name='cell.18' size=2 value='{{ cells.18 }}' class='{{ cell_styles.18 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.19' size=2 value='{{ cells.19 }}' class='{{ cell_styles.19 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.20' size=2 value='{{ cells.20 }}' class='{{ cell_styles.20 }}'>
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="16"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="13" rowspan="2">Partus ho bebe foin moris, tuir grupu tinan inan nian <br />(numeru absolutu)</td>
+        <td colspan="3">Idade inan nian</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>&lt;19</td>
+        <td>19-34</td>
+        <td>&#8805;35</td>
+    </tr>
+
+    <tr class="border">
+        <td>8</td>
+        <td colspan="12">Partus nebe hetan asistencia husi pessoal saude iha uma</td>
+        <td>
+            <input type='text' name='cell.21' size=2 value='{{ cells.21 }}' class='{{ cell_styles.21 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.22' size=2 value='{{ cells.22 }}' class='{{ cell_styles.22 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.23' size=2 value='{{ cells.23 }}' class='{{ cell_styles.23 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>9</td>
+        <td colspan="12">Partus nebe hetan asistencia husi pessoal saude iha fasilidade saude</td>
+        <td>
+            <input type='text' name='cell.24' size=2 value='{{ cells.24 }}' class='{{ cell_styles.24 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.25' size=2 value='{{ cells.25 }}' class='{{ cell_styles.25 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.26' size=2 value='{{ cells.26 }}' class='{{ cell_styles.26 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>10</td>
+        <td colspan="12">Feto nebe refere ba fasilidade saude nebe aas tan partu ho komplikasaun</td>
+        <td>
+            <input type='text' name='cell.27' size=2 value='{{ cells.27 }}' class='{{ cell_styles.27 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.28' size=2 value='{{ cells.28 }}' class='{{ cell_styles.28 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.29' size=2 value='{{ cells.29 }}' class='{{ cell_styles.29 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>11</td>
+        <td colspan="12">Feto nebe mate durante periodu isin rua, partu, post natal to'o loron 42</td>
+        <td>
+            <input type='text' name='cell.30' size=2 value='{{ cells.30 }}' class='{{ cell_styles.30 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.31' size=2 value='{{ cells.31 }}' class='{{ cell_styles.31 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.32' size=2 value='{{ cells.32 }}' class='{{ cell_styles.32 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>12</td>
+        <td colspan="12">Numeru bebe foin moris</td>
+        <td>
+            <input type='text' name='cell.33' size=2 value='{{ cells.33 }}' class='{{ cell_styles.33 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.34' size=2 value='{{ cells.34 }}' class='{{ cell_styles.34 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.35' size=2 value='{{ cells.35 }}' class='{{ cell_styles.35 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>13</td>
+        <td colspan="12">Numeru bebe nebe mate wainhira partu (&#8805; isin rua semana 22 ou + 500gr)</td>
+        <td>
+            <input type='text' name='cell.36' size=2 value='{{ cells.36 }}' class='{{ cell_styles.36 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.37' size=2 value='{{ cells.37 }}' class='{{ cell_styles.37 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.38' size=2 value='{{ cells.38 }}' class='{{ cell_styles.38 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>14</td>
+        <td colspan="12">Numeru bebe foin moris nebe mate molok loron 7 (loron 0-6)</td>
+        <td>
+            <input type='text' name='cell.39' size=2 value='{{ cells.39 }}' class='{{ cell_styles.39 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.40' size=2 value='{{ cells.40 }}' class='{{ cell_styles.40 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.41' size=2 value='{{ cells.41 }}' class='{{ cell_styles.41 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>15</td>
+        <td colspan="12">Numeru bebe foin moris nebe mate husi semana rua too hat (loron 7-28)</td>
+        <td>
+            <input type='text' name='cell.42' size=2 value='{{ cells.42 }}' class='{{ cell_styles.42 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.43' size=2 value='{{ cells.43 }}' class='{{ cell_styles.43 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.44' size=2 value='{{ cells.44 }}' class='{{ cell_styles.44 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>16</td>
+        <td colspan="12">Numeru bebe foin moris ho pezu menus husi 2,500 grama</td>
+        <td>
+            <input type='text' name='cell.45' size=2 value='{{ cells.45 }}' class='{{ cell_styles.45 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.46' size=2 value='{{ cells.46 }}' class='{{ cell_styles.46 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.47' size=2 value='{{ cells.47 }}' class='{{ cell_styles.47 }}'>
+        </td>
+    </tr
+
+</table>
+
+<table class="form">
+
+    <tr>
+        <td colspan="16"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="13" rowspan="2">Feto post natal <br />(numeru absolutu)</td>
+        <td colspan="3">Idade inan nian</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>&lt;19</td>
+        <td>19-34</td>
+        <td>&#8805;35</td>
+    </tr>
+
+    <tr class="border">
+        <td>17</td>
+        <td colspan="12">Konsulta post natal iha 1a semana depois partu (PN-1)</td>
+        <td>
+            <input type='text' name='cell.48' size=2 value='{{ cells.48 }}' class='{{ cell_styles.48 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.49' size=2 value='{{ cells.49 }}' class='{{ cell_styles.49 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.50' size=2 value='{{ cells.50 }}' class='{{ cell_styles.50 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>18</td>
+        <td colspan="12">Konsulta post natal husi semana ida too nen depois partu (PN-2)</td>
+        <td>
+            <input type='text' name='cell.51' size=2 value='{{ cells.51 }}' class='{{ cell_styles.51 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.52' size=2 value='{{ cells.52 }}' class='{{ cell_styles.52 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.53' size=2 value='{{ cells.53 }}' class='{{ cell_styles.53 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>19</td>
+        <td colspan="12">Feto post natal nebe simu Vit A no aimoruk suplementu aumenta ran - (90)</td>
+        <td>
+            <input type='text' name='cell.54' size=2 value='{{ cells.54 }}' class='{{ cell_styles.54 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.55' size=2 value='{{ cells.55 }}' class='{{ cell_styles.55 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.56' size=2 value='{{ cells.56 }}' class='{{ cell_styles.56 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>20</td>
+        <td colspan="12">Feto post natal refere ba fasilidade saude nebe aas ho komplikasaun</td>
+        <td>
+            <input type='text' name='cell.57' size=2 value='{{ cells.57 }}' class='{{ cell_styles.57 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.58' size=2 value='{{ cells.58 }}' class='{{ cell_styles.58 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.59' size=2 value='{{ cells.59 }}' class='{{ cell_styles.59 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>21</td>
+        <td colspan="12">Bebe foin moris nebe konsulta iha 1a semana (KN-1)</td>
+        <td>
+            <input type='text' name='cell.60' size=2 value='{{ cells.60 }}' class='{{ cell_styles.60 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.61' size=2 value='{{ cells.61 }}' class='{{ cell_styles.61 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.62' size=2 value='{{ cells.62 }}' class='{{ cell_styles.62 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>22</td>
+        <td colspan="12">Bebe foin moris nebe konsulta husi semana ida too hat (KN-2)</td>
+        <td>
+            <input type='text' name='cell.63' size=2 value='{{ cells.63 }}' class='{{ cell_styles.63 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.64' size=2 value='{{ cells.64 }}' class='{{ cell_styles.64 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.65' size=2 value='{{ cells.65 }}' class='{{ cell_styles.65 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>23</td>
+        <td colspan="12">Bebe foin moris refere ba facilidade saude nebe aas ho komplikasaun</td>
+        <td>
+            <input type='text' name='cell.66' size=2 value='{{ cells.66 }}' class='{{ cell_styles.66 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.67' size=2 value='{{ cells.67 }}' class='{{ cell_styles.67 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.68' size=2 value='{{ cells.68 }}' class='{{ cell_styles.68 }}'>
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="16"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="13" rowspan="2">Emergencia no obstetrikas <br />(numeru absolutu)</td>
+        <td colspan="3">Idade feto nian</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>&lt;19</td>
+        <td>19-34</td>
+        <td>&#8805;35</td>
+    </tr>
+
+    <tr class="border">
+        <td rowspan="5">24</td>
+        <td colspan="6" rowspan="5">Emergencia no obstetricas tamba:</td>
+        <td colspan="6">a) hemorragias</td>
+        <td>
+            <input type='text' name='cell.69' size=2 value='{{ cells.69 }}' class='{{ cell_styles.69 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.70' size=2 value='{{ cells.70 }}' class='{{ cell_styles.70 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.71' size=2 value='{{ cells.71 }}' class='{{ cell_styles.71 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="6">b) preeclampsia grave no eclampsia</td>
+        <td>
+            <input type='text' name='cell.72' size=2 value='{{ cells.72 }}' class='{{ cell_styles.72 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.73' size=2 value='{{ cells.73 }}' class='{{ cell_styles.73 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.74' size=2 value='{{ cells.74 }}' class='{{ cell_styles.74 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="6">c) complicasaun abortu</td>
+        <td>
+            <input type='text' name='cell.75' size=2 value='{{ cells.75 }}' class='{{ cell_styles.75 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.76' size=2 value='{{ cells.76 }}' class='{{ cell_styles.76 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.77' size=2 value='{{ cells.77 }}' class='{{ cell_styles.77 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="6">d) prosesu partu nebe kleur</td>
+        <td>
+            <input type='text' name='cell.78' size=2 value='{{ cells.78 }}' class='{{ cell_styles.78 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.79' size=2 value='{{ cells.79 }}' class='{{ cell_styles.79 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.80' size=2 value='{{ cells.80 }}' class='{{ cell_styles.80 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="6">e) puerperal sepsis</td>
+        <td>
+            <input type='text' name='cell.81' size=2 value='{{ cells.81 }}' class='{{ cell_styles.81 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.82' size=2 value='{{ cells.82 }}' class='{{ cell_styles.82 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.83' size=2 value='{{ cells.83 }}' class='{{ cell_styles.83 }}'>
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    <tr>
+        <td colspan="16"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="13" rowspan="2">Kausa (penyebab) Mortalidade Inan Isin rua no Partus (numeru absoluta)</td>
+        <td colspan="3">Idade inan nian</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>&lt;19</td>
+        <td>19-34</td>
+        <td>&#8805;35</td>
+    </tr>
+
+    <tr class="border">
+        <td>25</td>
+        <td colspan="12">Hemorragias</td>
+        <td>
+            <input type='text' name='cell.84' size=2 value='{{ cells.84 }}' class='{{ cell_styles.84 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.85' size=2 value='{{ cells.85 }}' class='{{ cell_styles.85 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.86' size=2 value='{{ cells.86 }}' class='{{ cell_styles.86 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>26</td>
+        <td colspan="12">Eclampsia</td>
+        <td>
+            <input type='text' name='cell.87' size=2 value='{{ cells.87 }}' class='{{ cell_styles.87 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.88' size=2 value='{{ cells.88 }}' class='{{ cell_styles.88 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.89' size=2 value='{{ cells.89 }}' class='{{ cell_styles.89 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>27</td>
+        <td colspan="12">Puerperal sepsis</td>
+        <td>
+            <input type='text' name='cell.90' size=2 value='{{ cells.90 }}' class='{{ cell_styles.90 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.91' size=2 value='{{ cells.91 }}' class='{{ cell_styles.91 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.92' size=2 value='{{ cells.92 }}' class='{{ cell_styles.92 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>28</td>
+        <td colspan="12">Prosesu partu nebe kleur (obstruct Labour)</td>
+        <td>
+            <input type='text' name='cell.93' size=2 value='{{ cells.93 }}' class='{{ cell_styles.93 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.94' size=2 value='{{ cells.94 }}' class='{{ cell_styles.94 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.95' size=2 value='{{ cells.95 }}' class='{{ cell_styles.95 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>29</td>
+        <td colspan="12">Komplikasaun Abortus</td>
+        <td>
+            <input type='text' name='cell.96' size=2 value='{{ cells.96 }}' class='{{ cell_styles.96 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.97' size=2 value='{{ cells.97 }}' class='{{ cell_styles.97 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.98' size=2 value='{{ cells.98 }}' class='{{ cell_styles.98 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>32</td>
+        <td colspan="12">Selu-seluk tan</td>
+        <td>
+            <input type='text' name='cell.99' size=2 value='{{ cells.99 }}' class='{{ cell_styles.99 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.100' size=2 value='{{ cells.100 }}' class='{{ cell_styles.100 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.101' size=2 value='{{ cells.101 }}' class='{{ cell_styles.101 }}'>
+        </td>
+    </tr>
+
+</table>
+{% endblock %}

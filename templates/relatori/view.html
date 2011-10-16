@@ -1,0 +1,50 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block extrastyle %}
+<link href="/static/css/forms.css" type="text/css" rel="stylesheet" />
+
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs"><a href="/relatori/"><img src="/static/images/home.svg" class="bread">{% trans 'Home' %}</a> &rsaquo; 
+{% if item_pk %}
+<a href="/relatori/query/">{% trans 'Search' %}</a>
+{% else %}
+<a href="/relatori/cumulative/">{% trans 'Cumulative' %}</a>
+{% endif %}
+&rsaquo; {% trans 'View' %}</div>
+{% endblock %}
+
+{% block content %}
+
+{% if item_pk %}
+<div id='edit-form'>
+    <form method='GET' action='/relatori/edit/'>
+    <input type='hidden' name="item_pk" value='{{ item_pk }}'>
+    <input type='submit' value='Edit'>
+    </form>
+</div>
+{% endif %}
+
+
+{% if form.data_form %}
+<div id='export-excel-form'>
+    <form method='POST' action='/relatori/data_form/xls/'>
+    {{ form.as_p }}
+    <input type='submit' value='Export as Excel'>
+</div>
+{% else %}
+<div id='export-excel-form'>
+    <form method='POST' action='/relatori/cumulative/xls/'>
+    {{ form.as_p }}
+    <input type='submit' value='Export as Excel'>
+    </form>
+</div>
+{% endif %}
+
+<div id="content-main">
+{% block view_template %}{% endblock %}
+</div>
+
+{% endblock %}

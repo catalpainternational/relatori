@@ -1,0 +1,838 @@
+{% extends "relatori/edit.html" %}
+{% block edit_template %}
+
+
+<table class="form">
+    
+    <tr>
+        <td class="logo"><img src="/static/images/MoH.jpg" class="logo" /></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="7" class="border2"><h1>REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE<br />MINISTÉRIO DA SAÚDE</h1></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="4" class="border2"><h1>FORMULÁRIU-3</h1><br />
+            Fulan:
+            <input type="text" name="fulan" size="2" value="{{ fulan }}" class="{{ fulan_style }} ">
+            Tinan:
+            <input type="text" name="tinan" size="4" value="{{ tinan }}" class="{{ tinan_style }}">
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+    
+<table class="form border2">
+    
+    <tr class="border">
+        <td><b>Distritu:</b> {{ distritu }}
+            <input type='hidden' name='district' value='{{ distritu }}'>
+        </td>
+        <td><b>Subdistritu:</b> {{ subdistritu }}
+            <input type='hidden' name='subdistrict' value='{{ subdistritu }}'>
+        </td>
+        <td><b>Fatin:</b> {{ fatin }} 
+            <input type='hidden' name='village' value='{{ fatin }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="3"><b>Fasilidade:</b> {{ facility }} 
+            <input type='hidden' name='name' value='{{ facility.id }}'> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Code:</b> {{ code }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+
+    <tr>
+        <td colspan="15"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="15"><h2>SAUDE LABARIK NIAN / IMCI</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="15"><h3>A. Klasifikasaun Kazu</h3></td>
+    </tr>
+
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="5" rowspan="3">Klasifikasaun Moras Baseia I M C I (Integrited Management Child Illnes)</td>
+        <td colspan="5">Numero Pasiente Nebe Konsulta</td>
+        <td colspan="5">Numero Labarik nebe Mate<sup>1</sup></td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td colspan="2">Fulan 2-11</td>
+        <td colspan="2">Tinan 1-5</td>
+        <td rowspan="2">Total</td>
+        <td colspan="2">Fulan 2-11</td>
+        <td colspan="2">Tinan 1-5</td>
+        <td rowspan="2">Total</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+    </tr>
+
+    <tr class="border">
+        <td>1</td>
+        <td colspan="4">Moras Grave <span class="small bold">(Very Severe Disease)</span></td>
+        <td>
+            <input type='text' name='cell.0' size=2 value='{{ cells.0 }}' class='{{ cell_styles.0 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.1' size=2 value='{{ cells.1 }}' class='{{ cell_styles.1 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.2' size=2 value='{{ cells.2 }}' class='{{ cell_styles.2 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.3' size=2 value='{{ cells.3 }}' class='{{ cell_styles.3 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.4' size=2 value='{{ cells.4 }}' class='{{ cell_styles.4 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.5' size=2 value='{{ cells.5 }}' class='{{ cell_styles.5 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.6' size=2 value='{{ cells.6 }}' class='{{ cell_styles.6 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.7' size=2 value='{{ cells.7 }}' class='{{ cell_styles.7 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.8' size=2 value='{{ cells.8 }}' class='{{ cell_styles.8 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.9' size=2 value='{{ cells.9 }}' class='{{ cell_styles.9 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>2</td>
+        <td colspan="4">Pneomonia Grave <span class="small bold">(Severe Pneomonia)</span></td>
+        <td>
+            <input type='text' name='cell.10' size=2 value='{{ cells.10 }}' class='{{ cell_styles.10 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.11' size=2 value='{{ cells.11 }}' class='{{ cell_styles.11 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.12' size=2 value='{{ cells.12 }}' class='{{ cell_styles.12 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.13' size=2 value='{{ cells.13 }}' class='{{ cell_styles.13 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.14' size=2 value='{{ cells.14 }}' class='{{ cell_styles.14 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.15' size=2 value='{{ cells.15 }}' class='{{ cell_styles.15 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.16' size=2 value='{{ cells.16 }}' class='{{ cell_styles.16 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.17' size=2 value='{{ cells.17 }}' class='{{ cell_styles.17 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.18' size=2 value='{{ cells.18 }}' class='{{ cell_styles.18 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.19' size=2 value='{{ cells.19 }}' class='{{ cell_styles.19 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>3</td>
+        <td colspan="4">Pneomonia <span class="small bold">(Pneomonia)</span></td>
+        <td>
+            <input type='text' name='cell.20' size=2 value='{{ cells.20 }}' class='{{ cell_styles.20 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.21' size=2 value='{{ cells.21 }}' class='{{ cell_styles.21 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.22' size=2 value='{{ cells.22 }}' class='{{ cell_styles.22 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.23' size=2 value='{{ cells.23 }}' class='{{ cell_styles.23 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.24' size=2 value='{{ cells.24 }}' class='{{ cell_styles.24 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.25' size=2 value='{{ cells.25 }}' class='{{ cell_styles.25 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.26' size=2 value='{{ cells.26 }}' class='{{ cell_styles.26 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.27' size=2 value='{{ cells.27 }}' class='{{ cell_styles.27 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.28' size=2 value='{{ cells.28 }}' class='{{ cell_styles.28 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.29' size=2 value='{{ cells.29 }}' class='{{ cell_styles.29 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>4</td>
+        <td colspan="4">Me'ar ou Inus Ben <span class="small bold">(Cough or Cold)</span></td>
+        <td>
+            <input type='text' name='cell.30' size=2 value='{{ cells.30 }}' class='{{ cell_styles.30 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.31' size=2 value='{{ cells.31 }}' class='{{ cell_styles.31 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.32' size=2 value='{{ cells.32 }}' class='{{ cell_styles.32 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.33' size=2 value='{{ cells.33 }}' class='{{ cell_styles.33 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.34' size=2 value='{{ cells.34 }}' class='{{ cell_styles.34 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.35' size=2 value='{{ cells.35 }}' class='{{ cell_styles.35 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.36' size=2 value='{{ cells.36 }}' class='{{ cell_styles.36 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.37' size=2 value='{{ cells.37 }}' class='{{ cell_styles.37 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.38' size=2 value='{{ cells.38 }}' class='{{ cell_styles.38 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.39' size=2 value='{{ cells.39 }}' class='{{ cell_styles.39 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>5</td>
+        <td colspan="4">Diareia<sup>2</sup> <span class="small bold">(Diarrhoea)</span></td>
+        <td>
+            <input type='text' name='cell.40' size=2 value='{{ cells.40 }}' class='{{ cell_styles.40 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.41' size=2 value='{{ cells.41 }}' class='{{ cell_styles.41 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.42' size=2 value='{{ cells.42 }}' class='{{ cell_styles.42 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.43' size=2 value='{{ cells.43 }}' class='{{ cell_styles.43 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.44' size=2 value='{{ cells.44 }}' class='{{ cell_styles.44 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.45' size=2 value='{{ cells.45 }}' class='{{ cell_styles.45 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.46' size=2 value='{{ cells.46 }}' class='{{ cell_styles.46 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.47' size=2 value='{{ cells.47 }}' class='{{ cell_styles.47 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.48' size=2 value='{{ cells.48 }}' class='{{ cell_styles.48 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.49' size=2 value='{{ cells.49 }}' class='{{ cell_styles.49 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>6</td>
+        <td colspan="4">Disentry <span class="small bold">(Dysentry)</span></td>
+        <td>
+            <input type='text' name='cell.50' size=2 value='{{ cells.50 }}' class='{{ cell_styles.50 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.51' size=2 value='{{ cells.51 }}' class='{{ cell_styles.51 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.52' size=2 value='{{ cells.52 }}' class='{{ cell_styles.52 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.53' size=2 value='{{ cells.53 }}' class='{{ cell_styles.53 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.54' size=2 value='{{ cells.54 }}' class='{{ cell_styles.54 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.55' size=2 value='{{ cells.55 }}' class='{{ cell_styles.55 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.56' size=2 value='{{ cells.56 }}' class='{{ cell_styles.56 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.57' size=2 value='{{ cells.57 }}' class='{{ cell_styles.57 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.58' size=2 value='{{ cells.58 }}' class='{{ cell_styles.58 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.59' size=2 value='{{ cells.59 }}' class='{{ cell_styles.59 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>7</td>
+        <td colspan="4">Moras todan ho Isin Manas <span class="small bold">(Very Severe Febrile Disease)</span></td>
+        <td>
+            <input type='text' name='cell.60' size=2 value='{{ cells.60 }}' class='{{ cell_styles.60 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.61' size=2 value='{{ cells.61 }}' class='{{ cell_styles.61 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.62' size=2 value='{{ cells.62 }}' class='{{ cell_styles.62 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.63' size=2 value='{{ cells.63 }}' class='{{ cell_styles.63 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.64' size=2 value='{{ cells.64 }}' class='{{ cell_styles.64 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.65' size=2 value='{{ cells.65 }}' class='{{ cell_styles.65 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.66' size=2 value='{{ cells.66 }}' class='{{ cell_styles.66 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.67' size=2 value='{{ cells.67 }}' class='{{ cell_styles.67 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.68' size=2 value='{{ cells.68 }}' class='{{ cell_styles.68 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.69' size=2 value='{{ cells.69 }}' class='{{ cell_styles.69 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>8</td>
+        <td colspan="4">Malaria Definitivo <span class="small bold">(Definite Malaria)</span></td>
+        <td>
+            <input type='text' name='cell.70' size=2 value='{{ cells.70 }}' class='{{ cell_styles.70 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.71' size=2 value='{{ cells.71 }}' class='{{ cell_styles.71 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.72' size=2 value='{{ cells.72 }}' class='{{ cell_styles.72 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.73' size=2 value='{{ cells.73 }}' class='{{ cell_styles.73 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.74' size=2 value='{{ cells.74 }}' class='{{ cell_styles.74 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.75' size=2 value='{{ cells.75 }}' class='{{ cell_styles.75 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.76' size=2 value='{{ cells.76 }}' class='{{ cell_styles.76 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.77' size=2 value='{{ cells.77 }}' class='{{ cell_styles.77 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.78' size=2 value='{{ cells.78 }}' class='{{ cell_styles.78 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.79' size=2 value='{{ cells.79 }}' class='{{ cell_styles.79 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>9</td>
+        <td colspan="4">Isin Manas ou dala ruma Malaria Vivax <span class="small bold">(Febrile or Posibel Malaria Vivax)</span></td>
+        <td>
+            <input type='text' name='cell.80' size=2 value='{{ cells.80 }}' class='{{ cell_styles.80 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.81' size=2 value='{{ cells.81 }}' class='{{ cell_styles.81 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.82' size=2 value='{{ cells.82 }}' class='{{ cell_styles.82 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.83' size=2 value='{{ cells.83 }}' class='{{ cell_styles.83 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.84' size=2 value='{{ cells.84 }}' class='{{ cell_styles.84 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.85' size=2 value='{{ cells.85 }}' class='{{ cell_styles.85 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.86' size=2 value='{{ cells.86 }}' class='{{ cell_styles.86 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.87' size=2 value='{{ cells.87 }}' class='{{ cell_styles.87 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.88' size=2 value='{{ cells.88 }}' class='{{ cell_styles.88 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.89' size=2 value='{{ cells.89 }}' class='{{ cell_styles.89 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>10</td>
+        <td colspan="4">Measles <span class="small bold">(Sarampu)</span></td>
+        <td>
+            <input type='text' name='cell.90' size=2 value='{{ cells.90 }}' class='{{ cell_styles.90 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.91' size=2 value='{{ cells.91 }}' class='{{ cell_styles.91 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.92' size=2 value='{{ cells.92 }}' class='{{ cell_styles.92 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.93' size=2 value='{{ cells.93 }}' class='{{ cell_styles.93 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.94' size=2 value='{{ cells.94 }}' class='{{ cell_styles.94 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.95' size=2 value='{{ cells.95 }}' class='{{ cell_styles.95 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.96' size=2 value='{{ cells.96 }}' class='{{ cell_styles.96 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.97' size=2 value='{{ cells.97 }}' class='{{ cell_styles.97 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.98' size=2 value='{{ cells.98 }}' class='{{ cell_styles.98 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.99' size=2 value='{{ cells.99 }}' class='{{ cell_styles.99 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>11</td>
+        <td colspan="4">Dengue<sup>3</sup> <span class="small bold">(Dengue)</span></td>
+        <td>
+            <input type='text' name='cell.100' size=2 value='{{ cells.100 }}' class='{{ cell_styles.100 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.101' size=2 value='{{ cells.101 }}' class='{{ cell_styles.101 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.102' size=2 value='{{ cells.102 }}' class='{{ cell_styles.102 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.103' size=2 value='{{ cells.103 }}' class='{{ cell_styles.103 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.104' size=2 value='{{ cells.104 }}' class='{{ cell_styles.104 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.105' size=2 value='{{ cells.105 }}' class='{{ cell_styles.105 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.106' size=2 value='{{ cells.106 }}' class='{{ cell_styles.106 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.107' size=2 value='{{ cells.107 }}' class='{{ cell_styles.107 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.108' size=2 value='{{ cells.108 }}' class='{{ cell_styles.108 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.109' size=2 value='{{ cells.109 }}' class='{{ cell_styles.109 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>12</td>
+        <td colspan="4">Isin Manas : dala ruma la'os Dengue Hemorrhagic Fever <span class="small bold">(DHF)</span></td>
+        <td>
+            <input type='text' name='cell.110' size=2 value='{{ cells.110 }}' class='{{ cell_styles.110 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.111' size=2 value='{{ cells.111 }}' class='{{ cell_styles.111 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.112' size=2 value='{{ cells.112 }}' class='{{ cell_styles.112 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.113' size=2 value='{{ cells.113 }}' class='{{ cell_styles.113 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.114' size=2 value='{{ cells.114 }}' class='{{ cell_styles.114 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.115' size=2 value='{{ cells.115 }}' class='{{ cell_styles.115 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.116' size=2 value='{{ cells.116 }}' class='{{ cell_styles.116 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.117' size=2 value='{{ cells.117 }}' class='{{ cell_styles.117 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.118' size=2 value='{{ cells.118 }}' class='{{ cell_styles.118 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.119' size=2 value='{{ cells.119 }}' class='{{ cell_styles.119 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>13</td>
+        <td colspan="4">Problema Tilun<sup>4</sup> <span class="small bold">(Ear Problem)</span></td>
+        <td>
+            <input type='text' name='cell.120' size=2 value='{{ cells.120 }}' class='{{ cell_styles.120 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.121' size=2 value='{{ cells.121 }}' class='{{ cell_styles.121 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.122' size=2 value='{{ cells.122 }}' class='{{ cell_styles.122 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.123' size=2 value='{{ cells.123 }}' class='{{ cell_styles.123 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.124' size=2 value='{{ cells.124 }}' class='{{ cell_styles.124 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.125' size=2 value='{{ cells.125 }}' class='{{ cell_styles.125 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.126' size=2 value='{{ cells.126 }}' class='{{ cell_styles.126 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.127' size=2 value='{{ cells.127 }}' class='{{ cell_styles.127 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.128' size=2 value='{{ cells.128 }}' class='{{ cell_styles.128 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.129' size=2 value='{{ cells.129 }}' class='{{ cell_styles.129 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>14</td>
+        <td colspan="4">Malnutrisaun<sup>5</sup> <span class="small bold">(Malnurish)</span></td>
+        <td>
+            <input type='text' name='cell.130' size=2 value='{{ cells.130 }}' class='{{ cell_styles.130 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.131' size=2 value='{{ cells.131 }}' class='{{ cell_styles.131 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.132' size=2 value='{{ cells.132 }}' class='{{ cell_styles.132 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.133' size=2 value='{{ cells.133 }}' class='{{ cell_styles.133 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.134' size=2 value='{{ cells.134 }}' class='{{ cell_styles.134 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.135' size=2 value='{{ cells.135 }}' class='{{ cell_styles.135 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.136' size=2 value='{{ cells.136 }}' class='{{ cell_styles.136 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.137' size=2 value='{{ cells.137 }}' class='{{ cell_styles.137 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.138' size=2 value='{{ cells.138 }}' class='{{ cell_styles.138 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.139' size=2 value='{{ cells.139 }}' class='{{ cell_styles.139 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>15</td>
+        <td colspan="4">Seluk-Seluk <span class="small bold">(Other)</span></td>
+        <td>
+            <input type='text' name='cell.140' size=2 value='{{ cells.140 }}' class='{{ cell_styles.140 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.141' size=2 value='{{ cells.141 }}' class='{{ cell_styles.141 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.142' size=2 value='{{ cells.142 }}' class='{{ cell_styles.142 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.143' size=2 value='{{ cells.143 }}' class='{{ cell_styles.143 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.144' size=2 value='{{ cells.144 }}' class='{{ cell_styles.144 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.145' size=2 value='{{ cells.145 }}' class='{{ cell_styles.145 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.146' size=2 value='{{ cells.146 }}' class='{{ cell_styles.146 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.147' size=2 value='{{ cells.147 }}' class='{{ cell_styles.147 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.148' size=2 value='{{ cells.148 }}' class='{{ cell_styles.148 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.149' size=2 value='{{ cells.149 }}' class='{{ cell_styles.149 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="5">Total</td>
+        <td>
+            <input type='text' name='cell.150' size=2 value='{{ cells.150 }}' class='{{ cell_styles.150 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.151' size=2 value='{{ cells.151 }}' class='{{ cell_styles.151 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.152' size=2 value='{{ cells.152 }}' class='{{ cell_styles.152 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.153' size=2 value='{{ cells.153 }}' class='{{ cell_styles.153 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.154' size=2 value='{{ cells.154 }}' class='{{ cell_styles.154 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.155' size=2 value='{{ cells.155 }}' class='{{ cell_styles.155 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.156' size=2 value='{{ cells.156 }}' class='{{ cell_styles.156 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.157' size=2 value='{{ cells.157 }}' class='{{ cell_styles.157 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.158' size=2 value='{{ cells.158 }}' class='{{ cell_styles.158 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.159' size=2 value='{{ cells.159 }}' class='{{ cell_styles.159 }}'>
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="15"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr class="border small">
+        <td>1</td>
+        <td colspan="14">Total Labarik nebe Mate: iha Facilidade Saude no Emergency</td>
+    </tr>
+
+    <tr class="border small">
+        <td>2</td>
+        <td colspan="14">Inklui tipo oi-oin husi diareia ho grau dehidrasaun hotu, menus deit dysentry</td>
+    </tr>
+
+    <tr class="border small">
+        <td>3</td>
+        <td colspan="14">Inklui Dengue Hemorrhagic Fever (DHF), ou Dala ruma Dengue Hemorrhagic Fever (DHF),</td>
+    </tr>
+
+    <tr class="border small">
+        <td>4</td>
+        <td colspan="14">Inklui Infesaun tilun Akut no kronik no Mastoiditis</td>
+    </tr>
+
+    <tr class="border small">
+        <td>5</td>
+        <td colspan="14">Inklui Malnutrisaun todan no/ou anemia todan no anemia no pezu tun liu</td>
+    </tr>
+
+    <tr>
+        <td colspan="15"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="5"><h3>B. Konsultasaun no Referal</h3></td>
+        <td colspan="2"></td>
+        <td colspan="4"><h3>C. Staff Treinadu IMCI</h3></td>
+        <td colspan="4"></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="4">Tipo Konsulta no Referal</td>
+        <td colspan="2">Numero</td>
+        <td></td>
+        <td colspan="2">Tipo Staff</td>
+        <td colspan="2"># Post Baseia ba BSP</td>
+        <td colspan="2"># Nebe Iha</td>
+        <td colspan="2"># Nebe Treinadu iha IMCI</td>
+    </tr>
+
+    <tr class="border">
+        <td>1</td>
+        <td colspan="3">Premeiro Vizita</td>
+        <td colspan="2">
+            <input type='text' name='cell.160' size=2 value='{{ cells.160 }}' class='{{ cell_styles.160 }}'>
+        </td>
+        <td></td>
+        <td colspan="2">Doutor</td>
+        <td colspan="2">
+            <input type='text' name='cell.161' size=2 value='{{ cells.161 }}' class='{{ cell_styles.161 }}'>
+        </td>
+        <td colspan="2">
+            <input type='text' name='cell.162' size=2 value='{{ cells.162 }}' class='{{ cell_styles.162 }}'>
+        </td>
+        <td colspan="2">
+            <input type='text' name='cell.163' size=2 value='{{ cells.163 }}' class='{{ cell_styles.163 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>2</td>
+        <td colspan="3">Vizita Follow up</td>
+        <td colspan="2">
+            <input type='text' name='cell.164' size=2 value='{{ cells.164 }}' class='{{ cell_styles.164 }}'>
+        </td>
+        <td></td>
+        <td colspan="2">Enfremeiro</td>
+        <td colspan="2">
+            <input type='text' name='cell.165' size=2 value='{{ cells.165 }}' class='{{ cell_styles.165 }}'>
+        </td>
+        <td colspan="2">
+            <input type='text' name='cell.166' size=2 value='{{ cells.166 }}' class='{{ cell_styles.166 }}'>
+        </td>
+        <td colspan="2">
+            <input type='text' name='cell.167' size=2 value='{{ cells.167 }}' class='{{ cell_styles.167 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>3</td>
+        <td colspan="3">Pasiente nebe hetan referal</td>
+        <td colspan="2">
+            <input type='text' name='cell.168' size=2 value='{{ cells.168 }}' class='{{ cell_styles.168 }}'>
+        </td>
+        <td></td>
+        <td colspan="2">Parteira</td>
+        <td colspan="2">
+            <input type='text' name='cell.169' size=2 value='{{ cells.169 }}' class='{{ cell_styles.169 }}'>
+        </td>
+        <td colspan="2">
+            <input type='text' name='cell.170' size=2 value='{{ cells.170 }}' class='{{ cell_styles.170 }}'>
+        </td>
+        <td colspan="2">
+            <input type='text' name='cell.171' size=2 value='{{ cells.171 }}' class='{{ cell_styles.171 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="4">Total</td>
+        <td colspan="2">
+            <input type='text' name='cell.172' size=2 value='{{ cells.172 }}' class='{{ cell_styles.172 }}'>
+        </td>
+        <td></td>
+        <td colspan="2">Seluk-seluk</td>
+        <td colspan="2">
+            <input type='text' name='cell.173' size=2 value='{{ cells.173 }}' class='{{ cell_styles.173 }}'>
+        </td>
+        <td colspan="2">
+            <input type='text' name='cell.174' size=2 value='{{ cells.174 }}' class='{{ cell_styles.174 }}'>
+        </td>
+        <td colspan="2">
+            <input type='text' name='cell.175' size=2 value='{{ cells.175 }}' class='{{ cell_styles.175 }}'>
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="15"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr>
+        <td colspan="15"><h3>D. Facilidade saude ho Staff nebe treinadu iha IMCI</h3></td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td colspan="3">Facilidade Saude</td>
+        <td colspan="2">Total</td>
+        <td colspan="10"># Facilidade Saude nebe la iha staff Treinadun iha IMCI</td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="3">Centro da Saude</td>
+        <td colspan="2">
+            <input type='text' name='cell.176' size=2 value='{{ cells.176 }}' class='{{ cell_styles.176 }}'>
+        </td>
+        <td colspan="10">
+            <input type='text' name='cell.177' size=2 value='{{ cells.177 }}' class='{{ cell_styles.177 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="3">Posto Saude</td>
+        <td colspan="2">
+            <input type='text' name='cell.178' size=2 value='{{ cells.178 }}' class='{{ cell_styles.178 }}'>
+        </td>
+        <td colspan="10">
+            <input type='text' name='cell.179' size=2 value='{{ cells.179 }}' class='{{ cell_styles.179 }}'>
+        </td>
+    </tr>
+
+</table>
+
+{% endblock %}

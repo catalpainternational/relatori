@@ -1,0 +1,536 @@
+{% extends "relatori/view.html" %}
+{% block view_template %}
+
+<script type="text/javascript" src="http://jquery.com/src/jquery-latest.js"></script>
+
+<table class="form">
+    
+    <tr>
+        <td class="logo"><img src="/static/images/MoH.jpg" class="logo" /></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="7" class="border2"><h1>REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE<br />MINISTÉRIO DA SAÚDE</h1></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="4" class="border2"><h1>FORMULARIU-2B</h1><br />
+            Fulan:
+            <input type="text" name="fulan" size="2" value="{{ fulan }}" class="{{ fulan_style }} ">
+            Tinan:
+            <input type="text" name="tinan" size="4" value="{{ tinan }}" class="{{ tinan_style }}">
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+    
+<table class="form border2">
+    
+    <tr class="border">
+        <td><b>Distritu:</b> {{ distritu }}
+            <input type='hidden' name='district' value='{{ distritu }}'>
+        </td>
+        <td><b>Subdistritu:</b> {{ subdistritu }}
+            <input type='hidden' name='subdistrict' value='{{ subdistritu }}'>
+        </td>
+        <td><b>Fatin:</b> {{ fatin }} 
+            <input type='hidden' name='village' value='{{ fatin }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="3"><b>Fasilidade:</b> {{ facility }} 
+            <input type='hidden' name='name' value='{{ facility.id }}'> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Code:</b> {{ code }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="28"><div class="spacer"></div></td>
+    </tr>
+    
+    <tr>
+        <td colspan="28"><h2>SAUDE MATERNA - PLANEAMENTU FAMILIAR</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="28"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="6">Total Visitor</td>
+        <td rowspan="3" class="small bt"><img src="/static/images/nunka.png" alt="Nunka Usa" /></td>
+        <td colspan="3" rowspan="2">Konseling</td>
+        <td rowspan="2">STI</td>
+        <td colspan="17">Metode Planeamento Familiar</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td colspan="3" class="rotate">Mane</td>
+        <td colspan="3" class="rotate">Feto</td>
+        <td colspan="3" class="rotate">POP</td>
+        <td colspan="3" class="rotate">COP</td>
+        <td colspan="2" class="rotate">Injetavel</td>
+        <td colspan="2" class="rotate">Implant</td>
+        <td colspan="2" class="rotate">IUD</td>
+        <td colspan="3" class="rotate">Kondom</td>
+        <td rowspan="2" class="rotate small bt"><img src="/static/images/vasectomi.png" alt="Vasectomi" /></td>
+        <td rowspan="2" class="rotate small bt"><img src="/static/images/tubectomi.png" alt="Tubectomi" /></td>
+    </tr>
+
+    <tr class="border green center bold small">
+        <td>15-24</td>
+        <td>25+</td>
+        <td><img src="/static/images/kaben.png" alt="Kaben" /></td>
+        <td>15-24</td>
+        <td>25+</td>
+        <td><img src="/static/images/kaben.png" alt="Kaben" /></td>
+        <td class="bt"><img src="/static/images/pf.png" alt="PF" /></td>
+        <td class="bt"><img src="/static/images/sti.png" alt="STI" /></td>
+        <td class="bt"><img src="/static/images/pnc.png" alt="PNC" /></td>
+        <td class="bt"><img src="/static/images/digtrat.png" alt="Dig/trat" /></td>
+        <td class="bt"><img src="/static/images/foun.png" alt="Foun" /></td>
+        <td class="bt"><img src="/static/images/tuan.png" alt="Tuan" /></td>
+        <td class="bt"><img src="/static/images/siklu.png" alt="Siklu" /></td>
+        <td class="bt"><img src="/static/images/foun.png" alt="Foun" /></td>
+        <td class="bt"><img src="/static/images/tuan.png" alt="Tuan" /></td>
+        <td class="bt"><img src="/static/images/siklu.png" alt="Siklu" /></td>
+        <td class="bt"><img src="/static/images/foun.png" alt="Foun" /></td>
+        <td class="bt"><img src="/static/images/tuan.png" alt="Tuan" /></td>
+        <td class="bt"><img src="/static/images/foun.png" alt="Foun" /></td>
+        <td class="bt"><img src="/static/images/tuan.png" alt="Tuan" /></td>
+        <td class="bt"><img src="/static/images/foun.png" alt="Foun" /></td>
+        <td class="bt"><img src="/static/images/tuan.png" alt="Tuan" /></td>
+        <td class="bt"><img src="/static/images/foun.png" alt="Foun" /></td>
+        <td class="bt"><img src="/static/images/tuan.png" alt="Tuan" /></td>
+        <td class="bt"><img src="/static/images/pcs.png" alt="PCS" /></td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.0 }}
+        </td>
+        <td>
+            {{ cells.1 }}
+        </td>
+        <td>
+            {{ cells.2 }}
+        </td>
+        <td>
+            {{ cells.3 }}
+        </td>
+        <td>
+            {{ cells.4 }}
+        </td>
+        <td>
+            {{ cells.5 }}
+        </td>
+        <td>
+            {{ cells.6 }}
+        </td>
+        <td>
+            {{ cells.7 }}
+        </td>
+        <td>
+            {{ cells.8 }}
+        </td>
+        <td>
+            {{ cells.9 }}
+        </td>
+        <td>
+            {{ cells.10 }}
+        </td>
+        <td>
+            {{ cells.11 }}
+        </td>
+        <td>
+            {{ cells.12 }}
+        </td>
+        <td>
+            {{ cells.13 }}
+        </td>
+        <td>
+            {{ cells.14 }}
+        </td>
+        <td>
+            {{ cells.15 }}
+        </td>
+        <td>
+            {{ cells.16 }}
+        </td>
+        <td>
+            {{ cells.17 }}
+        </td>
+        <td>
+            {{ cells.18 }}
+        </td>
+        <td>
+            {{ cells.19 }}
+        </td>
+        <td>
+            {{ cells.20 }}
+        </td>
+        <td>
+            {{ cells.21 }}
+        </td>
+        <td>
+            {{ cells.22 }}
+        </td>
+        <td>
+            {{ cells.23 }}
+        </td>
+        <td>
+            {{ cells.24 }}
+        </td>
+        <td>
+            {{ cells.25 }}
+        </td>
+        <td>
+            {{ cells.26 }}
+        </td>
+        <td>
+            {{ cells.27 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.28 }}
+        </td>
+        <td>
+            {{ cells.29 }}
+        </td>
+        <td>
+            {{ cells.30 }}
+        </td>
+        <td>
+            {{ cells.31 }}
+        </td>
+        <td>
+            {{ cells.32 }}
+        </td>
+        <td>
+            {{ cells.33 }}
+        </td>
+        <td>
+            {{ cells.34 }}
+        </td>
+        <td>
+            {{ cells.35 }}
+        </td>
+        <td>
+            {{ cells.36 }}
+        </td>
+        <td>
+            {{ cells.37 }}
+        </td>
+        <td>
+            {{ cells.38 }}
+        </td>
+        <td>
+            {{ cells.39 }}
+        </td>
+        <td>
+            {{ cells.40 }}
+        </td>
+        <td>
+            {{ cells.41 }}
+        </td>
+        <td>
+            {{ cells.42 }}
+        </td>
+        <td>
+            {{ cells.43 }}
+        </td>
+        <td>
+            {{ cells.44 }}
+        </td>
+        <td>
+            {{ cells.45 }}
+        </td>
+        <td>
+            {{ cells.46 }}
+        </td>
+        <td>
+            {{ cells.47 }}
+        </td>
+        <td>
+            {{ cells.48 }}
+        </td>
+        <td>
+            {{ cells.49 }}
+        </td>
+        <td>
+            {{ cells.50 }}
+        </td>
+        <td>
+            {{ cells.51 }}
+        </td>
+        <td>
+            {{ cells.52 }}
+        </td>
+        <td>
+            {{ cells.53 }}
+        </td>
+        <td>
+            {{ cells.54 }}
+        </td>
+        <td>
+            {{ cells.55 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>
+            {{ cells.56 }}
+        </td>
+        <td>
+            {{ cells.57 }}
+        </td>
+        <td>
+            {{ cells.58 }}
+        </td>
+        <td>
+            {{ cells.59 }}
+        </td>
+        <td>
+            {{ cells.60 }}
+        </td>
+        <td>
+            {{ cells.61 }}
+        </td>
+        <td>
+            {{ cells.62 }}
+        </td>
+        <td>
+            {{ cells.63 }}
+        </td>
+        <td>
+            {{ cells.64 }}
+        </td>
+        <td>
+            {{ cells.65 }}
+        </td>
+        <td>
+            {{ cells.66 }}
+        </td>
+        <td>
+            {{ cells.67 }}
+        </td>
+        <td>
+            {{ cells.68 }}
+        </td>
+        <td>
+            {{ cells.69 }}
+        </td>
+        <td>
+            {{ cells.70 }}
+        </td>
+        <td>
+            {{ cells.71 }}
+        </td>
+        <td>
+            {{ cells.72 }}
+        </td>
+        <td>
+            {{ cells.73 }}
+        </td>
+        <td>
+            {{ cells.74 }}
+        </td>
+        <td>
+            {{ cells.75 }}
+        </td>
+        <td>
+            {{ cells.76 }}
+        </td>
+        <td>
+            {{ cells.77 }}
+        </td>
+        <td>
+            {{ cells.78 }}
+        </td>
+        <td>
+            {{ cells.79 }}
+        </td>
+        <td>
+            {{ cells.80 }}
+        </td>
+        <td>
+            {{ cells.81 }}
+        </td>
+        <td>
+            {{ cells.82 }}
+        </td>
+        <td>
+            {{ cells.83 }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="28"><div class="spacer"></div></td>
+    </tr>
+
+    <tr class="top">
+        <td></td>
+        <td colspan="8">
+            
+            <table>
+                <tr class="border green center bold">
+                    <td colspan="2">Total Uzario nebe kontinua</td>
+                </tr>
+                <tr class="border">
+                    <td>POPs:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>COPc:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Injectavel:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Implant:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>IUDs:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Kondoms:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Vasectomi:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Tobectomi:</td>
+                    <td>………………………………</td>
+                </tr>
+            </table>
+            
+        </td>
+        <td></td>
+        <td colspan="8">
+            <table>
+                <tr class="border green center bold">
+                    <td colspan="2">Total Uzario nebe kontinua</td>
+                </tr>
+                <tr class="border">
+                    <td>POPs:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>COPc:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Injectavel:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Implant:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>IUDs:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Kondoms:</td>
+                    <td>………………………………</td>
+                </tr>
+            </table>
+        </td>
+        <td></td>
+        <td colspan="8">
+            <table>
+                <tr class="border green center bold">
+                    <td colspan="2">Total Uzario nebe kontinua</td>
+                </tr>
+                <tr class="border">
+                    <td>POPs:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>COPc:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Injectavel:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Implant:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>IUDs:</td>
+                    <td>………………………………</td>
+                </tr>
+                <tr class="border">
+                    <td>Kondoms:</td>
+                    <td>………………………………</td>
+                </tr>
+            </table>
+        </td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td colspan="28"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td>Nota :</td>
+        <td>PF</td>
+        <td></td>
+        <td colspan="4">Planeamento Familiar</td>
+        <td colspan="3"></td>
+        <td colspan="4">Ante Natal Care</td>
+        <td colspan="4"></td>
+        <td colspan="2">POP</td>
+        <td colspan="5">Progesteron Only Pil</td>
+        <td colspan="3"></td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td>STI</td>
+        <td></td>
+        <td colspan="5">Sexual Transmitted Infection</td>
+        <td colspan="2"></td>
+        <td colspan="4">Post Natal Care</td>
+        <td colspan="4"></td>
+        <td colspan="2">COP</td>
+        <td colspan="5">Combined Oral Pil</td>
+        <td colspan="3"></td>
+    </tr>
+
+    <tr>
+        <td colspan="18"></td>
+        <td colspan="2">IUD</td>
+        <td colspan="5">Intra Uterine Device</td>
+        <td colspan="3"></td>
+    </tr>
+
+</table>
+
+{% endblock %}

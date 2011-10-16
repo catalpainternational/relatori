@@ -1,0 +1,1804 @@
+{% extends "relatori/edit.html" %}
+{% block edit_template %}
+
+
+<table class="form">
+    
+    <tr>
+        <td class="logo"><img src="/static/images/MoH.jpg" class="logo" /></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="7" class="border2"><h1>REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE<br />MINISTÉRIO DA SAÚDE</h1></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="4" class="border2"><h1>FORMULARIO 14</h1><br />
+            Fulan:
+            <input type="text" name="fulan" size="2" value="{{ fulan }}" class="{{ fulan_style }} ">
+            Tinan:
+            <input type="text" name="tinan" size="4" value="{{ tinan }}" class="{{ tinan_style }}">
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+    
+<table class="form border2">
+    
+    <tr class="border">
+        <td><b>Distritu:</b> {{ distritu }}
+            <input type='hidden' name='district' value='{{ distritu }}'>
+        </td>
+        <td><b>Subdistritu:</b> {{ subdistritu }}
+            <input type='hidden' name='subdistrict' value='{{ subdistritu }}'>
+        </td>
+        <td><b>Fatin:</b> {{ fatin }} 
+            <input type='hidden' name='village' value='{{ fatin }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="3"><b>Fasilidade:</b> {{ facility }} 
+            <input type='hidden' name='name' value='{{ facility.id }}'> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Code:</b> {{ code }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+
+    <tr>
+        <td colspan="17"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="17"><h2>RELATORIO MENSAL SAUDE ORAL</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="17"><div class="spacer"></div></td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td rowspan="2">Moras</td>
+        <td colspan="2">6-11 meses</td>
+        <td colspan="2">12-14 anos</td>
+        <td colspan="2">15-34 anos</td>
+        <td colspan="2">35-54 anos</td>
+        <td colspan="2">55-64 anos</td>
+        <td colspan="2">&gt;65 anos</td>
+        <td colspan="2">Total</td>
+        <td colspan="2">% (Pres.)</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+        <td>M</td>
+        <td>F</td>
+    </tr>
+
+    <tr>
+        <td colspan="17" class="border yellow bold">TOOTH WEAR</td>
+    </tr>
+
+    <tr class="border">
+        <td>Abrasion</td>
+        <td>
+            <input type='text' name='cell.0' size=2 value='{{ cells.0 }}' class='{{ cell_styles.0 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.1' size=2 value='{{ cells.1 }}' class='{{ cell_styles.1 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.2' size=2 value='{{ cells.2 }}' class='{{ cell_styles.2 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.3' size=2 value='{{ cells.3 }}' class='{{ cell_styles.3 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.4' size=2 value='{{ cells.4 }}' class='{{ cell_styles.4 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.5' size=2 value='{{ cells.5 }}' class='{{ cell_styles.5 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.6' size=2 value='{{ cells.6 }}' class='{{ cell_styles.6 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.7' size=2 value='{{ cells.7 }}' class='{{ cell_styles.7 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.8' size=2 value='{{ cells.8 }}' class='{{ cell_styles.8 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.9' size=2 value='{{ cells.9 }}' class='{{ cell_styles.9 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.10' size=2 value='{{ cells.10 }}' class='{{ cell_styles.10 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.11' size=2 value='{{ cells.11 }}' class='{{ cell_styles.11 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.12' size=2 value='{{ cells.12 }}' class='{{ cell_styles.12 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.13' size=2 value='{{ cells.13 }}' class='{{ cell_styles.13 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.14' size=2 value='{{ cells.14 }}' class='{{ cell_styles.14 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.15' size=2 value='{{ cells.15 }}' class='{{ cell_styles.15 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Atrition</td>
+        <td>
+            <input type='text' name='cell.16' size=2 value='{{ cells.16 }}' class='{{ cell_styles.16 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.17' size=2 value='{{ cells.17 }}' class='{{ cell_styles.17 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.18' size=2 value='{{ cells.18 }}' class='{{ cell_styles.18 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.19' size=2 value='{{ cells.19 }}' class='{{ cell_styles.19 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.20' size=2 value='{{ cells.20 }}' class='{{ cell_styles.20 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.21' size=2 value='{{ cells.21 }}' class='{{ cell_styles.21 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.22' size=2 value='{{ cells.22 }}' class='{{ cell_styles.22 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.23' size=2 value='{{ cells.23 }}' class='{{ cell_styles.23 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.24' size=2 value='{{ cells.24 }}' class='{{ cell_styles.24 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.25' size=2 value='{{ cells.25 }}' class='{{ cell_styles.25 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.26' size=2 value='{{ cells.26 }}' class='{{ cell_styles.26 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.27' size=2 value='{{ cells.27 }}' class='{{ cell_styles.27 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.28' size=2 value='{{ cells.28 }}' class='{{ cell_styles.28 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.29' size=2 value='{{ cells.29 }}' class='{{ cell_styles.29 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.30' size=2 value='{{ cells.30 }}' class='{{ cell_styles.30 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.31' size=2 value='{{ cells.31 }}' class='{{ cell_styles.31 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Erosion</td>
+        <td>
+            <input type='text' name='cell.32' size=2 value='{{ cells.32 }}' class='{{ cell_styles.32 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.33' size=2 value='{{ cells.33 }}' class='{{ cell_styles.33 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.34' size=2 value='{{ cells.34 }}' class='{{ cell_styles.34 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.35' size=2 value='{{ cells.35 }}' class='{{ cell_styles.35 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.36' size=2 value='{{ cells.36 }}' class='{{ cell_styles.36 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.37' size=2 value='{{ cells.37 }}' class='{{ cell_styles.37 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.38' size=2 value='{{ cells.38 }}' class='{{ cell_styles.38 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.39' size=2 value='{{ cells.39 }}' class='{{ cell_styles.39 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.40' size=2 value='{{ cells.40 }}' class='{{ cell_styles.40 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.41' size=2 value='{{ cells.41 }}' class='{{ cell_styles.41 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.42' size=2 value='{{ cells.42 }}' class='{{ cell_styles.42 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.43' size=2 value='{{ cells.43 }}' class='{{ cell_styles.43 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.44' size=2 value='{{ cells.44 }}' class='{{ cell_styles.44 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.45' size=2 value='{{ cells.45 }}' class='{{ cell_styles.45 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.46' size=2 value='{{ cells.46 }}' class='{{ cell_styles.46 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.47' size=2 value='{{ cells.47 }}' class='{{ cell_styles.47 }}'>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="17" class="border yellow bold">CARIES</td>
+    </tr>
+
+    <tr class="border">
+        <td>Enamel</td>
+        <td>
+            <input type='text' name='cell.48' size=2 value='{{ cells.48 }}' class='{{ cell_styles.48 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.49' size=2 value='{{ cells.49 }}' class='{{ cell_styles.49 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.50' size=2 value='{{ cells.50 }}' class='{{ cell_styles.50 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.51' size=2 value='{{ cells.51 }}' class='{{ cell_styles.51 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.52' size=2 value='{{ cells.52 }}' class='{{ cell_styles.52 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.53' size=2 value='{{ cells.53 }}' class='{{ cell_styles.53 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.54' size=2 value='{{ cells.54 }}' class='{{ cell_styles.54 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.55' size=2 value='{{ cells.55 }}' class='{{ cell_styles.55 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.56' size=2 value='{{ cells.56 }}' class='{{ cell_styles.56 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.57' size=2 value='{{ cells.57 }}' class='{{ cell_styles.57 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.58' size=2 value='{{ cells.58 }}' class='{{ cell_styles.58 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.59' size=2 value='{{ cells.59 }}' class='{{ cell_styles.59 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.60' size=2 value='{{ cells.60 }}' class='{{ cell_styles.60 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.61' size=2 value='{{ cells.61 }}' class='{{ cell_styles.61 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.62' size=2 value='{{ cells.62 }}' class='{{ cell_styles.62 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.63' size=2 value='{{ cells.63 }}' class='{{ cell_styles.63 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Dentin</td>
+        <td>
+            <input type='text' name='cell.64' size=2 value='{{ cells.64 }}' class='{{ cell_styles.64 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.65' size=2 value='{{ cells.65 }}' class='{{ cell_styles.65 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.66' size=2 value='{{ cells.66 }}' class='{{ cell_styles.66 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.67' size=2 value='{{ cells.67 }}' class='{{ cell_styles.67 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.68' size=2 value='{{ cells.68 }}' class='{{ cell_styles.68 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.69' size=2 value='{{ cells.69 }}' class='{{ cell_styles.69 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.70' size=2 value='{{ cells.70 }}' class='{{ cell_styles.70 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.71' size=2 value='{{ cells.71 }}' class='{{ cell_styles.71 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.72' size=2 value='{{ cells.72 }}' class='{{ cell_styles.72 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.73' size=2 value='{{ cells.73 }}' class='{{ cell_styles.73 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.74' size=2 value='{{ cells.74 }}' class='{{ cell_styles.74 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.75' size=2 value='{{ cells.75 }}' class='{{ cell_styles.75 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.76' size=2 value='{{ cells.76 }}' class='{{ cell_styles.76 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.77' size=2 value='{{ cells.77 }}' class='{{ cell_styles.77 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.78' size=2 value='{{ cells.78 }}' class='{{ cell_styles.78 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.79' size=2 value='{{ cells.79 }}' class='{{ cell_styles.79 }}'>
+        </td>
+    </tr>
+
+    <tr class="border yellow bold">
+        <td colspan="17">PULP DISEASE</td>
+    </tr>
+
+    <tr class="border">
+        <td>Reversible Pulpitis</td>
+        <td>
+            <input type='text' name='cell.80' size=2 value='{{ cells.80 }}' class='{{ cell_styles.80 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.81' size=2 value='{{ cells.81 }}' class='{{ cell_styles.81 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.82' size=2 value='{{ cells.82 }}' class='{{ cell_styles.82 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.83' size=2 value='{{ cells.83 }}' class='{{ cell_styles.83 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.84' size=2 value='{{ cells.84 }}' class='{{ cell_styles.84 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.85' size=2 value='{{ cells.85 }}' class='{{ cell_styles.85 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.86' size=2 value='{{ cells.86 }}' class='{{ cell_styles.86 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.87' size=2 value='{{ cells.87 }}' class='{{ cell_styles.87 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.88' size=2 value='{{ cells.88 }}' class='{{ cell_styles.88 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.89' size=2 value='{{ cells.89 }}' class='{{ cell_styles.89 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.90' size=2 value='{{ cells.90 }}' class='{{ cell_styles.90 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.91' size=2 value='{{ cells.91 }}' class='{{ cell_styles.91 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.92' size=2 value='{{ cells.92 }}' class='{{ cell_styles.92 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.93' size=2 value='{{ cells.93 }}' class='{{ cell_styles.93 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.94' size=2 value='{{ cells.94 }}' class='{{ cell_styles.94 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.95' size=2 value='{{ cells.95 }}' class='{{ cell_styles.95 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Irreversible Pulpitis</td>
+        <td>
+            <input type='text' name='cell.96' size=2 value='{{ cells.96 }}' class='{{ cell_styles.96 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.97' size=2 value='{{ cells.97 }}' class='{{ cell_styles.97 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.98' size=2 value='{{ cells.98 }}' class='{{ cell_styles.98 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.99' size=2 value='{{ cells.99 }}' class='{{ cell_styles.99 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.100' size=2 value='{{ cells.100 }}' class='{{ cell_styles.100 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.101' size=2 value='{{ cells.101 }}' class='{{ cell_styles.101 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.102' size=2 value='{{ cells.102 }}' class='{{ cell_styles.102 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.103' size=2 value='{{ cells.103 }}' class='{{ cell_styles.103 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.104' size=2 value='{{ cells.104 }}' class='{{ cell_styles.104 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.105' size=2 value='{{ cells.105 }}' class='{{ cell_styles.105 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.106' size=2 value='{{ cells.106 }}' class='{{ cell_styles.106 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.107' size=2 value='{{ cells.107 }}' class='{{ cell_styles.107 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.108' size=2 value='{{ cells.108 }}' class='{{ cell_styles.108 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.109' size=2 value='{{ cells.109 }}' class='{{ cell_styles.109 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.110' size=2 value='{{ cells.110 }}' class='{{ cell_styles.110 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.111' size=2 value='{{ cells.111 }}' class='{{ cell_styles.111 }}'>
+        </td>
+    </tr>
+
+    <tr class="border yellow bold">
+        <td colspan="17">GUM DISEASE</td>
+    </tr>
+
+    <tr class="border">
+        <td>Gingivitis</td>
+        <td>
+            <input type='text' name='cell.112' size=2 value='{{ cells.112 }}' class='{{ cell_styles.112 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.113' size=2 value='{{ cells.113 }}' class='{{ cell_styles.113 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.114' size=2 value='{{ cells.114 }}' class='{{ cell_styles.114 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.115' size=2 value='{{ cells.115 }}' class='{{ cell_styles.115 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.116' size=2 value='{{ cells.116 }}' class='{{ cell_styles.116 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.117' size=2 value='{{ cells.117 }}' class='{{ cell_styles.117 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.118' size=2 value='{{ cells.118 }}' class='{{ cell_styles.118 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.119' size=2 value='{{ cells.119 }}' class='{{ cell_styles.119 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.120' size=2 value='{{ cells.120 }}' class='{{ cell_styles.120 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.121' size=2 value='{{ cells.121 }}' class='{{ cell_styles.121 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.122' size=2 value='{{ cells.122 }}' class='{{ cell_styles.122 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.123' size=2 value='{{ cells.123 }}' class='{{ cell_styles.123 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.124' size=2 value='{{ cells.124 }}' class='{{ cell_styles.124 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.125' size=2 value='{{ cells.125 }}' class='{{ cell_styles.125 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.126' size=2 value='{{ cells.126 }}' class='{{ cell_styles.126 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.127' size=2 value='{{ cells.127 }}' class='{{ cell_styles.127 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Periodontitis</td>
+        <td>
+            <input type='text' name='cell.128' size=2 value='{{ cells.128 }}' class='{{ cell_styles.128 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.129' size=2 value='{{ cells.129 }}' class='{{ cell_styles.129 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.130' size=2 value='{{ cells.130 }}' class='{{ cell_styles.130 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.131' size=2 value='{{ cells.131 }}' class='{{ cell_styles.131 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.132' size=2 value='{{ cells.132 }}' class='{{ cell_styles.132 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.133' size=2 value='{{ cells.133 }}' class='{{ cell_styles.133 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.134' size=2 value='{{ cells.134 }}' class='{{ cell_styles.134 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.135' size=2 value='{{ cells.135 }}' class='{{ cell_styles.135 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.136' size=2 value='{{ cells.136 }}' class='{{ cell_styles.136 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.137' size=2 value='{{ cells.137 }}' class='{{ cell_styles.137 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.138' size=2 value='{{ cells.138 }}' class='{{ cell_styles.138 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.139' size=2 value='{{ cells.139 }}' class='{{ cell_styles.139 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.140' size=2 value='{{ cells.140 }}' class='{{ cell_styles.140 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.141' size=2 value='{{ cells.141 }}' class='{{ cell_styles.141 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.142' size=2 value='{{ cells.142 }}' class='{{ cell_styles.142 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.143' size=2 value='{{ cells.143 }}' class='{{ cell_styles.143 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Pericoronitis</td>
+        <td>
+            <input type='text' name='cell.144' size=2 value='{{ cells.144 }}' class='{{ cell_styles.144 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.145' size=2 value='{{ cells.145 }}' class='{{ cell_styles.145 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.146' size=2 value='{{ cells.146 }}' class='{{ cell_styles.146 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.147' size=2 value='{{ cells.147 }}' class='{{ cell_styles.147 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.148' size=2 value='{{ cells.148 }}' class='{{ cell_styles.148 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.149' size=2 value='{{ cells.149 }}' class='{{ cell_styles.149 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.150' size=2 value='{{ cells.150 }}' class='{{ cell_styles.150 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.151' size=2 value='{{ cells.151 }}' class='{{ cell_styles.151 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.152' size=2 value='{{ cells.152 }}' class='{{ cell_styles.152 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.153' size=2 value='{{ cells.153 }}' class='{{ cell_styles.153 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.154' size=2 value='{{ cells.154 }}' class='{{ cell_styles.154 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.155' size=2 value='{{ cells.155 }}' class='{{ cell_styles.155 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.156' size=2 value='{{ cells.156 }}' class='{{ cell_styles.156 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.157' size=2 value='{{ cells.157 }}' class='{{ cell_styles.157 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.158' size=2 value='{{ cells.158 }}' class='{{ cell_styles.158 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.159' size=2 value='{{ cells.159 }}' class='{{ cell_styles.159 }}'>
+        </td>
+    </tr>
+
+    <tr class="border yellow bold">
+        <td colspan="17">PERIAPICAL DISEASE</td>
+    </tr>
+
+    <tr class="border">
+        <td>Periapical perio acuta</td>
+        <td>
+            <input type='text' name='cell.160' size=2 value='{{ cells.160 }}' class='{{ cell_styles.160 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.161' size=2 value='{{ cells.161 }}' class='{{ cell_styles.161 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.162' size=2 value='{{ cells.162 }}' class='{{ cell_styles.162 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.163' size=2 value='{{ cells.163 }}' class='{{ cell_styles.163 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.164' size=2 value='{{ cells.164 }}' class='{{ cell_styles.164 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.165' size=2 value='{{ cells.165 }}' class='{{ cell_styles.165 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.166' size=2 value='{{ cells.166 }}' class='{{ cell_styles.166 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.167' size=2 value='{{ cells.167 }}' class='{{ cell_styles.167 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.168' size=2 value='{{ cells.168 }}' class='{{ cell_styles.168 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.169' size=2 value='{{ cells.169 }}' class='{{ cell_styles.169 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.170' size=2 value='{{ cells.170 }}' class='{{ cell_styles.170 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.171' size=2 value='{{ cells.171 }}' class='{{ cell_styles.171 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.172' size=2 value='{{ cells.172 }}' class='{{ cell_styles.172 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.173' size=2 value='{{ cells.173 }}' class='{{ cell_styles.173 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.174' size=2 value='{{ cells.174 }}' class='{{ cell_styles.174 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.175' size=2 value='{{ cells.175 }}' class='{{ cell_styles.175 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Periapical perio cronic</td>
+        <td>
+            <input type='text' name='cell.176' size=2 value='{{ cells.176 }}' class='{{ cell_styles.176 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.177' size=2 value='{{ cells.177 }}' class='{{ cell_styles.177 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.178' size=2 value='{{ cells.178 }}' class='{{ cell_styles.178 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.179' size=2 value='{{ cells.179 }}' class='{{ cell_styles.179 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.180' size=2 value='{{ cells.180 }}' class='{{ cell_styles.180 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.181' size=2 value='{{ cells.181 }}' class='{{ cell_styles.181 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.182' size=2 value='{{ cells.182 }}' class='{{ cell_styles.182 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.183' size=2 value='{{ cells.183 }}' class='{{ cell_styles.183 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.184' size=2 value='{{ cells.184 }}' class='{{ cell_styles.184 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.185' size=2 value='{{ cells.185 }}' class='{{ cell_styles.185 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.186' size=2 value='{{ cells.186 }}' class='{{ cell_styles.186 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.187' size=2 value='{{ cells.187 }}' class='{{ cell_styles.187 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.188' size=2 value='{{ cells.188 }}' class='{{ cell_styles.188 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.189' size=2 value='{{ cells.189 }}' class='{{ cell_styles.189 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.190' size=2 value='{{ cells.190 }}' class='{{ cell_styles.190 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.191' size=2 value='{{ cells.191 }}' class='{{ cell_styles.191 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Apical abcess acute</td>
+        <td>
+            <input type='text' name='cell.192' size=2 value='{{ cells.192 }}' class='{{ cell_styles.192 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.193' size=2 value='{{ cells.193 }}' class='{{ cell_styles.193 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.194' size=2 value='{{ cells.194 }}' class='{{ cell_styles.194 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.195' size=2 value='{{ cells.195 }}' class='{{ cell_styles.195 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.196' size=2 value='{{ cells.196 }}' class='{{ cell_styles.196 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.197' size=2 value='{{ cells.197 }}' class='{{ cell_styles.197 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.198' size=2 value='{{ cells.198 }}' class='{{ cell_styles.198 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.199' size=2 value='{{ cells.199 }}' class='{{ cell_styles.199 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.200' size=2 value='{{ cells.200 }}' class='{{ cell_styles.200 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.201' size=2 value='{{ cells.201 }}' class='{{ cell_styles.201 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.202' size=2 value='{{ cells.202 }}' class='{{ cell_styles.202 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.203' size=2 value='{{ cells.203 }}' class='{{ cell_styles.203 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.204' size=2 value='{{ cells.204 }}' class='{{ cell_styles.204 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.205' size=2 value='{{ cells.205 }}' class='{{ cell_styles.205 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.206' size=2 value='{{ cells.206 }}' class='{{ cell_styles.206 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.207' size=2 value='{{ cells.207 }}' class='{{ cell_styles.207 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Apical abcess cronic</td>
+        <td>
+            <input type='text' name='cell.208' size=2 value='{{ cells.208 }}' class='{{ cell_styles.208 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.209' size=2 value='{{ cells.209 }}' class='{{ cell_styles.209 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.210' size=2 value='{{ cells.210 }}' class='{{ cell_styles.210 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.211' size=2 value='{{ cells.211 }}' class='{{ cell_styles.211 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.212' size=2 value='{{ cells.212 }}' class='{{ cell_styles.212 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.213' size=2 value='{{ cells.213 }}' class='{{ cell_styles.213 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.214' size=2 value='{{ cells.214 }}' class='{{ cell_styles.214 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.215' size=2 value='{{ cells.215 }}' class='{{ cell_styles.215 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.216' size=2 value='{{ cells.216 }}' class='{{ cell_styles.216 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.217' size=2 value='{{ cells.217 }}' class='{{ cell_styles.217 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.218' size=2 value='{{ cells.218 }}' class='{{ cell_styles.218 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.219' size=2 value='{{ cells.219 }}' class='{{ cell_styles.219 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.220' size=2 value='{{ cells.220 }}' class='{{ cell_styles.220 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.221' size=2 value='{{ cells.221 }}' class='{{ cell_styles.221 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.222' size=2 value='{{ cells.222 }}' class='{{ cell_styles.222 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.223' size=2 value='{{ cells.223 }}' class='{{ cell_styles.223 }}'>
+        </td>
+    </tr>
+
+    <tr class="border yellow bold">
+        <td colspan="17">FACIAL INFEC</td>
+    </tr>
+
+    <tr class="border">
+        <td>Maxilary</td>
+        <td>
+            <input type='text' name='cell.224' size=2 value='{{ cells.224 }}' class='{{ cell_styles.224 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.225' size=2 value='{{ cells.225 }}' class='{{ cell_styles.225 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.226' size=2 value='{{ cells.226 }}' class='{{ cell_styles.226 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.227' size=2 value='{{ cells.227 }}' class='{{ cell_styles.227 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.228' size=2 value='{{ cells.228 }}' class='{{ cell_styles.228 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.229' size=2 value='{{ cells.229 }}' class='{{ cell_styles.229 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.230' size=2 value='{{ cells.230 }}' class='{{ cell_styles.230 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.231' size=2 value='{{ cells.231 }}' class='{{ cell_styles.231 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.232' size=2 value='{{ cells.232 }}' class='{{ cell_styles.232 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.233' size=2 value='{{ cells.233 }}' class='{{ cell_styles.233 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.234' size=2 value='{{ cells.234 }}' class='{{ cell_styles.234 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.235' size=2 value='{{ cells.235 }}' class='{{ cell_styles.235 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.236' size=2 value='{{ cells.236 }}' class='{{ cell_styles.236 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.237' size=2 value='{{ cells.237 }}' class='{{ cell_styles.237 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.238' size=2 value='{{ cells.238 }}' class='{{ cell_styles.238 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.239' size=2 value='{{ cells.239 }}' class='{{ cell_styles.239 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Mandibular</td>
+        <td>
+            <input type='text' name='cell.240' size=2 value='{{ cells.240 }}' class='{{ cell_styles.240 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.241' size=2 value='{{ cells.241 }}' class='{{ cell_styles.241 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.242' size=2 value='{{ cells.242 }}' class='{{ cell_styles.242 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.243' size=2 value='{{ cells.243 }}' class='{{ cell_styles.243 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.244' size=2 value='{{ cells.244 }}' class='{{ cell_styles.244 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.245' size=2 value='{{ cells.245 }}' class='{{ cell_styles.245 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.246' size=2 value='{{ cells.246 }}' class='{{ cell_styles.246 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.247' size=2 value='{{ cells.247 }}' class='{{ cell_styles.247 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.248' size=2 value='{{ cells.248 }}' class='{{ cell_styles.248 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.249' size=2 value='{{ cells.249 }}' class='{{ cell_styles.249 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.250' size=2 value='{{ cells.250 }}' class='{{ cell_styles.250 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.251' size=2 value='{{ cells.251 }}' class='{{ cell_styles.251 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.252' size=2 value='{{ cells.252 }}' class='{{ cell_styles.252 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.253' size=2 value='{{ cells.253 }}' class='{{ cell_styles.253 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.254' size=2 value='{{ cells.254 }}' class='{{ cell_styles.254 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.255' size=2 value='{{ cells.255 }}' class='{{ cell_styles.255 }}'>
+        </td>
+    </tr>
+
+    <tr class="border yellow bold">
+        <td colspan="17">POST-OP COMPLICATION</td>
+    </tr>
+
+    <tr class="border">
+        <td>Dry Socket</td>
+        <td>
+            <input type='text' name='cell.256' size=2 value='{{ cells.256 }}' class='{{ cell_styles.256 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.257' size=2 value='{{ cells.257 }}' class='{{ cell_styles.257 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.258' size=2 value='{{ cells.258 }}' class='{{ cell_styles.258 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.259' size=2 value='{{ cells.259 }}' class='{{ cell_styles.259 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.260' size=2 value='{{ cells.260 }}' class='{{ cell_styles.260 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.261' size=2 value='{{ cells.261 }}' class='{{ cell_styles.261 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.262' size=2 value='{{ cells.262 }}' class='{{ cell_styles.262 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.263' size=2 value='{{ cells.263 }}' class='{{ cell_styles.263 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.264' size=2 value='{{ cells.264 }}' class='{{ cell_styles.264 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.265' size=2 value='{{ cells.265 }}' class='{{ cell_styles.265 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.266' size=2 value='{{ cells.266 }}' class='{{ cell_styles.266 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.267' size=2 value='{{ cells.267 }}' class='{{ cell_styles.267 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.268' size=2 value='{{ cells.268 }}' class='{{ cell_styles.268 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.269' size=2 value='{{ cells.269 }}' class='{{ cell_styles.269 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.270' size=2 value='{{ cells.270 }}' class='{{ cell_styles.270 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.271' size=2 value='{{ cells.271 }}' class='{{ cell_styles.271 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Nerve Injury</td>
+        <td>
+            <input type='text' name='cell.272' size=2 value='{{ cells.272 }}' class='{{ cell_styles.272 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.273' size=2 value='{{ cells.273 }}' class='{{ cell_styles.273 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.274' size=2 value='{{ cells.274 }}' class='{{ cell_styles.274 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.275' size=2 value='{{ cells.275 }}' class='{{ cell_styles.275 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.276' size=2 value='{{ cells.276 }}' class='{{ cell_styles.276 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.277' size=2 value='{{ cells.277 }}' class='{{ cell_styles.277 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.278' size=2 value='{{ cells.278 }}' class='{{ cell_styles.278 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.279' size=2 value='{{ cells.279 }}' class='{{ cell_styles.279 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.280' size=2 value='{{ cells.280 }}' class='{{ cell_styles.280 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.281' size=2 value='{{ cells.281 }}' class='{{ cell_styles.281 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.282' size=2 value='{{ cells.282 }}' class='{{ cell_styles.282 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.283' size=2 value='{{ cells.283 }}' class='{{ cell_styles.283 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.284' size=2 value='{{ cells.284 }}' class='{{ cell_styles.284 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.285' size=2 value='{{ cells.285 }}' class='{{ cell_styles.285 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.286' size=2 value='{{ cells.286 }}' class='{{ cell_styles.286 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.287' size=2 value='{{ cells.287 }}' class='{{ cell_styles.287 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Bleeding</td>
+        <td>
+            <input type='text' name='cell.288' size=2 value='{{ cells.288 }}' class='{{ cell_styles.288 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.289' size=2 value='{{ cells.289 }}' class='{{ cell_styles.289 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.290' size=2 value='{{ cells.290 }}' class='{{ cell_styles.290 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.291' size=2 value='{{ cells.291 }}' class='{{ cell_styles.291 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.292' size=2 value='{{ cells.292 }}' class='{{ cell_styles.292 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.293' size=2 value='{{ cells.293 }}' class='{{ cell_styles.293 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.294' size=2 value='{{ cells.294 }}' class='{{ cell_styles.294 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.295' size=2 value='{{ cells.295 }}' class='{{ cell_styles.295 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.296' size=2 value='{{ cells.296 }}' class='{{ cell_styles.296 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.297' size=2 value='{{ cells.297 }}' class='{{ cell_styles.297 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.298' size=2 value='{{ cells.298 }}' class='{{ cell_styles.298 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.299' size=2 value='{{ cells.299 }}' class='{{ cell_styles.299 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.300' size=2 value='{{ cells.300 }}' class='{{ cell_styles.300 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.301' size=2 value='{{ cells.301 }}' class='{{ cell_styles.301 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.302' size=2 value='{{ cells.302 }}' class='{{ cell_styles.302 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.303' size=2 value='{{ cells.303 }}' class='{{ cell_styles.303 }}'>
+        </td>
+    </tr>
+
+    <tr class="border yellow bold">
+        <td colspan="17">MUCOSAL DISEASE</td>
+    </tr>
+
+    <tr class="border">
+        <td>Ulceration Traumatic</td>
+        <td>
+            <input type='text' name='cell.304' size=2 value='{{ cells.304 }}' class='{{ cell_styles.304 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.305' size=2 value='{{ cells.305 }}' class='{{ cell_styles.305 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.306' size=2 value='{{ cells.306 }}' class='{{ cell_styles.306 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.307' size=2 value='{{ cells.307 }}' class='{{ cell_styles.307 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.308' size=2 value='{{ cells.308 }}' class='{{ cell_styles.308 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.309' size=2 value='{{ cells.309 }}' class='{{ cell_styles.309 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.310' size=2 value='{{ cells.310 }}' class='{{ cell_styles.310 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.311' size=2 value='{{ cells.311 }}' class='{{ cell_styles.311 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.312' size=2 value='{{ cells.312 }}' class='{{ cell_styles.312 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.313' size=2 value='{{ cells.313 }}' class='{{ cell_styles.313 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.314' size=2 value='{{ cells.314 }}' class='{{ cell_styles.314 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.315' size=2 value='{{ cells.315 }}' class='{{ cell_styles.315 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.316' size=2 value='{{ cells.316 }}' class='{{ cell_styles.316 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.317' size=2 value='{{ cells.317 }}' class='{{ cell_styles.317 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.318' size=2 value='{{ cells.318 }}' class='{{ cell_styles.318 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.319' size=2 value='{{ cells.319 }}' class='{{ cell_styles.319 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Ulceration Drug Related</td>
+        <td>
+            <input type='text' name='cell.320' size=2 value='{{ cells.320 }}' class='{{ cell_styles.320 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.321' size=2 value='{{ cells.321 }}' class='{{ cell_styles.321 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.322' size=2 value='{{ cells.322 }}' class='{{ cell_styles.322 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.323' size=2 value='{{ cells.323 }}' class='{{ cell_styles.323 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.324' size=2 value='{{ cells.324 }}' class='{{ cell_styles.324 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.325' size=2 value='{{ cells.325 }}' class='{{ cell_styles.325 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.326' size=2 value='{{ cells.326 }}' class='{{ cell_styles.326 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.327' size=2 value='{{ cells.327 }}' class='{{ cell_styles.327 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.328' size=2 value='{{ cells.328 }}' class='{{ cell_styles.328 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.329' size=2 value='{{ cells.329 }}' class='{{ cell_styles.329 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.330' size=2 value='{{ cells.330 }}' class='{{ cell_styles.330 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.331' size=2 value='{{ cells.331 }}' class='{{ cell_styles.331 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.332' size=2 value='{{ cells.332 }}' class='{{ cell_styles.332 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.333' size=2 value='{{ cells.333 }}' class='{{ cell_styles.333 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.334' size=2 value='{{ cells.334 }}' class='{{ cell_styles.334 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.335' size=2 value='{{ cells.335 }}' class='{{ cell_styles.335 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Ulceration RAU</td>
+        <td>
+            <input type='text' name='cell.336' size=2 value='{{ cells.336 }}' class='{{ cell_styles.336 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.337' size=2 value='{{ cells.337 }}' class='{{ cell_styles.337 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.338' size=2 value='{{ cells.338 }}' class='{{ cell_styles.338 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.339' size=2 value='{{ cells.339 }}' class='{{ cell_styles.339 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.340' size=2 value='{{ cells.340 }}' class='{{ cell_styles.340 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.341' size=2 value='{{ cells.341 }}' class='{{ cell_styles.341 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.342' size=2 value='{{ cells.342 }}' class='{{ cell_styles.342 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.343' size=2 value='{{ cells.343 }}' class='{{ cell_styles.343 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.344' size=2 value='{{ cells.344 }}' class='{{ cell_styles.344 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.345' size=2 value='{{ cells.345 }}' class='{{ cell_styles.345 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.346' size=2 value='{{ cells.346 }}' class='{{ cell_styles.346 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.347' size=2 value='{{ cells.347 }}' class='{{ cell_styles.347 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.348' size=2 value='{{ cells.348 }}' class='{{ cell_styles.348 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.349' size=2 value='{{ cells.349 }}' class='{{ cell_styles.349 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.350' size=2 value='{{ cells.350 }}' class='{{ cell_styles.350 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.351' size=2 value='{{ cells.351 }}' class='{{ cell_styles.351 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Infection Bacterial</td>
+        <td>
+            <input type='text' name='cell.352' size=2 value='{{ cells.352 }}' class='{{ cell_styles.352 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.353' size=2 value='{{ cells.353 }}' class='{{ cell_styles.353 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.354' size=2 value='{{ cells.354 }}' class='{{ cell_styles.354 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.355' size=2 value='{{ cells.355 }}' class='{{ cell_styles.355 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.356' size=2 value='{{ cells.356 }}' class='{{ cell_styles.356 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.357' size=2 value='{{ cells.357 }}' class='{{ cell_styles.357 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.358' size=2 value='{{ cells.358 }}' class='{{ cell_styles.358 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.359' size=2 value='{{ cells.359 }}' class='{{ cell_styles.359 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.360' size=2 value='{{ cells.360 }}' class='{{ cell_styles.360 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.361' size=2 value='{{ cells.361 }}' class='{{ cell_styles.361 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.362' size=2 value='{{ cells.362 }}' class='{{ cell_styles.362 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.363' size=2 value='{{ cells.363 }}' class='{{ cell_styles.363 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.364' size=2 value='{{ cells.364 }}' class='{{ cell_styles.364 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.365' size=2 value='{{ cells.365 }}' class='{{ cell_styles.365 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.366' size=2 value='{{ cells.366 }}' class='{{ cell_styles.366 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.367' size=2 value='{{ cells.367 }}' class='{{ cell_styles.367 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Infection Viral</td>
+        <td>
+            <input type='text' name='cell.368' size=2 value='{{ cells.368 }}' class='{{ cell_styles.368 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.369' size=2 value='{{ cells.369 }}' class='{{ cell_styles.369 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.370' size=2 value='{{ cells.370 }}' class='{{ cell_styles.370 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.371' size=2 value='{{ cells.371 }}' class='{{ cell_styles.371 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.372' size=2 value='{{ cells.372 }}' class='{{ cell_styles.372 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.373' size=2 value='{{ cells.373 }}' class='{{ cell_styles.373 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.374' size=2 value='{{ cells.374 }}' class='{{ cell_styles.374 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.375' size=2 value='{{ cells.375 }}' class='{{ cell_styles.375 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.376' size=2 value='{{ cells.376 }}' class='{{ cell_styles.376 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.377' size=2 value='{{ cells.377 }}' class='{{ cell_styles.377 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.378' size=2 value='{{ cells.378 }}' class='{{ cell_styles.378 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.379' size=2 value='{{ cells.379 }}' class='{{ cell_styles.379 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.380' size=2 value='{{ cells.380 }}' class='{{ cell_styles.380 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.381' size=2 value='{{ cells.381 }}' class='{{ cell_styles.381 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.382' size=2 value='{{ cells.382 }}' class='{{ cell_styles.382 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.383' size=2 value='{{ cells.383 }}' class='{{ cell_styles.383 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Infection Fungal</td>
+        <td>
+            <input type='text' name='cell.384' size=2 value='{{ cells.384 }}' class='{{ cell_styles.384 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.385' size=2 value='{{ cells.385 }}' class='{{ cell_styles.385 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.386' size=2 value='{{ cells.386 }}' class='{{ cell_styles.386 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.387' size=2 value='{{ cells.387 }}' class='{{ cell_styles.387 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.388' size=2 value='{{ cells.388 }}' class='{{ cell_styles.388 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.389' size=2 value='{{ cells.389 }}' class='{{ cell_styles.389 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.390' size=2 value='{{ cells.390 }}' class='{{ cell_styles.390 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.391' size=2 value='{{ cells.391 }}' class='{{ cell_styles.391 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.392' size=2 value='{{ cells.392 }}' class='{{ cell_styles.392 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.393' size=2 value='{{ cells.393 }}' class='{{ cell_styles.393 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.394' size=2 value='{{ cells.394 }}' class='{{ cell_styles.394 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.395' size=2 value='{{ cells.395 }}' class='{{ cell_styles.395 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.396' size=2 value='{{ cells.396 }}' class='{{ cell_styles.396 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.397' size=2 value='{{ cells.397 }}' class='{{ cell_styles.397 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.398' size=2 value='{{ cells.398 }}' class='{{ cell_styles.398 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.399' size=2 value='{{ cells.399 }}' class='{{ cell_styles.399 }}'>
+        </td>
+    </tr>
+
+    <tr class="border yellow bold">
+        <td colspan="17">CYST</td>
+    </tr>
+
+    <tr class="border">
+        <td>Odontogenic Origin</td>
+        <td>
+            <input type='text' name='cell.400' size=2 value='{{ cells.400 }}' class='{{ cell_styles.400 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.401' size=2 value='{{ cells.401 }}' class='{{ cell_styles.401 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.402' size=2 value='{{ cells.402 }}' class='{{ cell_styles.402 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.403' size=2 value='{{ cells.403 }}' class='{{ cell_styles.403 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.404' size=2 value='{{ cells.404 }}' class='{{ cell_styles.404 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.405' size=2 value='{{ cells.405 }}' class='{{ cell_styles.405 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.406' size=2 value='{{ cells.406 }}' class='{{ cell_styles.406 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.407' size=2 value='{{ cells.407 }}' class='{{ cell_styles.407 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.408' size=2 value='{{ cells.408 }}' class='{{ cell_styles.408 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.409' size=2 value='{{ cells.409 }}' class='{{ cell_styles.409 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.410' size=2 value='{{ cells.410 }}' class='{{ cell_styles.410 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.411' size=2 value='{{ cells.411 }}' class='{{ cell_styles.411 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.412' size=2 value='{{ cells.412 }}' class='{{ cell_styles.412 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.413' size=2 value='{{ cells.413 }}' class='{{ cell_styles.413 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.414' size=2 value='{{ cells.414 }}' class='{{ cell_styles.414 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.415' size=2 value='{{ cells.415 }}' class='{{ cell_styles.415 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Non Odontogenic</td>
+        <td>
+            <input type='text' name='cell.416' size=2 value='{{ cells.416 }}' class='{{ cell_styles.416 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.417' size=2 value='{{ cells.417 }}' class='{{ cell_styles.417 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.418' size=2 value='{{ cells.418 }}' class='{{ cell_styles.418 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.419' size=2 value='{{ cells.419 }}' class='{{ cell_styles.419 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.420' size=2 value='{{ cells.420 }}' class='{{ cell_styles.420 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.421' size=2 value='{{ cells.421 }}' class='{{ cell_styles.421 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.422' size=2 value='{{ cells.422 }}' class='{{ cell_styles.422 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.423' size=2 value='{{ cells.423 }}' class='{{ cell_styles.423 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.424' size=2 value='{{ cells.424 }}' class='{{ cell_styles.424 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.425' size=2 value='{{ cells.425 }}' class='{{ cell_styles.425 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.426' size=2 value='{{ cells.426 }}' class='{{ cell_styles.426 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.427' size=2 value='{{ cells.427 }}' class='{{ cell_styles.427 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.428' size=2 value='{{ cells.428 }}' class='{{ cell_styles.428 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.429' size=2 value='{{ cells.429 }}' class='{{ cell_styles.429 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.430' size=2 value='{{ cells.430 }}' class='{{ cell_styles.430 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.431' size=2 value='{{ cells.431 }}' class='{{ cell_styles.431 }}'>
+        </td>
+    </tr>
+
+    <tr class="border yellow bold">
+        <td colspan="17">TUMOR</td>
+    </tr>
+
+    <tr class="border">
+        <td>Bening</td>
+        <td>
+            <input type='text' name='cell.432' size=2 value='{{ cells.432 }}' class='{{ cell_styles.432 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.433' size=2 value='{{ cells.433 }}' class='{{ cell_styles.433 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.434' size=2 value='{{ cells.434 }}' class='{{ cell_styles.434 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.435' size=2 value='{{ cells.435 }}' class='{{ cell_styles.435 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.436' size=2 value='{{ cells.436 }}' class='{{ cell_styles.436 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.437' size=2 value='{{ cells.437 }}' class='{{ cell_styles.437 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.438' size=2 value='{{ cells.438 }}' class='{{ cell_styles.438 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.439' size=2 value='{{ cells.439 }}' class='{{ cell_styles.439 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.440' size=2 value='{{ cells.440 }}' class='{{ cell_styles.440 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.441' size=2 value='{{ cells.441 }}' class='{{ cell_styles.441 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.442' size=2 value='{{ cells.442 }}' class='{{ cell_styles.442 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.443' size=2 value='{{ cells.443 }}' class='{{ cell_styles.443 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.444' size=2 value='{{ cells.444 }}' class='{{ cell_styles.444 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.445' size=2 value='{{ cells.445 }}' class='{{ cell_styles.445 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.446' size=2 value='{{ cells.446 }}' class='{{ cell_styles.446 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.447' size=2 value='{{ cells.447 }}' class='{{ cell_styles.447 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Malignant</td>
+        <td>
+            <input type='text' name='cell.448' size=2 value='{{ cells.448 }}' class='{{ cell_styles.448 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.449' size=2 value='{{ cells.449 }}' class='{{ cell_styles.449 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.450' size=2 value='{{ cells.450 }}' class='{{ cell_styles.450 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.451' size=2 value='{{ cells.451 }}' class='{{ cell_styles.451 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.452' size=2 value='{{ cells.452 }}' class='{{ cell_styles.452 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.453' size=2 value='{{ cells.453 }}' class='{{ cell_styles.453 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.454' size=2 value='{{ cells.454 }}' class='{{ cell_styles.454 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.455' size=2 value='{{ cells.455 }}' class='{{ cell_styles.455 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.456' size=2 value='{{ cells.456 }}' class='{{ cell_styles.456 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.457' size=2 value='{{ cells.457 }}' class='{{ cell_styles.457 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.458' size=2 value='{{ cells.458 }}' class='{{ cell_styles.458 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.459' size=2 value='{{ cells.459 }}' class='{{ cell_styles.459 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.460' size=2 value='{{ cells.460 }}' class='{{ cell_styles.460 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.461' size=2 value='{{ cells.461 }}' class='{{ cell_styles.461 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.462' size=2 value='{{ cells.462 }}' class='{{ cell_styles.462 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.463' size=2 value='{{ cells.463 }}' class='{{ cell_styles.463 }}'>
+        </td>
+    </tr>
+
+    <tr class="border yellow bold">
+        <td colspan="17">SALIVARY GLAND DISEASE</td>
+    </tr>
+
+    <tr class="border">
+        <td>Obstructive</td>
+        <td>
+            <input type='text' name='cell.464' size=2 value='{{ cells.464 }}' class='{{ cell_styles.464 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.465' size=2 value='{{ cells.465 }}' class='{{ cell_styles.465 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.466' size=2 value='{{ cells.466 }}' class='{{ cell_styles.466 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.467' size=2 value='{{ cells.467 }}' class='{{ cell_styles.467 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.468' size=2 value='{{ cells.468 }}' class='{{ cell_styles.468 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.469' size=2 value='{{ cells.469 }}' class='{{ cell_styles.469 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.470' size=2 value='{{ cells.470 }}' class='{{ cell_styles.470 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.471' size=2 value='{{ cells.471 }}' class='{{ cell_styles.471 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.472' size=2 value='{{ cells.472 }}' class='{{ cell_styles.472 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.473' size=2 value='{{ cells.473 }}' class='{{ cell_styles.473 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.474' size=2 value='{{ cells.474 }}' class='{{ cell_styles.474 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.475' size=2 value='{{ cells.475 }}' class='{{ cell_styles.475 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.476' size=2 value='{{ cells.476 }}' class='{{ cell_styles.476 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.477' size=2 value='{{ cells.477 }}' class='{{ cell_styles.477 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.478' size=2 value='{{ cells.478 }}' class='{{ cell_styles.478 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.479' size=2 value='{{ cells.479 }}' class='{{ cell_styles.479 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Sialadenitys</td>
+        <td>
+            <input type='text' name='cell.480' size=2 value='{{ cells.480 }}' class='{{ cell_styles.480 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.481' size=2 value='{{ cells.481 }}' class='{{ cell_styles.481 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.482' size=2 value='{{ cells.482 }}' class='{{ cell_styles.482 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.483' size=2 value='{{ cells.483 }}' class='{{ cell_styles.483 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.484' size=2 value='{{ cells.484 }}' class='{{ cell_styles.484 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.485' size=2 value='{{ cells.485 }}' class='{{ cell_styles.485 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.486' size=2 value='{{ cells.486 }}' class='{{ cell_styles.486 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.487' size=2 value='{{ cells.487 }}' class='{{ cell_styles.487 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.488' size=2 value='{{ cells.488 }}' class='{{ cell_styles.488 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.489' size=2 value='{{ cells.489 }}' class='{{ cell_styles.489 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.490' size=2 value='{{ cells.490 }}' class='{{ cell_styles.490 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.491' size=2 value='{{ cells.491 }}' class='{{ cell_styles.491 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.492' size=2 value='{{ cells.492 }}' class='{{ cell_styles.492 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.493' size=2 value='{{ cells.493 }}' class='{{ cell_styles.493 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.494' size=2 value='{{ cells.494 }}' class='{{ cell_styles.494 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.495' size=2 value='{{ cells.495 }}' class='{{ cell_styles.495 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>Sjogrens Syndrome</td>
+        <td>
+            <input type='text' name='cell.496' size=2 value='{{ cells.496 }}' class='{{ cell_styles.496 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.497' size=2 value='{{ cells.497 }}' class='{{ cell_styles.497 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.498' size=2 value='{{ cells.498 }}' class='{{ cell_styles.498 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.499' size=2 value='{{ cells.499 }}' class='{{ cell_styles.499 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.500' size=2 value='{{ cells.500 }}' class='{{ cell_styles.500 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.501' size=2 value='{{ cells.501 }}' class='{{ cell_styles.501 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.502' size=2 value='{{ cells.502 }}' class='{{ cell_styles.502 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.503' size=2 value='{{ cells.503 }}' class='{{ cell_styles.503 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.504' size=2 value='{{ cells.504 }}' class='{{ cell_styles.504 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.505' size=2 value='{{ cells.505 }}' class='{{ cell_styles.505 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.506' size=2 value='{{ cells.506 }}' class='{{ cell_styles.506 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.507' size=2 value='{{ cells.507 }}' class='{{ cell_styles.507 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.508' size=2 value='{{ cells.508 }}' class='{{ cell_styles.508 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.509' size=2 value='{{ cells.509 }}' class='{{ cell_styles.509 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.510' size=2 value='{{ cells.510 }}' class='{{ cell_styles.510 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.511' size=2 value='{{ cells.511 }}' class='{{ cell_styles.511 }}'>
+        </td>
+    </tr>
+
+</table>
+{% endblock %}

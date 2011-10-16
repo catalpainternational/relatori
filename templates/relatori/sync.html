@@ -1,0 +1,82 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block extrastyle %}
+<style>
+    #display-block {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+    #content-main { 
+        border: thin solid #CCCCCC;
+        background-color: #F5F5F5;
+    	background-image: -moz-linear-gradient(#F9F9F9, #F5F5F5);
+    	background-repeat: repeat-x;
+        margin-top: 40px;
+        margin-bottom: 100px;
+        padding: 60px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        width: 260px;
+        height: 230px;
+        box-shadow: 0 4px 5px #808080;   
+        float: left;
+        }
+    div.padding-left {
+        margin-left:20px;
+    }
+    #spinner {
+        height: 400px;
+        margin: auto;
+        margin-top: 100px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+            
+  img.icon { 
+			padding-bottom: 10px;
+			padding-top: 10px;
+			padding-right: 15px;
+			height: 60px;
+			float: left;
+	
+}
+    </style>
+{% endblock %}
+
+{% block breadcrumbs %}<div class="breadcrumbs"><a href="/relatori/"><img src="/static/images/home.svg" class="bread">{% trans 'Home' %}</a> &rsaquo; {% trans 'Sync' %}</div>{% endblock %}
+
+{% block content %}
+
+<div id="display-block">
+<div id="content-main">
+    <h2><img src="/static/images/download.svg" class="icon">{% trans 'Import Database' %}</h2>
+    <p>{% trans 'Please be patient. This may take a few minutes' %}</p>
+    <form enctype="multipart/form-data" method="POST" action="/relatori/sync/">
+        {{ form.as_p }}
+        <input onclick="javascript:document.getElementById('spinner').style.display='block';document.getElementById('display-block').style.display='none';" type='submit' name='submit' value="{% trans 'Import' %}" />
+    </form>
+</div>
+<div id="content-main" class="padding-left">
+    <h2><img src="/static/images/upload.svg" class="icon">{% trans 'Export Database' %}</h2>
+    <p>{% trans 'Please be patient. This may take a few minutes' %}</p>
+    <form method="GET" action="/relatori/sync/">
+        <input type='submit' class='button' name='submit' value="{% trans 'Export' %}">
+    </form>
+</div>
+</div>
+
+<div id="spinner" style="display:none">
+    <p>{% trans 'Please be patient. This may take a few minutes' %}</p>
+    <br/>
+    <img src="/static/images/big_spinner_336699.gif">
+</div>
+
+
+
+{% endblock %}

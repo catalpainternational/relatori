@@ -1,0 +1,143 @@
+/* LOGIN FORM */
+
+body.login {
+    background: none;
+}
+
+#content {
+    margin: 10px 75px 50px;
+
+}
+
+#container {
+    min-width: 600px;
+    padding: 0;
+    position: relative;
+    width: 100%;
+
+}
+
+.login #container {
+	
+    border: 1px solid #ccc;
+    width: 28em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    font: 13px/20px helvetica,arial,sans-serif;
+ 	background-color: #F5F5F5;
+    background-image: -moz-linear-gradient(#F9F9F9, #F5F5F5);
+    background-repeat: repeat-x;
+    box-shadow: 0 4px 5px #808080;
+    height: 310px;
+  	border-radius: 6px 6px 6px 6px;
+}
+
+.button, input[type="submit"], input[type="button"], .submit-row input {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    -moz-transition: all 0.1s linear 0s;
+    background-color: #0064CD;
+    background-image: -moz-linear-gradient(center top , #049CDB, #0064CD);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: normal;
+    padding: 5px 14px 6px;    
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+   
+}
+
+#header-text {
+    color: #404040;
+    font-size: 30px;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 37px;
+    margin-left: 45px;
+    margin-top: -56px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    width: 429px;
+}
+
+.logo-login {
+	width: 96px;
+	height: 81px;
+	margin-top: 13px;
+	margin-left: -58px;
+	
+}
+
+.login #content-main {
+    width: 100%;
+}
+
+.login form {
+    margin-top: 49px;
+}
+
+.login .form-row {
+    padding: 4px 0;
+    float: left;
+    width: 100%;
+}
+
+.login .form-row label {
+    float: left;
+    width: 9em;
+    padding-right: 0.5em;
+    line-height: 2em;
+    text-align: right;
+    font-size: 1em;
+    color: #333;
+}
+
+.login .form-row #id_username, .login .form-row #id_password {
+    width: 21em;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 4px 4px 4px 4px;
+    -moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+    color: #202122;
+    line-height: 18px;
+    padding: 6px 6px 4px;
+    
+    -moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+    
+}
+
+.input:focus { 
+	background-color: #FEFBF3; 
+	border: 1px solid #CCC; box-shadow: 0 0 0 1px #73BDFA inset, 0 0 2px 0 rgba(115, 189, 250, 0.9);
+}
+
+.login span.help {
+    font-size: 10px;
+    display: block;
+}
+
+.login .submit-row {
+    clear: both;
+    padding: 1em 0 0 9.4em;
+    margin-left: 157px;
+}
+
+#branding h1 {
+	display: none;
+
+}
+

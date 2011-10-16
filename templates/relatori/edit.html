@@ -1,0 +1,28 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block extrastyle %}
+
+<link href="/static/css/forms.css" type="text/css" rel="stylesheet" />
+
+{% endblock %}
+
+{% block breadcrumbs %}<div class="breadcrumbs"><a href="/relatori/"><img src="/static/images/home.svg" class="bread">{% trans 'Home' %}</a> &rsaquo; <a href="/relatori/new/">{% trans 'Forms' %}</a> &rsaquo;  {% trans 'Edit' %}</div>{% endblock %}
+
+{% block content %}
+<div id='content-main'>
+    <form method='POST' action='/relatori/edit/'>
+
+    {% block edit_template %}{% endblock %}
+        <div id="submission">
+        <input type='hidden' name='facility' value='{{ facility.id }}'>
+        <input type='hidden' name='data_form' value='{{ hmis_form }}'>
+        <input type='hidden' name='data_form_type_pk' value='{{ data_form_type_pk }}'>
+        <input type='submit' name='submit' value='Cancel'>
+        <input type='submit' name='submit' value='Save'>
+        <!--input type='submit' name='submit' value='Save and Add Another'-->
+        </div>
+    </form>
+
+</div>
+{% endblock %}

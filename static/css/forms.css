@@ -1,0 +1,113 @@
+body {
+    background-color: #F8F8F8;
+    
+}
+
+#content{ 
+    width:850px;
+    background: #ffffff;
+    box-shadow: 0 4px 18px #C8C8C8;
+    margin: 20px auto 50px;
+    padding: 60px;
+}
+
+table {
+    table-layout: fixed;
+    border-collapse: collapse;    
+    font: 11px Arial,sans-serif;
+}
+
+table td { padding: 3px; font-size: 13px;}
+
+.form {
+    width: 800px;
+    background-color: #FFF;
+}
+.form2 {
+    border: 1px solid #CCC;
+}
+
+.form input {
+    width: 40px;
+    border: none;
+    padding: 3px;
+    font-size: 11px;
+}
+
+    .logo {
+        width: 90px;
+    }
+    
+h1,h2 {
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1px;
+}
+h3 { font-size: 12px; margin: 0; padding: 0; }
+
+.w100 { width: 100px; }
+.w200 { width: 200px; }
+.w300 { width: 300px; }
+.w800 { width: 800px; }
+
+.small { font-size: 9px; }
+
+.spacer { width: 30px; height: 30px; }
+.off { background-color: #CCC; }
+.green { background-color: #66CC99; }
+.grey { background-color: #F0F0F0; }
+.yellow { background-color: yellow; }
+
+.center { text-align: center; }
+.right { text-align: right; }
+.left { text-align: left; }
+.top { vertical-align: top; }
+
+.bold { font-weight: bold; }
+
+.border, tr.border td {  border: 1px solid #CCC; }
+.border_top { border-top: 2px solid #CCC; }
+.border_right { border-right: 2px solid #CCC; }
+.border_bot { border-bottom: 2px solid #CCC; }
+.border_left { border-left: 2px solid #CCC; }
+.border2 { border: 2px solid #CCC; }
+
+tr.border input { width: 80%; height: 100%; border: 1px solid #FFF; font-size: 11px; }
+tr.border input:focus { background-color: #FEFEE5; border: 1px solid #CCC; }
+
+.grey input { background-color: #F0F0F0; }
+
+### added by Anders
+.cell_data
+{text-align: left;}
+.cell_data_error {
+    text-align: left;
+    color:#FDDFDE;
+    background:#FDDFDE;
+    }
+.cell_data
+    {text-align: left;}
+.export
+    {text-align: left;}
+#edit-form {
+    position: absolute;
+    left: 10px;
+    top: 65px;
+}
+#export-excel-form {
+    position: absolute;
+    left: 55px;
+    top: 65px
+}
+#content-main {
+    position: relative;
+    top: 20px;
+    left: 20px;        
+}
+#submission {
+    padding: 10px;
+    position: relative;
+    top: 20px;
+}

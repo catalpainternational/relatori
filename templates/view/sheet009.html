@@ -1,0 +1,656 @@
+{% extends "relatori/view.html" %}
+{% block view_template %}
+
+
+<table class="form">
+    
+    <tr>
+        <td class="logo"><img src="/static/images/MoH.jpg" class="logo" /></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="7" class="border2"><h1>REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE<br />MINISTÉRIO DA SAÚDE</h1></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="4" class="border2"><h1>FORMULARIU-8B</h1><br />
+            Fulan:
+            <input type="text" name="fulan" size="2" value="{{ fulan }}" class="{{ fulan_style }} ">
+            Tinan:
+            <input type="text" name="tinan" size="4" value="{{ tinan }}" class="{{ tinan_style }}">
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+    
+<table class="form border2">
+    
+    <tr class="border">
+        <td><b>Distritu:</b> {{ distritu }}
+            <input type='hidden' name='district' value='{{ distritu }}'>
+        </td>
+        <td><b>Subdistritu:</b> {{ subdistritu }}
+            <input type='hidden' name='subdistrict' value='{{ subdistritu }}'>
+        </td>
+        <td><b>Fatin:</b> {{ fatin }} 
+            <input type='hidden' name='village' value='{{ fatin }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="3"><b>Fasilidade:</b> {{ facility }} 
+            <input type='hidden' name='name' value='{{ facility.id }}'> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Code:</b> {{ code }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+
+    <tr>
+        <td colspan="9"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><h2>TUBERCULOSE</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><h2>RESULTADU BA TRATAMENTOS (2 fulan)</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="3">
+            <sub>Typo Kazu</sub>
+            <sup>Resultadu</sup>
+        </td>
+        <td>BK Negativo</td>
+        <td>La Halo Examinasaun Mear Tasak (Kompleto Tratamento</td>
+        <td>Falla</td>
+        <td>Mate</td>
+        <td>Kotu Tratamento</td>
+        <td>Transfer Sai</td>
+    </tr>
+
+    <tr class="border">
+        <td>1*</td>
+        <td colspan="2">Mear tasak positivu foun</td>
+        <td>
+            {{ cells.0 }}
+        </td>
+        <td>
+            {{ cells.1 }}
+        </td>
+        <td>
+            {{ cells.2 }}
+        </td>
+        <td>
+            {{ cells.3 }}
+        </td>
+        <td>
+            {{ cells.4 }}
+        </td>
+        <td>
+            {{ cells.5 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>2</td>
+        <td colspan="2">Rekaida <span class="small bold">(Kambuh)</span></td>
+        <td>
+            {{ cells.6 }}
+        </td>
+        <td>
+            {{ cells.7 }}
+        </td>
+        <td>
+            {{ cells.8 }}
+        </td>
+        <td>
+            {{ cells.9 }}
+        </td>
+        <td>
+            {{ cells.10 }}
+        </td>
+        <td>
+            {{ cells.11 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>3</td>
+        <td colspan="2">Hafoin Falla</td>
+        <td>
+            {{ cells.12 }}
+        </td>
+        <td>
+            {{ cells.13 }}
+        </td>
+        <td>
+            {{ cells.14 }}
+        </td>
+        <td>
+            {{ cells.15 }}
+        </td>
+        <td>
+            {{ cells.16 }}
+        </td>
+        <td>
+            {{ cells.17 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>4</td>
+        <td colspan="2">Hafoin Kotu Tratamento</td>
+        <td>
+            {{ cells.18 }}
+        </td>
+        <td>
+            {{ cells.19 }}
+        </td>
+        <td>
+            {{ cells.20 }}
+        </td>
+        <td>
+            {{ cells.21 }}
+        </td>
+        <td>
+            {{ cells.22 }}
+        </td>
+        <td>
+            {{ cells.23 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>5*</td>
+        <td colspan="2">BK Negativo</td>
+        <td>
+            {{ cells.24 }}
+        </td>
+        <td>
+            {{ cells.25 }}
+        </td>
+        <td>
+            {{ cells.26 }}
+        </td>
+        <td>
+            {{ cells.27 }}
+        </td>
+        <td>
+            {{ cells.28 }}
+        </td>
+        <td>
+            {{ cells.29 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>6*</td>
+        <td colspan="2">TB extra-pulmaun</td>
+        <td>
+            {{ cells.30 }}
+        </td>
+        <td>
+            {{ cells.31 }}
+        </td>
+        <td>
+            {{ cells.32 }}
+        </td>
+        <td>
+            {{ cells.33 }}
+        </td>
+        <td>
+            {{ cells.34 }}
+        </td>
+        <td>
+            {{ cells.35 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>7</td>
+        <td colspan="2">Kazu seluk</td>
+        <td>
+            {{ cells.36 }}
+        </td>
+        <td>
+            {{ cells.37 }}
+        </td>
+        <td>
+            {{ cells.38 }}
+        </td>
+        <td>
+            {{ cells.39 }}
+        </td>
+        <td>
+            {{ cells.40 }}
+        </td>
+        <td>
+            {{ cells.41 }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="9">* Kazu foun</td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><h2>RESULTADU BA TRATAMENTOS (5 fulan)</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="3">
+            <sub>Kasu</sub>
+            <sup>Resultadu</sup>
+        </td>
+        <td>BK Negativo</td>
+        <td>La Halo Examinasaun Mear Tasak (Kompleto Tratamento</td>
+        <td>Falla</td>
+        <td>Mate</td>
+        <td>Kotu Tratamento</td>
+        <td>Transfer Sai</td>
+    </tr>
+
+    <tr class="border">
+        <td>1*</td>
+        <td colspan="2">Mear tasak positivu foun</td>
+        <td>
+            {{ cells.42 }}
+        </td>
+        <td>
+            {{ cells.43 }}
+        </td>
+        <td>
+            {{ cells.44 }}
+        </td>
+        <td>
+            {{ cells.45 }}
+        </td>
+        <td>
+            {{ cells.46 }}
+        </td>
+        <td>
+            {{ cells.47 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>2</td>
+        <td colspan="2">Rekaida <span class="small bold">(Kambuh)</span></td>
+        <td>
+            {{ cells.48 }}
+        </td>
+        <td>
+            {{ cells.49 }}
+        </td>
+        <td>
+            {{ cells.50 }}
+        </td>
+        <td>
+            {{ cells.51 }}
+        </td>
+        <td>
+            {{ cells.52 }}
+        </td>
+        <td>
+            {{ cells.53 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>3</td>
+        <td colspan="2">Hafoin Falla</td>
+        <td>
+            {{ cells.54 }}
+        </td>
+        <td>
+            {{ cells.55 }}
+        </td>
+        <td>
+            {{ cells.56 }}
+        </td>
+        <td>
+            {{ cells.57 }}
+        </td>
+        <td>
+            {{ cells.58 }}
+        </td>
+        <td>
+            {{ cells.59 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>4</td>
+        <td colspan="2">Hafoin Kotu Tratamento</td>
+        <td>
+            {{ cells.60 }}
+        </td>
+        <td>
+            {{ cells.61 }}
+        </td>
+        <td>
+            {{ cells.62 }}
+        </td>
+        <td>
+            {{ cells.63 }}
+        </td>
+        <td>
+            {{ cells.64 }}
+        </td>
+        <td>
+            {{ cells.65 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>5*</td>
+        <td colspan="2">BK Negativo</td>
+        <td>
+            {{ cells.66 }}
+        </td>
+        <td>
+            {{ cells.67 }}
+        </td>
+        <td>
+            {{ cells.68 }}
+        </td>
+        <td>
+            {{ cells.69 }}
+        </td>
+        <td>
+            {{ cells.70 }}
+        </td>
+        <td>
+            {{ cells.71 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>6*</td>
+        <td colspan="2">TB extra-pulmaun</td>
+        <td>
+            {{ cells.72 }}
+        </td>
+        <td>
+            {{ cells.73 }}
+        </td>
+        <td>
+            {{ cells.74 }}
+        </td>
+        <td>
+            {{ cells.75 }}
+        </td>
+        <td>
+            {{ cells.76 }}
+        </td>
+        <td>
+            {{ cells.77 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>7</td>
+        <td colspan="2">Kazu seluk</td>
+        <td>
+            {{ cells.78 }}
+        </td>
+        <td>
+            {{ cells.79 }}
+        </td>
+        <td>
+            {{ cells.80 }}
+        </td>
+        <td>
+            {{ cells.81 }}
+        </td>
+        <td>
+            {{ cells.82 }}
+        </td>
+        <td>
+            {{ cells.83 }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="9">* Kazu foun</td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><h2>RESULTADU BA TRATAMENTOS (8 fulan)</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><div class="spacer"></div></td>
+    </tr>
+
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="3">
+            <sub>Kasu</sub>
+            <sup>Resultadu</sup>
+        </td>
+        <td>BK Negativo</td>
+        <td>La Halo Examinasaun Mear Tasak (Kompleto Tratamento</td>
+        <td>Falla</td>
+        <td>Mate</td>
+        <td>Kotu Tratamento</td>
+        <td>Transfer Sai</td>
+    </tr>
+
+    <tr class="border">
+        <td>1*</td>
+        <td colspan="2">Mear tasak positivu foun</td>
+        <td>
+            {{ cells.84 }}
+        </td>
+        <td>
+            {{ cells.85 }}
+        </td>
+        <td>
+            {{ cells.86 }}
+        </td>
+        <td>
+            {{ cells.87 }}
+        </td>
+        <td>
+            {{ cells.88 }}
+        </td>
+        <td>
+            {{ cells.89 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>2</td>
+        <td colspan="2">Rekaida <span class="small bold">(Kambuh)</span></td>
+        <td>
+            {{ cells.90 }}
+        </td>
+        <td>
+            {{ cells.91 }}
+        </td>
+        <td>
+            {{ cells.92 }}
+        </td>
+        <td>
+            {{ cells.93 }}
+        </td>
+        <td>
+            {{ cells.94 }}
+        </td>
+        <td>
+            {{ cells.95 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>3</td>
+        <td colspan="2">Hafoin Falla</td>
+        <td>
+            {{ cells.96 }}
+        </td>
+        <td>
+            {{ cells.97 }}
+        </td>
+        <td>
+            {{ cells.98 }}
+        </td>
+        <td>
+            {{ cells.99 }}
+        </td>
+        <td>
+            {{ cells.100 }}
+        </td>
+        <td>
+            {{ cells.101 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>4</td>
+        <td colspan="2">Hafoin Kotu Tratamento</td>
+        <td>
+            {{ cells.102 }}
+        </td>
+        <td>
+            {{ cells.103 }}
+        </td>
+        <td>
+            {{ cells.104 }}
+        </td>
+        <td>
+            {{ cells.105 }}
+        </td>
+        <td>
+            {{ cells.106 }}
+        </td>
+        <td>
+            {{ cells.107 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>5*</td>
+        <td colspan="2">BK Negativo</td>
+        <td>
+            {{ cells.108 }}
+        </td>
+        <td>
+            {{ cells.109 }}
+        </td>
+        <td>
+            {{ cells.110 }}
+        </td>
+        <td>
+            {{ cells.111 }}
+        </td>
+        <td>
+            {{ cells.112 }}
+        </td>
+        <td>
+            {{ cells.113 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>6*</td>
+        <td colspan="2">TB extra-pulmaun</td>
+        <td>
+            {{ cells.114 }}
+        </td>
+        <td>
+            {{ cells.115 }}
+        </td>
+        <td>
+            {{ cells.116 }}
+        </td>
+        <td>
+            {{ cells.117 }}
+        </td>
+        <td>
+            {{ cells.118 }}
+        </td>
+        <td>
+            {{ cells.119 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>7</td>
+        <td colspan="2">Kazu seluk</td>
+        <td>
+            {{ cells.120 }}
+        </td>
+        <td>
+            {{ cells.121 }}
+        </td>
+        <td>
+            {{ cells.122 }}
+        </td>
+        <td>
+            {{ cells.123 }}
+        </td>
+        <td>
+            {{ cells.124 }}
+        </td>
+        <td>
+            {{ cells.125 }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="9">* Kazu foun</td>
+    </tr>
+
+</table>
+
+{% endblock %}

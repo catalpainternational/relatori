@@ -1,0 +1,644 @@
+{% extends "relatori/view.html" %}
+{% block view_template %}
+
+
+<table class="form">
+    
+    <tr>
+        <td class="logo"><img src="/static/images/MoH.jpg" class="logo" /></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="7" class="border2"><h1>REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE<br />MINISTÉRIO DA SAÚDE</h1></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="4" class="border2"><h1>FORMULARIU-2A</h1><br />
+            Fulan:
+            <input type="text" name="fulan" size="2" value="{{ fulan }}" class="{{ fulan_style }} ">
+            Tinan:
+            <input type="text" name="tinan" size="4" value="{{ tinan }}" class="{{ tinan_style }}">
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+    
+<table class="form border2">
+    
+    <tr class="border">
+        <td><b>Distritu:</b> {{ distritu }}
+            <input type='hidden' name='district' value='{{ distritu }}'>
+        </td>
+        <td><b>Subdistritu:</b> {{ subdistritu }}
+            <input type='hidden' name='subdistrict' value='{{ subdistritu }}'>
+        </td>
+        <td><b>Fatin:</b> {{ fatin }} 
+            <input type='hidden' name='village' value='{{ fatin }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="3"><b>Fasilidade:</b> {{ facility }} 
+            <input type='hidden' name='name' value='{{ facility.id }}'> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Code:</b> {{ code }}
+        </td>
+    </tr>
+
+</table>
+
+<table class="form">
+
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+    <tr>
+        <td colspan="16"><h2>SAUDE MATERNU-INFANTIL</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="16"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="13" rowspan="2">Isin rua nebe seguru cuidadu pre natal <br />(numeru absolutu)</td>
+        <td colspan="3">Idade inan isin rua</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>&lt;19</td>
+        <td>19-34</td>
+        <td>&#8805;35</td>
+    </tr>
+
+    <tr class="border">
+        <td>1</td>
+        <td colspan="12">Consulta isin rua (cuidados pre-natais)</td>
+        <td>
+            {{ cells.0 }}
+        </td>
+        <td>
+            {{ cells.1 }}
+        </td>
+        <td>
+            {{ cells.2 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>2</td>
+        <td colspan="12">Feto isin rua nebe consulta ba dala uluk (K1)</td>
+        <td>
+            {{ cells.3 }}
+        </td>
+        <td>
+            {{ cells.4 }}
+        </td>
+        <td>
+            {{ cells.5 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>3</td>
+        <td colspan="12">Feto isin rua nebe consulta ba dala hat (K4)</td>
+        <td>
+            {{ cells.6 }}
+        </td>
+        <td>
+            {{ cells.7 }}
+        </td>
+        <td>
+            {{ cells.8 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>4</td>
+        <td colspan="12">Feto isin rua ho test sifilis positivo</td>
+        <td>
+            {{ cells.9 }}
+        </td>
+        <td>
+            {{ cells.10 }}
+        </td>
+        <td>
+            {{ cells.11 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>5</td>
+        <td colspan="12">Feto isin rua ho anemia grave (Hb&lt;7g/l)</td>
+        <td>
+            {{ cells.12 }}
+        </td>
+        <td>
+            {{ cells.13 }}
+        </td>
+        <td>
+            {{ cells.14 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>6</td>
+        <td colspan="12">Feto isin rua nebe simu aimoruk suplementu aumenta ran (90 X 3)</td>
+        <td>
+            {{ cells.15 }}
+        </td>
+        <td>
+            {{ cells.16 }}
+        </td>
+        <td>
+            {{ cells.17 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>7</td>
+        <td colspan="12">Feto isin rua nebe refere ba fasilidade saude aas tan ho komplikasaun</td>
+        <td>
+            {{ cells.18 }}
+        </td>
+        <td>
+            {{ cells.19 }}
+        </td>
+        <td>
+            {{ cells.20 }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="16"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="13" rowspan="2">Partus ho bebe foin moris, tuir grupu tinan inan nian <br />(numeru absolutu)</td>
+        <td colspan="3">Idade inan nian</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>&lt;19</td>
+        <td>19-34</td>
+        <td>&#8805;35</td>
+    </tr>
+
+    <tr class="border">
+        <td>8</td>
+        <td colspan="12">Partus nebe hetan asistencia husi pessoal saude iha uma</td>
+        <td>
+            {{ cells.21 }}
+        </td>
+        <td>
+            {{ cells.22 }}
+        </td>
+        <td>
+            {{ cells.23 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>9</td>
+        <td colspan="12">Partus nebe hetan asistencia husi pessoal saude iha fasilidade saude</td>
+        <td>
+            {{ cells.24 }}
+        </td>
+        <td>
+            {{ cells.25 }}
+        </td>
+        <td>
+            {{ cells.26 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>10</td>
+        <td colspan="12">Feto nebe refere ba fasilidade saude nebe aas tan partu ho komplikasaun</td>
+        <td>
+            {{ cells.27 }}
+        </td>
+        <td>
+            {{ cells.28 }}
+        </td>
+        <td>
+            {{ cells.29 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>11</td>
+        <td colspan="12">Feto nebe mate durante periodu isin rua, partu, post natal to'o loron 42</td>
+        <td>
+            {{ cells.30 }}
+        </td>
+        <td>
+            {{ cells.31 }}
+        </td>
+        <td>
+            {{ cells.32 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>12</td>
+        <td colspan="12">Numeru bebe foin moris</td>
+        <td>
+            {{ cells.33 }}
+        </td>
+        <td>
+            {{ cells.34 }}
+        </td>
+        <td>
+            {{ cells.35 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>13</td>
+        <td colspan="12">Numeru bebe nebe mate wainhira partu (&#8805; isin rua semana 22 ou + 500gr)</td>
+        <td>
+            {{ cells.36 }}
+        </td>
+        <td>
+            {{ cells.37 }}
+        </td>
+        <td>
+            {{ cells.38 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>14</td>
+        <td colspan="12">Numeru bebe foin moris nebe mate molok loron 7 (loron 0-6)</td>
+        <td>
+            {{ cells.39 }}
+        </td>
+        <td>
+            {{ cells.40 }}
+        </td>
+        <td>
+            {{ cells.41 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>15</td>
+        <td colspan="12">Numeru bebe foin moris nebe mate husi semana rua too hat (loron 7-28)</td>
+        <td>
+            {{ cells.42 }}
+        </td>
+        <td>
+            {{ cells.43 }}
+        </td>
+        <td>
+            {{ cells.44 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>16</td>
+        <td colspan="12">Numeru bebe foin moris ho pezu menus husi 2,500 grama</td>
+        <td>
+            {{ cells.45 }}
+        </td>
+        <td>
+            {{ cells.46 }}
+        </td>
+        <td>
+            {{ cells.47 }}
+        </td>
+    </tr
+
+</table>
+
+<table class="form">
+
+    <tr>
+        <td colspan="16"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="13" rowspan="2">Feto post natal <br />(numeru absolutu)</td>
+        <td colspan="3">Idade inan nian</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>&lt;19</td>
+        <td>19-34</td>
+        <td>&#8805;35</td>
+    </tr>
+
+    <tr class="border">
+        <td>17</td>
+        <td colspan="12">Konsulta post natal iha 1a semana depois partu (PN-1)</td>
+        <td>
+            {{ cells.48 }}
+        </td>
+        <td>
+            {{ cells.49 }}
+        </td>
+        <td>
+            {{ cells.50 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>18</td>
+        <td colspan="12">Konsulta post natal husi semana ida too nen depois partu (PN-2)</td>
+        <td>
+            {{ cells.51 }}
+        </td>
+        <td>
+            {{ cells.52 }}
+        </td>
+        <td>
+            {{ cells.53 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>19</td>
+        <td colspan="12">Feto post natal nebe simu Vit A no aimoruk suplementu aumenta ran - (90)</td>
+        <td>
+            {{ cells.54 }}
+        </td>
+        <td>
+            {{ cells.55 }}
+        </td>
+        <td>
+            {{ cells.56 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>20</td>
+        <td colspan="12">Feto post natal refere ba fasilidade saude nebe aas ho komplikasaun</td>
+        <td>
+            {{ cells.57 }}
+        </td>
+        <td>
+            {{ cells.58 }}
+        </td>
+        <td>
+            {{ cells.59 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>21</td>
+        <td colspan="12">Bebe foin moris nebe konsulta iha 1a semana (KN-1)</td>
+        <td>
+            {{ cells.60 }}
+        </td>
+        <td>
+            {{ cells.61 }}
+        </td>
+        <td>
+            {{ cells.62 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>22</td>
+        <td colspan="12">Bebe foin moris nebe konsulta husi semana ida too hat (KN-2)</td>
+        <td>
+            {{ cells.63 }}
+        </td>
+        <td>
+            {{ cells.64 }}
+        </td>
+        <td>
+            {{ cells.65 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>23</td>
+        <td colspan="12">Bebe foin moris refere ba facilidade saude nebe aas ho komplikasaun</td>
+        <td>
+            {{ cells.66 }}
+        </td>
+        <td>
+            {{ cells.67 }}
+        </td>
+        <td>
+            {{ cells.68 }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="16"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="13" rowspan="2">Emergencia no obstetrikas <br />(numeru absolutu)</td>
+        <td colspan="3">Idade feto nian</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>&lt;19</td>
+        <td>19-34</td>
+        <td>&#8805;35</td>
+    </tr>
+
+    <tr class="border">
+        <td rowspan="5">24</td>
+        <td colspan="6" rowspan="5">Emergencia no obstetricas tamba:</td>
+        <td colspan="6">a) hemorragias</td>
+        <td>
+            {{ cells.69 }}
+        </td>
+        <td>
+            {{ cells.70 }}
+        </td>
+        <td>
+            {{ cells.71 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="6">b) preeclampsia grave no eclampsia</td>
+        <td>
+            {{ cells.72 }}
+        </td>
+        <td>
+            {{ cells.73 }}
+        </td>
+        <td>
+            {{ cells.74 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="6">c) complicasaun abortu</td>
+        <td>
+            {{ cells.75 }}
+        </td>
+        <td>
+            {{ cells.76 }}
+        </td>
+        <td>
+            {{ cells.77 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="6">d) prosesu partu nebe kleur</td>
+        <td>
+            {{ cells.78 }}
+        </td>
+        <td>
+            {{ cells.79 }}
+        </td>
+        <td>
+            {{ cells.80 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="6">e) puerperal sepsis</td>
+        <td>
+            {{ cells.81 }}
+        </td>
+        <td>
+            {{ cells.82 }}
+        </td>
+        <td>
+            {{ cells.83 }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    <tr>
+        <td colspan="16"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="13" rowspan="2">Kausa (penyebab) Mortalidade Inan Isin rua no Partus (numeru absoluta)</td>
+        <td colspan="3">Idade inan nian</td>
+    </tr>
+
+    <tr class="border green center bold">
+        <td>&lt;19</td>
+        <td>19-34</td>
+        <td>&#8805;35</td>
+    </tr>
+
+    <tr class="border">
+        <td>25</td>
+        <td colspan="12">Hemorragias</td>
+        <td>
+            {{ cells.84 }}
+        </td>
+        <td>
+            {{ cells.85 }}
+        </td>
+        <td>
+            {{ cells.86 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>26</td>
+        <td colspan="12">Eclampsia</td>
+        <td>
+            {{ cells.87 }}
+        </td>
+        <td>
+            {{ cells.88 }}
+        </td>
+        <td>
+            {{ cells.89 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>27</td>
+        <td colspan="12">Puerperal sepsis</td>
+        <td>
+            {{ cells.90 }}
+        </td>
+        <td>
+            {{ cells.91 }}
+        </td>
+        <td>
+            {{ cells.92 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>28</td>
+        <td colspan="12">Prosesu partu nebe kleur (obstruct Labour)</td>
+        <td>
+            {{ cells.93 }}
+        </td>
+        <td>
+            {{ cells.94 }}
+        </td>
+        <td>
+            {{ cells.95 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>29</td>
+        <td colspan="12">Komplikasaun Abortus</td>
+        <td>
+            {{ cells.96 }}
+        </td>
+        <td>
+            {{ cells.97 }}
+        </td>
+        <td>
+            {{ cells.98 }}
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>32</td>
+        <td colspan="12">Selu-seluk tan</td>
+        <td>
+            {{ cells.99 }}
+        </td>
+        <td>
+            {{ cells.100 }}
+        </td>
+        <td>
+            {{ cells.101 }}
+        </td>
+    </tr>
+
+</table>
+{% endblock %}

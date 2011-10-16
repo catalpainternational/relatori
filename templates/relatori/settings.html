@@ -1,0 +1,35 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block extrastyle %}
+<style>
+    #content-main{ 
+            border: thin solid #CCCCCC;
+            background-color: #f5f5f5;
+            margin-top: 70px;
+            margin-bottom: 30px;
+            margin-left: 250px;
+            padding: 60px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+            width: 260px;
+            height: 230px;
+            box-shadow: 0 4px 5px #808080;;
+            } 
+</style>
+{% endblock %}
+
+{% block breadcrumbs %}<div class="breadcrumbs"><a href="/relatori/"><img src="/static/images/home.svg" class="bread">{% trans 'Home' %}</a> &rsaquo; {% trans 'Settings' %}</div>{% endblock %}
+
+{% block content %}
+
+<div id="content-main">
+    <h2>{% trans 'Settings' %}</h2>
+    <form method="POST" action="/relatori/settings/">
+        {{ form.as_p }}
+        <input type='submit' name='submit' value="{% trans 'Save' %}">
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,656 @@
+{% extends "relatori/edit.html" %}
+{% block edit_template %}
+
+
+<table class="form">
+    
+    <tr>
+        <td class="logo"><img src="/static/images/MoH.jpg" class="logo" /></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="7" class="border2"><h1>REPÚBLICA DEMOCRÁTICA DE TIMOR-LESTE<br />MINISTÉRIO DA SAÚDE</h1></td>
+        <td><div class="spacer"></div></td>
+        <td colspan="4" class="border2"><h1>FORMULARIU-8B</h1><br />
+            Fulan:
+            <input type="text" name="fulan" size="2" value="{{ fulan }}" class="{{ fulan_style }} ">
+            Tinan:
+            <input type="text" name="tinan" size="4" value="{{ tinan }}" class="{{ tinan_style }}">
+        </td>
+    </tr>
+    
+    <tr>
+        <td colspan="14"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+    
+<table class="form border2">
+    
+    <tr class="border">
+        <td><b>Distritu:</b> {{ distritu }}
+            <input type='hidden' name='district' value='{{ distritu }}'>
+        </td>
+        <td><b>Subdistritu:</b> {{ subdistritu }}
+            <input type='hidden' name='subdistrict' value='{{ subdistritu }}'>
+        </td>
+        <td><b>Fatin:</b> {{ fatin }} 
+            <input type='hidden' name='village' value='{{ fatin }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td colspan="3"><b>Fasilidade:</b> {{ facility }} 
+            <input type='hidden' name='name' value='{{ facility.id }}'> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Code:</b> {{ code }}
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+
+    <tr>
+        <td colspan="9"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><h2>TUBERCULOSE</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><h2>RESULTADU BA TRATAMENTOS (2 fulan)</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="3">
+            <sub>Typo Kazu</sub>
+            <sup>Resultadu</sup>
+        </td>
+        <td>BK Negativo</td>
+        <td>La Halo Examinasaun Mear Tasak (Kompleto Tratamento</td>
+        <td>Falla</td>
+        <td>Mate</td>
+        <td>Kotu Tratamento</td>
+        <td>Transfer Sai</td>
+    </tr>
+
+    <tr class="border">
+        <td>1*</td>
+        <td colspan="2">Mear tasak positivu foun</td>
+        <td>
+            <input type='text' name='cell.0' size=2 value='{{ cells.0 }}' class='{{ cell_styles.0 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.1' size=2 value='{{ cells.1 }}' class='{{ cell_styles.1 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.2' size=2 value='{{ cells.2 }}' class='{{ cell_styles.2 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.3' size=2 value='{{ cells.3 }}' class='{{ cell_styles.3 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.4' size=2 value='{{ cells.4 }}' class='{{ cell_styles.4 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.5' size=2 value='{{ cells.5 }}' class='{{ cell_styles.5 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>2</td>
+        <td colspan="2">Rekaida <span class="small bold">(Kambuh)</span></td>
+        <td>
+            <input type='text' name='cell.6' size=2 value='{{ cells.6 }}' class='{{ cell_styles.6 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.7' size=2 value='{{ cells.7 }}' class='{{ cell_styles.7 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.8' size=2 value='{{ cells.8 }}' class='{{ cell_styles.8 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.9' size=2 value='{{ cells.9 }}' class='{{ cell_styles.9 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.10' size=2 value='{{ cells.10 }}' class='{{ cell_styles.10 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.11' size=2 value='{{ cells.11 }}' class='{{ cell_styles.11 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>3</td>
+        <td colspan="2">Hafoin Falla</td>
+        <td>
+            <input type='text' name='cell.12' size=2 value='{{ cells.12 }}' class='{{ cell_styles.12 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.13' size=2 value='{{ cells.13 }}' class='{{ cell_styles.13 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.14' size=2 value='{{ cells.14 }}' class='{{ cell_styles.14 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.15' size=2 value='{{ cells.15 }}' class='{{ cell_styles.15 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.16' size=2 value='{{ cells.16 }}' class='{{ cell_styles.16 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.17' size=2 value='{{ cells.17 }}' class='{{ cell_styles.17 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>4</td>
+        <td colspan="2">Hafoin Kotu Tratamento</td>
+        <td>
+            <input type='text' name='cell.18' size=2 value='{{ cells.18 }}' class='{{ cell_styles.18 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.19' size=2 value='{{ cells.19 }}' class='{{ cell_styles.19 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.20' size=2 value='{{ cells.20 }}' class='{{ cell_styles.20 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.21' size=2 value='{{ cells.21 }}' class='{{ cell_styles.21 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.22' size=2 value='{{ cells.22 }}' class='{{ cell_styles.22 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.23' size=2 value='{{ cells.23 }}' class='{{ cell_styles.23 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>5*</td>
+        <td colspan="2">BK Negativo</td>
+        <td>
+            <input type='text' name='cell.24' size=2 value='{{ cells.24 }}' class='{{ cell_styles.24 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.25' size=2 value='{{ cells.25 }}' class='{{ cell_styles.25 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.26' size=2 value='{{ cells.26 }}' class='{{ cell_styles.26 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.27' size=2 value='{{ cells.27 }}' class='{{ cell_styles.27 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.28' size=2 value='{{ cells.28 }}' class='{{ cell_styles.28 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.29' size=2 value='{{ cells.29 }}' class='{{ cell_styles.29 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>6*</td>
+        <td colspan="2">TB extra-pulmaun</td>
+        <td>
+            <input type='text' name='cell.30' size=2 value='{{ cells.30 }}' class='{{ cell_styles.30 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.31' size=2 value='{{ cells.31 }}' class='{{ cell_styles.31 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.32' size=2 value='{{ cells.32 }}' class='{{ cell_styles.32 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.33' size=2 value='{{ cells.33 }}' class='{{ cell_styles.33 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.34' size=2 value='{{ cells.34 }}' class='{{ cell_styles.34 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.35' size=2 value='{{ cells.35 }}' class='{{ cell_styles.35 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>7</td>
+        <td colspan="2">Kazu seluk</td>
+        <td>
+            <input type='text' name='cell.36' size=2 value='{{ cells.36 }}' class='{{ cell_styles.36 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.37' size=2 value='{{ cells.37 }}' class='{{ cell_styles.37 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.38' size=2 value='{{ cells.38 }}' class='{{ cell_styles.38 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.39' size=2 value='{{ cells.39 }}' class='{{ cell_styles.39 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.40' size=2 value='{{ cells.40 }}' class='{{ cell_styles.40 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.41' size=2 value='{{ cells.41 }}' class='{{ cell_styles.41 }}'>
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="9">* Kazu foun</td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><h2>RESULTADU BA TRATAMENTOS (5 fulan)</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><div class="spacer"></div></td>
+    </tr>
+    
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="3">
+            <sub>Kasu</sub>
+            <sup>Resultadu</sup>
+        </td>
+        <td>BK Negativo</td>
+        <td>La Halo Examinasaun Mear Tasak (Kompleto Tratamento</td>
+        <td>Falla</td>
+        <td>Mate</td>
+        <td>Kotu Tratamento</td>
+        <td>Transfer Sai</td>
+    </tr>
+
+    <tr class="border">
+        <td>1*</td>
+        <td colspan="2">Mear tasak positivu foun</td>
+        <td>
+            <input type='text' name='cell.42' size=2 value='{{ cells.42 }}' class='{{ cell_styles.42 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.43' size=2 value='{{ cells.43 }}' class='{{ cell_styles.43 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.44' size=2 value='{{ cells.44 }}' class='{{ cell_styles.44 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.45' size=2 value='{{ cells.45 }}' class='{{ cell_styles.45 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.46' size=2 value='{{ cells.46 }}' class='{{ cell_styles.46 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.47' size=2 value='{{ cells.47 }}' class='{{ cell_styles.47 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>2</td>
+        <td colspan="2">Rekaida <span class="small bold">(Kambuh)</span></td>
+        <td>
+            <input type='text' name='cell.48' size=2 value='{{ cells.48 }}' class='{{ cell_styles.48 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.49' size=2 value='{{ cells.49 }}' class='{{ cell_styles.49 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.50' size=2 value='{{ cells.50 }}' class='{{ cell_styles.50 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.51' size=2 value='{{ cells.51 }}' class='{{ cell_styles.51 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.52' size=2 value='{{ cells.52 }}' class='{{ cell_styles.52 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.53' size=2 value='{{ cells.53 }}' class='{{ cell_styles.53 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>3</td>
+        <td colspan="2">Hafoin Falla</td>
+        <td>
+            <input type='text' name='cell.54' size=2 value='{{ cells.54 }}' class='{{ cell_styles.54 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.55' size=2 value='{{ cells.55 }}' class='{{ cell_styles.55 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.56' size=2 value='{{ cells.56 }}' class='{{ cell_styles.56 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.57' size=2 value='{{ cells.57 }}' class='{{ cell_styles.57 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.58' size=2 value='{{ cells.58 }}' class='{{ cell_styles.58 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.59' size=2 value='{{ cells.59 }}' class='{{ cell_styles.59 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>4</td>
+        <td colspan="2">Hafoin Kotu Tratamento</td>
+        <td>
+            <input type='text' name='cell.60' size=2 value='{{ cells.60 }}' class='{{ cell_styles.60 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.61' size=2 value='{{ cells.61 }}' class='{{ cell_styles.61 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.62' size=2 value='{{ cells.62 }}' class='{{ cell_styles.62 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.63' size=2 value='{{ cells.63 }}' class='{{ cell_styles.63 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.64' size=2 value='{{ cells.64 }}' class='{{ cell_styles.64 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.65' size=2 value='{{ cells.65 }}' class='{{ cell_styles.65 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>5*</td>
+        <td colspan="2">BK Negativo</td>
+        <td>
+            <input type='text' name='cell.66' size=2 value='{{ cells.66 }}' class='{{ cell_styles.66 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.67' size=2 value='{{ cells.67 }}' class='{{ cell_styles.67 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.68' size=2 value='{{ cells.68 }}' class='{{ cell_styles.68 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.69' size=2 value='{{ cells.69 }}' class='{{ cell_styles.69 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.70' size=2 value='{{ cells.70 }}' class='{{ cell_styles.70 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.71' size=2 value='{{ cells.71 }}' class='{{ cell_styles.71 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>6*</td>
+        <td colspan="2">TB extra-pulmaun</td>
+        <td>
+            <input type='text' name='cell.72' size=2 value='{{ cells.72 }}' class='{{ cell_styles.72 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.73' size=2 value='{{ cells.73 }}' class='{{ cell_styles.73 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.74' size=2 value='{{ cells.74 }}' class='{{ cell_styles.74 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.75' size=2 value='{{ cells.75 }}' class='{{ cell_styles.75 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.76' size=2 value='{{ cells.76 }}' class='{{ cell_styles.76 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.77' size=2 value='{{ cells.77 }}' class='{{ cell_styles.77 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>7</td>
+        <td colspan="2">Kazu seluk</td>
+        <td>
+            <input type='text' name='cell.78' size=2 value='{{ cells.78 }}' class='{{ cell_styles.78 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.79' size=2 value='{{ cells.79 }}' class='{{ cell_styles.79 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.80' size=2 value='{{ cells.80 }}' class='{{ cell_styles.80 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.81' size=2 value='{{ cells.81 }}' class='{{ cell_styles.81 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.82' size=2 value='{{ cells.82 }}' class='{{ cell_styles.82 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.83' size=2 value='{{ cells.83 }}' class='{{ cell_styles.83 }}'>
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="9">* Kazu foun</td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><div class="spacer"></div></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><h2>RESULTADU BA TRATAMENTOS (8 fulan)</h2></td>
+    </tr>
+
+    <tr>
+        <td colspan="9"><div class="spacer"></div></td>
+    </tr>
+
+</table>
+
+<table class="form border2">
+    
+    <tr class="border green center bold">
+        <td colspan="3">
+            <sub>Kasu</sub>
+            <sup>Resultadu</sup>
+        </td>
+        <td>BK Negativo</td>
+        <td>La Halo Examinasaun Mear Tasak (Kompleto Tratamento</td>
+        <td>Falla</td>
+        <td>Mate</td>
+        <td>Kotu Tratamento</td>
+        <td>Transfer Sai</td>
+    </tr>
+
+    <tr class="border">
+        <td>1*</td>
+        <td colspan="2">Mear tasak positivu foun</td>
+        <td>
+            <input type='text' name='cell.84' size=2 value='{{ cells.84 }}' class='{{ cell_styles.84 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.85' size=2 value='{{ cells.85 }}' class='{{ cell_styles.85 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.86' size=2 value='{{ cells.86 }}' class='{{ cell_styles.86 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.87' size=2 value='{{ cells.87 }}' class='{{ cell_styles.87 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.88' size=2 value='{{ cells.88 }}' class='{{ cell_styles.88 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.89' size=2 value='{{ cells.89 }}' class='{{ cell_styles.89 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>2</td>
+        <td colspan="2">Rekaida <span class="small bold">(Kambuh)</span></td>
+        <td>
+            <input type='text' name='cell.90' size=2 value='{{ cells.90 }}' class='{{ cell_styles.90 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.91' size=2 value='{{ cells.91 }}' class='{{ cell_styles.91 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.92' size=2 value='{{ cells.92 }}' class='{{ cell_styles.92 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.93' size=2 value='{{ cells.93 }}' class='{{ cell_styles.93 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.94' size=2 value='{{ cells.94 }}' class='{{ cell_styles.94 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.95' size=2 value='{{ cells.95 }}' class='{{ cell_styles.95 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>3</td>
+        <td colspan="2">Hafoin Falla</td>
+        <td>
+            <input type='text' name='cell.96' size=2 value='{{ cells.96 }}' class='{{ cell_styles.96 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.97' size=2 value='{{ cells.97 }}' class='{{ cell_styles.97 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.98' size=2 value='{{ cells.98 }}' class='{{ cell_styles.98 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.99' size=2 value='{{ cells.99 }}' class='{{ cell_styles.99 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.100' size=2 value='{{ cells.100 }}' class='{{ cell_styles.100 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.101' size=2 value='{{ cells.101 }}' class='{{ cell_styles.101 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>4</td>
+        <td colspan="2">Hafoin Kotu Tratamento</td>
+        <td>
+            <input type='text' name='cell.102' size=2 value='{{ cells.102 }}' class='{{ cell_styles.102 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.103' size=2 value='{{ cells.103 }}' class='{{ cell_styles.103 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.104' size=2 value='{{ cells.104 }}' class='{{ cell_styles.104 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.105' size=2 value='{{ cells.105 }}' class='{{ cell_styles.105 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.106' size=2 value='{{ cells.106 }}' class='{{ cell_styles.106 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.107' size=2 value='{{ cells.107 }}' class='{{ cell_styles.107 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>5*</td>
+        <td colspan="2">BK Negativo</td>
+        <td>
+            <input type='text' name='cell.108' size=2 value='{{ cells.108 }}' class='{{ cell_styles.108 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.109' size=2 value='{{ cells.109 }}' class='{{ cell_styles.109 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.110' size=2 value='{{ cells.110 }}' class='{{ cell_styles.110 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.111' size=2 value='{{ cells.111 }}' class='{{ cell_styles.111 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.112' size=2 value='{{ cells.112 }}' class='{{ cell_styles.112 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.113' size=2 value='{{ cells.113 }}' class='{{ cell_styles.113 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>6*</td>
+        <td colspan="2">TB extra-pulmaun</td>
+        <td>
+            <input type='text' name='cell.114' size=2 value='{{ cells.114 }}' class='{{ cell_styles.114 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.115' size=2 value='{{ cells.115 }}' class='{{ cell_styles.115 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.116' size=2 value='{{ cells.116 }}' class='{{ cell_styles.116 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.117' size=2 value='{{ cells.117 }}' class='{{ cell_styles.117 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.118' size=2 value='{{ cells.118 }}' class='{{ cell_styles.118 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.119' size=2 value='{{ cells.119 }}' class='{{ cell_styles.119 }}'>
+        </td>
+    </tr>
+
+    <tr class="border">
+        <td>7</td>
+        <td colspan="2">Kazu seluk</td>
+        <td>
+            <input type='text' name='cell.120' size=2 value='{{ cells.120 }}' class='{{ cell_styles.120 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.121' size=2 value='{{ cells.121 }}' class='{{ cell_styles.121 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.122' size=2 value='{{ cells.122 }}' class='{{ cell_styles.122 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.123' size=2 value='{{ cells.123 }}' class='{{ cell_styles.123 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.124' size=2 value='{{ cells.124 }}' class='{{ cell_styles.124 }}'>
+        </td>
+        <td>
+            <input type='text' name='cell.125' size=2 value='{{ cells.125 }}' class='{{ cell_styles.125 }}'>
+        </td>
+    </tr>
+    
+</table>
+
+<table class="form">
+    
+    <tr>
+        <td colspan="9">* Kazu foun</td>
+    </tr>
+
+</table>
+
+{% endblock %}
