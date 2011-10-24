@@ -4,7 +4,7 @@ from django.db.models import Sum
 
 import djtables
 
-from hmis.relatori import models
+from catalpa.relatori import models
 
 class QueryTable(djtables.Table):
     hmis_form_type = djtables.Column(name=_('HMIS Form'), value=lambda cell: cell.object,  link=lambda cell: "../view/%s/" % cell.object.pk, sortable=False,)

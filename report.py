@@ -1,5 +1,5 @@
 from datetime import datetime
-from relatori import models
+from catalpa.relatori import models
 from django.db.models import Sum
 
 

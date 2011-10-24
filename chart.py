@@ -3,8 +3,8 @@ import cairo
 import pycha.pie
 import pycha.bar
 
-from relatori import models
-from relatori.report import * 
+from catalpa.relatori import models
+from catalpa.relatori.report import * 
 
 
 def pie_chart(name, dataset, width=350, height=300, options=None ):

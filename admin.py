@@ -4,8 +4,8 @@ from django.conf.urls.defaults import patterns
 
 from catalpa.aihun.admin import Admin
 
-from relatori import models
-from health_service.lib.autocomplete_admin import FkAutocompleteAdmin, InlineAutocompleteAdmin
+from catalpa.relatori import models
+from catalpa.lib.autocomplete_admin import FkAutocompleteAdmin, InlineAutocompleteAdmin
 
 class OptionAdmin(admin.ModelAdmin):
 #class OptionAdmin(admin.TabularInline):
@@ -58,11 +58,11 @@ class IndicatorTypeAdmin(Admin, admin.ModelAdmin):
 class DenominatorAdmin(Admin, FkAutocompleteAdmin):
     model = models.Denominator
 
-    search_fields = ['health_facility__name', 'area__name']
-    list_display = ['denominator_type', 'health_facility', 'area', 'value',]
+    search_fields = ['facility__name', 'area__name']
+    list_display = ['denominator_type', 'facility', 'area', 'value',]
     list_filter = ('denominator_type',)
     related_search_fields = {'area': ('^name',),
-                            'health_facility': ('^name',),}
+                            'facility': ('^name',),}
 
 class DenominatorTypeAdmin(Admin, FkAutocompleteAdmin):
     model = models.DenominatorType

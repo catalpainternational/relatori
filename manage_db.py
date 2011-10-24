@@ -1,6 +1,6 @@
 from django.db import transaction
 from settings import DATABASES as dbs
-from health_service.models import HealthFacility, HealthFacilityType
+from catalpa.simple_locations.models import Facility, FacilityType
 from relatori import models
 
 

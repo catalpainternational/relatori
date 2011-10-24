@@ -26,10 +26,10 @@ import xlrd
 import xlwt
 from xlutils.copy import copy
 
-from hmis import settings
+#from hmis import settings
 from settings import MEDIA_ROOT, LANGUAGE_CODE, DATABASES
-from hmis.relatori import models, forms, tables, chart
-from hmis.health_service.models import HealthFacility
+from catalpa.relatori import models, forms, tables, chart
+from catalpa.simple_locations.models import Facility
 
 
 from catalpa.aihun.models import Operation
@@ -40,7 +40,7 @@ import copy
 
 @login_required
 def index(request):
-    return render_to_response('relatori/index.html',{
+    return render_to_response('catalpa/relatori/index.html',{
             'user' : request.user,
             'context_instance' : RequestContext(request),})
 
@@ -51,10 +51,10 @@ def preferences(request):
         try:
             data = { 'facility' : models.Settings.objects.all()[0].facility.id }
         except:
-            facility = HealthFacility.objects.all()[0]
+            facility = Facility.objects.all()[0]
             data = { 'facility' : facility.id }
         form = forms.SettingsForm(data)
-        return render_to_response('relatori/settings.html',{
+        return render_to_response('catalpa/relatori/settings.html',{
                 'form' : form,
                 'user' : request.user,
                 'context_instance' : RequestContext(request),})
@@ -74,7 +74,7 @@ def preferences(request):
                 settings.save()
         
         messages.success(request, _('Thank you %s, you successfully saved settings.' % (request.user)))    
-        return render_to_response('relatori/index.html',{
+        return render_to_response('catalpa/relatori/index.html',{
                 'user' : request.user,
                 'context_instance' : RequestContext(request),})
 
@@ -88,7 +88,7 @@ def query(request):
             }
         form = forms.QueryForm(data)
 
-        return render_to_response('relatori/query.html',{
+        return render_to_response('catalpa/relatori/query.html',{
             'form' : form,
             'user' : request.user,
             'context_instance' : RequestContext(request),
@@ -105,7 +105,7 @@ def query(request):
                 
                 #data_forms = models.DataForm.objects.filter(data_form_type=data_form_type, facility=facility, month__range=month_range, year=year)
                 data_forms = models.DataForm.objects.filter(data_form_type=data_form_type, facility=facility, year=year)
-                return render_to_response('relatori/query.html',{
+                return render_to_response('catalpa/relatori/query.html',{
                     'form': form,
                     'result': tables.QueryTable(data_forms, request=request),
                     'user' : request.user,
@@ -118,7 +118,7 @@ def summary(request):
 
         indicator_type = models.IndicatorType.objects.all()
 
-        return render_to_response('relatori/summary.html',{
+        return render_to_response('catalpa/relatori/summary.html',{
             'summary': tables.SummaryTable(indicator_type, request=request),
             'user' : request.user,
             'year' : datetime.now().year,
@@ -129,7 +129,7 @@ def summary_report(request):
     if request.method.upper() == 'GET':
         form = forms.SummaryReportForm()
 
-        return render_to_response('relatori/summary_report.html',{
+        return render_to_response('catalpa/relatori/summary_report.html',{
             'form' : form,
             'user' : request.user,
             'context_instance' : RequestContext(request),
@@ -157,11 +157,11 @@ def summary_report(request):
             chart.pie_chart_by_name('children weighed', facility)
 
             #return the template
-            return render_to_response('relatori/summary_report_index.html',{
+            return render_to_response('catalpa/relatori/summary_report_index.html',{
                 'facility' : facility,
             })
         else:
-            return render_to_response('relatori/summary_report.html',{
+            return render_to_response('catalpa/relatori/summary_report.html',{
                 'form' : form,
                 'user' : request.user,
                 'context_instance' : RequestContext(request),
@@ -181,7 +181,7 @@ def render_to_pdf(template_src, context_dict):
 
 def summary_report_as_pdf(request):
     if request.method.upper() == 'GET':
-        return render_to_pdf('relatori/summary_report_index.html',{
+        return render_to_pdf('catalpa/relatori/summary_report_index.html',{
         'facility' : 'District Health Service Manatuto',
         'pagesize':'A4',})
 
@@ -196,7 +196,7 @@ def cumulative(request):
 
         form = forms.CumulativeForm(data)
 
-        return render_to_response('relatori/cumulative.html',{
+        return render_to_response('catalpa/relatori/cumulative.html',{
             'form' : form,
             'user' : request.user,
             'context_instance' : RequestContext(request),
@@ -260,9 +260,9 @@ def cumulative(request):
             sheet = data_form_type.sheet_index+1
             if sheet < 10:
                 sheet = '0%s' % (sheet)
-            return render_to_response('view/sheet0%s.html' % (sheet), context,) 
+            return render_to_response('forms/form_0%s.html' % (sheet), context,) 
         else:
-            return render_to_response('relatori/cumulative.html',{
+            return render_to_response('catalpa/relatori/cumulative.html',{
                 'form': form,
                 'user' : request.user,
                 'context_instance' : RequestContext(request),
@@ -280,7 +280,7 @@ def report(request):
                 }
         form = forms.QueryForm(data)
 
-        return render_to_response('relatori/form.html',{
+        return render_to_response('catalpa/relatori/form.html',{
             'form': form,
             'user' : request.user,
             'context_instance' : RequestContext(request),
@@ -290,14 +290,15 @@ def report(request):
 @login_required
 def new(request):
     if request.method.upper() == 'GET':
+        import catalpa.simple_locations.models as sl_m
         data = {
                 #'month' : datetime.now().month,
                 #'year' : datetime.now().year,
-                #'facility' : models.Settings.objects.all()[0].facility.children.exclude(type__name__icontains="SISCA"),
+                #'facility' : sl_m.Facility.objects.get(name="MAF Facility 001"),# Settings.objects.all()[0].facility.children.exclude(type__name__icontains="SISCA"),
                 }
         form = forms.NewDataForm(data)
 
-        return render_to_response('relatori/new.html',{
+        return render_to_response('catalpa/relatori/new.html',{
             'form': form,
             'user' : request.user,
             'context_instance' : RequestContext(request),
@@ -325,7 +326,7 @@ def new(request):
             actual_cells = data_form_type.cells.all()
 
             from django import forms as _dForm
-            
+            cell_dico = {}
             for cell in actual_cells:
                 dgroups = cell.data_groups.all()
                 inp = _dForm.TextInput()
@@ -338,7 +339,8 @@ def new(request):
                         oList = tuple((o.value,("%d:%s" % (o.value,o.name))) for o in opti)
                         inp = _dForm.Select(choices=oList)
                         
-                cell.html = inp.render("cell.%d" % (cell.order),'')
+                cell.html = inp.render("c.%s" % (cell.spreadsheet_cell),'')
+                cell_dico[cell.spreadsheet_cell]=cell
             ## Now sending the actual cells to the template.
             context = { 
                     'user' : request.user,
@@ -354,15 +356,15 @@ def new(request):
                     'data_form_type_pk' : data_form_type.pk,
                     'cells' : cells,
                     'cell_styles' : cell_styles,
-                    'actual_cells' : actual_cells
+                    'c' : cell_dico
                     }
             #TODO: sheet_index + 1 is a hack, make it right
             sheet = data_form_type.sheet_index+1
             if sheet < 10:
                 sheet = '0%s' % (sheet)
-            return render_to_response('edit/sheet0%s.html' % (sheet), context,) 
+            return render_to_response('forms/form_0%s.html' % (sheet), context,) 
         else:
-            return render_to_response('relatori/new.html',{
+            return render_to_response('catalpa/relatori/new.html',{
                 'form': form,
                 'user' : request.user,
                 'context_instance' : RequestContext(request),
@@ -406,7 +408,7 @@ def edit(request, item_pk=None):
             sheet = data_form.data_form_type.sheet_index+1
             if sheet < 10:
                 sheet = '0%s' % (sheet)
-            return render_to_response('edit/sheet0%s.html' % (sheet), context,) 
+            return render_to_response('forms/form_0%s.html' % (sheet), context,) 
         else:
             data = { 
                 'start_month' : datetime.now().month-1,
@@ -417,7 +419,7 @@ def edit(request, item_pk=None):
                 }
             form = forms.QueryForm(data)
             
-            return render_to_response('relatori/query.html',{
+            return render_to_response('catalpa/relatori/query.html',{
                 'user' : request.user,
                 'form': form,
                 'context_instance' : RequestContext(request),
@@ -432,7 +434,7 @@ def edit(request, item_pk=None):
             return HttpResponseRedirect('/relatori/new')
         
         facility_id = form.get('facility')
-        facility = HealthFacility.objects.get(id=facility_id)  #TODO switch to pk?
+        facility = Facility.objects.get(id=facility_id)  #TODO switch to pk?
         
         data_form_type_pk = form.get('data_form_type_pk')
         data_form_type = models.DataFormType.objects.get(pk=data_form_type_pk)
@@ -502,7 +504,7 @@ def edit(request, item_pk=None):
             sheet = data_form_type.sheet_index+1
             if sheet < 10:
                 sheet = '0%s' % (sheet)
-            return render_to_response('edit/sheet0%s.html' % (sheet), 
+            return render_to_response('forms/form_0%s.html' % (sheet), 
                                         context, context_instance=RequestContext(request)) 
         
         if (data_form != u'') and (data_form != None):
@@ -515,7 +517,7 @@ def edit(request, item_pk=None):
             op.save()
 
             for cell_data in data_form.cell_data.all():
-                cell_data.value = form.get('cell.%s' % cell_data.cell.order)
+                cell_data.value = form.get('c.%s' % cell_data.cell.spreadsheet_cell)
                 cell_data.save()
         else:
             data_form = models.DataForm(data_form_type = data_form_type,
@@ -529,10 +531,10 @@ def edit(request, item_pk=None):
             op.create(request.user,data_form,'Initial entry')
             op.save()
             
-            for i in range(data_form_type.cells.all().count()):
+            for cell in data_form_type.cells.all():
                 cell_data = models.CellData(data_form = data_form,
-                                            cell = data_form_type.cells.get(order=i),
-                                            value = form.get('cell.%s' % str(i))
+                                            cell = cell,
+                                            value = form.get('c.%s' % cell.spreadsheet_cell)
                                             #creator = request.user
                                             )
                 cell_data.save()
@@ -547,7 +549,7 @@ def edit(request, item_pk=None):
             else:
                 # otherwise it already exists and we'll redirect to the search page
                 return HttpResponseRedirect('/relatori/query')
-        elif submit == 'Save and Add Another':            
+
             context = { 
                     'user' : request.user,
                     'context_instance' : RequestContext(request),
@@ -565,7 +567,7 @@ def edit(request, item_pk=None):
             sheet = data_form_type.sheet_index+1
             if sheet < 10:
                 sheet = '0%s' % (sheet)
-            return render_to_response('edit/sheet0%s.html' % (sheet), context,) 
+            return render_to_response('forms/form_0%s.html' % (sheet), context,) 
 
 
 @login_required
@@ -596,7 +598,7 @@ def view(request, item_pk):
     sheet = data_form_type.sheet_index+1
     if sheet < 10:
         sheet = '0%s' % (sheet)
-    return render_to_response('view/sheet0%s.html' % (sheet), context,) 
+    return render_to_response('forms/form_0%s.html' % (sheet), context,) 
 
 
 #def _export_csv(request, item_id):
@@ -675,7 +677,7 @@ def export_aggregate_to_xls(request):
         
             data_form_type = models.DataFormType.objects.get(pk=form.cleaned_data['data_form_type'])
             facility_pk = form.cleaned_data['facility']
-            facility = HealthFacility.objects.get(pk=facility_pk)
+            facility = Facility.objects.get(pk=facility_pk)
             month_range = (form.cleaned_data['start_month'], form.cleaned_data['end_month'])
             #year_range = (form.cleaned_data['start_year'], form.cleaned_data['end_year'])
             year = form.cleaned_data['year']
@@ -733,7 +735,7 @@ def sync(request):
             
         else:
             form = forms.SyncForm()
-            return render_to_response('relatori/sync.html',{
+            return render_to_response('catalpa/relatori/sync.html',{
                     'form' : form,
                     'user' : request.user,
                     'context_instance' : RequestContext(request),})
@@ -761,7 +763,7 @@ def sync(request):
                         translation.activate(LANGUAGE_CODE)
                         os.remove(path)
                         messages.success(request, _('Thank you %s, you synced your data' % (request.user)))
-                        return render_to_response('relatori/index.html',{
+                        return render_to_response('catalpa/relatori/index.html',{
                                 'user' : request.user,
                                 'context_instance' : RequestContext(request),})
                     except Exception as ex:
@@ -771,7 +773,7 @@ def sync(request):
                             pass
                         messages.error(request, _('There was an error with your Database Sync. Please try again. %s' % (ex)))
     
-                    return render_to_response('relatori/sync.html',{
+                    return render_to_response('catalpa/relatori/sync.html',{
                                 'user' : request.user,
                                 'context_instance' : RequestContext(request),})
 

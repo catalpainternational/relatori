@@ -2,10 +2,9 @@ from django.db import models
 # from django.contrib.gis.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from health_service.models import HealthFacility
-from simple_locations.models import Area
-from catalpa.aihun.models import Model, ModelType
+from catalpa.simple_locations.models import Area, Facility
 
+from catalpa.aihun.models import Model, ModelType
 
 class DataFormType(ModelType):
     """
@@ -26,7 +25,7 @@ class DataFormType(ModelType):
 
 class DataForm(Model):
     data_form_type = models.ForeignKey(DataFormType, related_name="reports") #TODO: change to data_form_types
-    facility = models.ForeignKey(HealthFacility, related_name="data_forms")
+    facility = models.ForeignKey(Facility, related_name="data_forms")
     month = models.IntegerField(_('month'), blank=True, null=True)
     year = models.IntegerField(_('year'), blank=True, null=True)
 
@@ -91,7 +90,7 @@ class IndicatorType(ModelType):
 
 class Indicator(Model):
     indicator_type = models.ForeignKey(IndicatorType, related_name=_('indicators'))
-    facility = models.ForeignKey(HealthFacility, related_name=_('indicators'))
+    facility = models.ForeignKey(Facility, related_name=_('indicators'))
     slug = models.CharField(_('slug'), max_length=50,)
     start_date = models.DateField(_('start date'),)
     end_date = models.DateField(_('end date'),)
@@ -149,7 +148,7 @@ class Denominator(Model):
     denominator_source = models.ForeignKey(DenominatorSource, null=True, blank=True, related_name=_('denominators'))
     slug = models.CharField(_('slug'), max_length=140, null=True, blank=True,)
     area = models.ForeignKey(Area, related_name='denominators', null=True, blank=True,)
-    health_facility = models.ForeignKey(HealthFacility, related_name='denominators', null=True, blank=True,) #TODO: perhaps this isn't needed
+    facility = models.ForeignKey(Facility, related_name='denominators', null=True, blank=True,) #TODO: perhaps this isn't needed
     start_date = models.DateField(_('start date'),)# Is this really needed, the denomitator source also has start and end dates
     end_date = models.DateField(_('end date'),) # Is this really needed, the denomitator source also has start and end dates
     value = models.IntegerField(_('value'),)
@@ -160,15 +159,15 @@ class Denominator(Model):
     
     def __unicode__(self,):
         name = ''
-        if self.health_facility is not None:
-            name += self.health_facility.__unicode__()
+        if self.facility is not None:
+            name += self.facility.__unicode__()
         if self.area is not None:
             name += self.area.__unicode__()
         return u"%s : %s :: %s" % (name, self.denominator_type, self.value,)
 
 
 class Settings(Model):
-    facility = models.ForeignKey(HealthFacility,)
+    facility = models.ForeignKey(Facility,)
     denominator_source = models.ForeignKey(DenominatorSource, null=True, blank=True, related_name=_('settings'))
 
     class Meta:
