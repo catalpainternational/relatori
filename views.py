@@ -17,6 +17,8 @@ from django.db.models import Sum
 from django.db import transaction
 from django.http import HttpRequest, QueryDict
 from django.core.management import call_command
+from django import forms as _dForm
+from django.forms.extras.widgets import SelectDateWidget
 
 import xhtml2pdf.pisa as pisa
 import cStringIO as StringIO
@@ -29,7 +31,7 @@ from xlutils.copy import copy
 #from hmis import settings
 from settings import MEDIA_ROOT, LANGUAGE_CODE, DATABASES
 from catalpa.relatori import models, forms, tables, chart
-from catalpa.simple_locations.models import Facility
+from catalpa.simple_locations.models import Facility, Area
 
 
 from catalpa.aihun.models import Operation
@@ -184,7 +186,7 @@ def summary_report_as_pdf(request):
         return render_to_pdf('catalpa/relatori/summary_report_index.html',{
         'facility' : 'District Health Service Manatuto',
         'pagesize':'A4',})
-
+    
 
 def cumulative(request):
     if request.method.upper() == 'GET':
@@ -290,7 +292,6 @@ def report(request):
 @login_required
 def new(request):
     if request.method.upper() == 'GET':
-        import catalpa.simple_locations.models as sl_m
         data = {
                 #'month' : datetime.now().month,
                 #'year' : datetime.now().year,
@@ -312,7 +313,25 @@ def new(request):
             data_form_type = form.cleaned_data['data_form_type']
             facility = form.cleaned_data['facility']
             
-            try: distritu = facility.area.get_ancestors().get(kind__name='District')
+            subdistricts= Area.objects.filter(parent=facility.area)
+            form_sucos = []
+            form_subdis = ""
+            sub_options = []
+            n = 1
+            sub_options.append((0,""))
+            suco_options_string=""
+            for sub in subdistricts:
+                s=[]
+                for suco in Area.objects.filter(parent=sub):
+                    s.append((suco.code,suco.name))
+                suco_f = _dForm.Select(choices=tuple(s))
+                form_sucos.append(suco_f.render("form_suco %d"%n,"suco_form"))
+                sub_options.append((n,sub.name))
+                n+=1
+            
+            sub_select = _dForm.Select(choices=tuple(sub_options))
+            form_subdis = sub_select.render("form_subdis",'subdis')
+            try: distritu = facility.area#.get_ancestors().get(kind__name='District')
             except: distritu = None
             try: subdistritu = facility.area.get_ancestors().get(kind__name='Subdistrict')
             except: subdistritu = None
@@ -325,7 +344,7 @@ def new(request):
             ## Generating the HTML 'input' using django forms
             actual_cells = data_form_type.cells.all()
 
-            from django import forms as _dForm
+
             cell_dico = {}
             for cell in actual_cells:
                 dgroups = cell.data_groups.all()
@@ -338,25 +357,43 @@ def new(request):
                     elif opti.count()>2:
                         oList = tuple((o.value,("%d:%s" % (o.value,o.name))) for o in opti)
                         inp = _dForm.Select(choices=oList)
+                    elif opti.count()==0 and dg.value=="Options - BOOL":
+                        inp = _dForm.CheckboxInput()
+                    elif opti.count()==0 and dg.value=="Options - DATE":
+                        inp = _dForm.DateInput()
                         
                 cell.html = inp.render("c.%s" % (cell.spreadsheet_cell),'')
                 cell_dico[cell.spreadsheet_cell]=cell
             ## Now sending the actual cells to the template.
+            fulan = tuple((n,n) for n in range(1,13))
+            fulan = _dForm.Select(choices=fulan)
+            fulan = fulan.render("fulan",'')
+            
+            tinan = tuple((n,n) for n in range(datetime.now().year -1, datetime.now().year+2))
+            tinan = _dForm.Select(choices=tinan)
+            tinan = tinan.render("tinan",'')
+
+            form_comment = _dForm.Textarea()
+            form_comment = form_comment.render("form_commentario","")
+
             context = { 
                     'user' : request.user,
-                    'fulan' : datetime.now().month,
+                    'fulan' : fulan,
                     'fulan_style' : fulan_style,
-                    'tinan' : datetime.now().year,
+                    'tinan' : tinan,
                     'tinan_style' : tinan_style,
                     'code' : facility.code,
+                    'debug' : "",
                     'distritu' : distritu,
-                    'subdistritu' : subdistritu,
+                    'form_subdis' : form_subdis,
+                    'form_suco': form_sucos,
                     'fatin' : facility.area,
                     'facility' : facility,
                     'data_form_type_pk' : data_form_type.pk,
                     'cells' : cells,
                     'cell_styles' : cell_styles,
-                    'c' : cell_dico
+                    'c' : cell_dico,
+                    'form_commentario':form_comment,
                     }
             #TODO: sheet_index + 1 is a hack, make it right
             sheet = data_form_type.sheet_index+1
@@ -435,7 +472,7 @@ def edit(request, item_pk=None):
         
         facility_id = form.get('facility')
         facility = Facility.objects.get(id=facility_id)  #TODO switch to pk?
-        
+
         data_form_type_pk = form.get('data_form_type_pk')
         data_form_type = models.DataFormType.objects.get(pk=data_form_type_pk)
         data_form = form.get('data_form')
@@ -464,16 +501,95 @@ def edit(request, item_pk=None):
                                                     data_form_type = form.get('data_form_type')).count()
         else:
             data_form_count = 0
-                                                    
-        for i in range(data_form_type.cells.all().count()):
-            cells.append(form.get('cell.%s' % str(i)))
+
+        #########################################################
+        ## Parsing and re generating the HTML 'input' using django forms
+        actual_cells = data_form_type.cells.all()
+        cell_dico = {}
+        for cell in actual_cells:
+            value = form.get('c.%s' % cell.spreadsheet_cell)
+            dgroups = cell.data_groups.all()
+            inp = _dForm.TextInput()
+            type_field="int"
+
+            for dg in dgroups:
+                opti = dg.options.all()
+                if opti.count()==2:
+                    oList = tuple((o.value,o.name) for o in opti)
+                    inp = _dForm.RadioSelect(choices=oList)
+                elif opti.count()>2:
+                    oList = tuple((o.value,("%d:%s" % (o.value,o.name))) for o in opti)
+                    inp = _dForm.Select(choices=oList)
+                elif opti.count()==0 and dg.value=="Options - BOOL":
+                    inp = _dForm.CheckboxInput()
+                    type_field="bool"
+                elif opti.count()==0 and dg.value=="Options - DATE":
+                    inp = _dForm.DateInput()
+                    type_field="date"
+                elif opti.count()==0 and dg.value=="Options - NAME":
+                    type_field="name"
             try:
-                int(cells[i])
-                cell_styles.append('cell_data')
+                if type_field == "int":
+                    int(value)
+                elif type_field == "date":
+                    print "date:"+value
+                elif  type_field == "bool":
+                    print "bool:"+value
+                elif  type_field == "name":
+                    print "name:"+value
             except:
+                print "Value was not correct:"+cell.spreadsheet_cell
                 cell_styles.append('cell_data_error')
                 invalid = True
-                problem=i
+                problem = cell.spreadsheet_cell 
+
+            cell.html = inp.render("c.%s" % (cell.spreadsheet_cell),value)
+            cell_dico[cell.spreadsheet_cell]=cell
+        ## Now sending the actual cells to the template.
+        fulan = tuple((n,n) for n in range(1,13))
+        fulan = _dForm.Select(choices=fulan)
+        fulan = fulan.render("fulan",form.get('fulan'))
+            
+        tinan = tuple((n,n) for n in range(datetime.now().year -1, datetime.now().year+2))
+        tinan = _dForm.Select(choices=tinan)
+        tinan = tinan.render("tinan",form.get('tinan'))
+        
+        form_comment = _dForm.Textarea()
+        form_comment = form_comment.render("form_commentario",form.get('form_commentario'))
+
+        try: distritu = facility.area#.get_ancestors().get(kind__name='District')
+        except: distritu = None
+        subdistricts= Area.objects.filter(parent=facility.area)
+        form_sucos = []
+        form_subdis = ""
+        sub_options = []
+        n = 1
+        sub_options.append((0,""))
+        suco_options_string=""
+        for sub in subdistricts:
+            s=[]
+            for suco in Area.objects.filter(parent=sub):
+                s.append((suco.code,suco.name))
+            suco_f = _dForm.Select(choices=tuple(s))
+            form_sucos.append(suco_f.render("form_suco %d"%n,"suco_form"))
+            sub_options.append((n,sub.name))
+            n+=1
+            
+        sub_select = _dForm.Select(choices=tuple(sub_options))
+        form_subdis = sub_select.render("form_subdis",'subdis')
+        try: distritu = facility.area#.get_ancestors().get(kind__name='District')
+        except: distritu = None
+            
+        #########################################################
+#        for cell in data_form_type.cells.all():
+#            c.append(form.get('c.%s' % cell.spreadsheet_cell))
+#            try:
+#                int(cells[i])
+#                cell_styles.append('cell_data')
+#            except:
+#                cell_styles.append('cell_data_error')
+#                invalid = True
+#                problem=i
 
         if (data_form_count is not 0) and (data_form is u''):
             invalid = True
@@ -482,23 +598,27 @@ def edit(request, item_pk=None):
             messages.error(request, _(u'Form with this month and year already exists.'))
         if invalid:
             messages.error(request, _(u'Save failed. Please fix error.'))
-
+            
             context = { 
                     'user' : request.user,
                     'context_instance' : RequestContext(request),
-                    'fulan' : form.get('fulan'),
+                    'fulan' : fulan,
                     'fulan_style' : fulan_style,
-                    'tinan' : form.get('tinan'),
+                    'tinan' : tinan,
                     'tinan_style' : tinan_style,
                     'code' : facility.code,
-                    'distritu' : facility.area.get_ancestors().get(kind__name='District'),
-                    'subdistritu' : facility.area.get_ancestors().get(kind__name='Subdistrict'),
+                    'distritu' : distritu,
+                    #'subdistritu' : subdistritu,
+                    'form_subdis' : form_subdis,
+                    'form_suco': form_sucos,
                     'fatin' : facility.area,
                     'facility' : facility,
                     'data_form_type_pk' : data_form_type_pk,
                     'data_form' : data_form,
                     'cells' : cells,
                     'cell_styles' : cell_styles,
+                    'c' : cell_dico,
+                    'form_commentario':form_comment,
                     }
             #TODO: sheet_index + 1 is a hack, make it right
             sheet = data_form_type.sheet_index+1
