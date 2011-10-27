@@ -15,7 +15,7 @@ from catalpa.relatori import models
 class NewDataForm(forms.Form):
     facility_queryset = Facility.objects.all()
     #facility_queryset = models.Settings.objects.all()[0].facility.descendants.exclude(type__name__icontains="SISCA").exclude(type__name__icontains="Subdistrict")
-    facility = forms.ModelChoiceField(label=_('Health Facility'), queryset=facility_queryset, required=False, empty_label=None)
+    facility = forms.ModelChoiceField(label=_('Facility'), queryset=facility_queryset, required=False, empty_label=None)
     #facility = forms.ModelChoiceField(label=_('Suco'),Facility.objects.all(),required=False, empty_label=None)
     #TODO: only look for data form types that are not retired or voided
     data_form_type = forms.ModelChoiceField(label=_('Data Form'), queryset=models.DataFormType.objects.all().order_by('sheet_index'),required=False, empty_label=None)

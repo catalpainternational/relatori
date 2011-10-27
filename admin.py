@@ -31,8 +31,8 @@ class DataFormAdmin(Admin, admin.ModelAdmin):
 class CellAdmin(Admin, admin.ModelAdmin):
     model = models.Cell
     fields = ['data_form_type', 'col', 'row', 'order', 'spreadsheet_cell',]
-    list_display = ['data_form_type', 'col', 'row', 'order',]
-    search_fields = ['data_form_type__name','col', 'row',]
+    list_display = ['data_form_type', 'col', 'row', 'order','spreadsheet_cell']
+    search_fields = ['data_form_type__name','col', 'row','spreadsheet_cell']
 
 
 class DataGroupAdmin(Admin, admin.ModelAdmin):

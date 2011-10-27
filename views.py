@@ -33,6 +33,7 @@ from settings import MEDIA_ROOT, LANGUAGE_CODE, DATABASES
 from catalpa.relatori import models, forms, tables, chart
 from catalpa.simple_locations.models import Facility, Area
 
+from fsms_app.models import FSMSForm
 
 from catalpa.aihun.models import Operation
 

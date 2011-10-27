@@ -7,7 +7,7 @@ import djtables
 from catalpa.relatori import models
 
 class QueryTable(djtables.Table):
-    hmis_form_type = djtables.Column(name=_('HMIS Form'), value=lambda cell: cell.object,  link=lambda cell: "../view/%s/" % cell.object.pk, sortable=False,)
+    hmis_form_type = djtables.Column(name=_('Form'), value=lambda cell: cell.object,  link=lambda cell: "../view/%s/" % cell.object.pk, sortable=False,)
     #Fetch the changed date from the operation where it would be latest operation that 
     #date_changed  = djtables.Column(name=_('Date of Last Change'), value=lambda cell: '%s/%s/%s' % (cell.object.date_changed.day, cell.object.date_changed.month, cell.object.date_changed.year), sortable=False,)
     date_changed  = djtables.Column(name=_('Date of Last Change'), value=lambda cell: '%s/%s/%s' % (cell.object.last_modified.day, cell.object.last_modified.month, cell.object.last_modified.year), sortable=True,)
