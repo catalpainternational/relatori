@@ -30,7 +30,7 @@ from xlutils.copy import copy
 
 #from hmis import settings
 from settings import MEDIA_ROOT, LANGUAGE_CODE, DATABASES
-from catalpa.relatori import models, forms, tables, chart
+from catalpa.relatori import models, forms, tables#, chart - _cairo i;por braks on windows
 from catalpa.simple_locations.models import Facility, Area
 
 from fsms_app.models import FSMSForm
