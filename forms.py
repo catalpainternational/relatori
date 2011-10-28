@@ -29,6 +29,9 @@ class QueryForm(forms.Form):
     #facility = forms.ModelChoiceField(label=_('Health Facility'), queryset=facility_queryset, required=False, empty_label=None)
     #TODO: only look for data form types that are not retired or voided
     data_form_type = forms.ModelChoiceField(label=_('Form'), queryset=models.DataFormType.objects.all(), required=False,empty_label=None)
+
+    start_month = forms.ChoiceField(label=_('First Month'),required=False, choices=MONTHS,)
+    end_month = forms.ChoiceField(label=_('Last Month'),required=False, choices=MONTHS,)
     year = forms.ChoiceField(label=_('Year'),required=False, choices=YEARS,)
 
 
