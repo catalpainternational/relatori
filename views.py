@@ -24,13 +24,14 @@ import xhtml2pdf.pisa as pisa
 import cStringIO as StringIO
 import cgi
 
-import xlrd 
+import xlrd
 import xlwt
 from xlutils.copy import copy
 
 #from hmis import settings
 from settings import MEDIA_ROOT, LANGUAGE_CODE, DATABASES
-from catalpa.relatori import models, forms, tables#, chart - _cairo i;por braks on windows
+from catalpa.relatori import models, forms, tables
+#from catalpa.relatori import chart# <- _cairo import breaks on windows
 from catalpa.simple_locations.models import Facility, Area
 
 from fsms_app.models import FSMSForm
@@ -75,8 +76,8 @@ def preferences(request):
                     #settings.creator = request.user
                 settings.facility = facility
                 settings.save()
-        
-        messages.success(request, _('Thank you %s, you successfully saved settings.' % (request.user)))    
+
+        messages.success(request, _('Thank you %s, you successfully saved settings.' % (request.user)))
         return render_to_response('catalpa/relatori/index.html',{
                 'user' : request.user,
                 'context_instance' : RequestContext(request),})
@@ -105,7 +106,7 @@ def query(request):
                 facility = form.cleaned_data['facility']
                 #month_range = (form.cleaned_data['start_month'],form.cleaned_data['end_month'])
                 year = form.cleaned_data['year']
-                
+
                 #data_forms = models.DataForm.objects.filter(data_form_type=data_form_type, facility=facility, month__range=month_range, year=year)
                 data_forms = models.DataForm.objects.filter(data_form_type=data_form_type, facility=facility, year=year)
                 return render_to_response('catalpa/relatori/query.html',{
@@ -187,7 +188,7 @@ def summary_report_as_pdf(request):
         return render_to_pdf('catalpa/relatori/summary_report_index.html',{
         'facility' : 'District Health Service Manatuto',
         'pagesize':'A4',})
-    
+
 
 def cumulative(request):
     if request.method.upper() == 'GET':
@@ -246,7 +247,7 @@ def cumulative(request):
                 distritu = subdistritu = ''
 
 
-            context = { 
+            context = {
                     'user' : request.user,
                     'fulan' : "%s - %s" % month_range,
                     'tinan' : form.cleaned_data['year'],
@@ -263,7 +264,7 @@ def cumulative(request):
             sheet = data_form_type.sheet_index+1
             if sheet < 10:
                 sheet = '0%s' % (sheet)
-            return render_to_response('forms/form_0%s.html' % (sheet), context,) 
+            return render_to_response('forms/form_0%s.html' % (sheet), context,)
         else:
             return render_to_response('catalpa/relatori/cumulative.html',{
                 'form': form,
@@ -305,15 +306,15 @@ def new(request):
             'user' : request.user,
             'context_instance' : RequestContext(request),
         })
-    
+
     elif request.method.upper() == 'POST':
-        
+
         form = forms.NewDataForm(request.POST)
         if form.is_valid():
-        
+
             data_form_type = form.cleaned_data['data_form_type']
             facility = form.cleaned_data['facility']
-            
+
             subdistricts= Area.objects.filter(parent=facility.area)
             form_sucos = []
             form_subdis = ""
@@ -329,14 +330,14 @@ def new(request):
                 form_sucos.append(suco_f.render("form_suco %d"%n,"suco_form"))
                 sub_options.append((n,sub.name))
                 n+=1
-            
+
             sub_select = _dForm.Select(choices=tuple(sub_options))
             form_subdis = sub_select.render("form_subdis",'subdis')
             try: distritu = facility.area#.get_ancestors().get(kind__name='District')
             except: distritu = None
             try: subdistritu = facility.area.get_ancestors().get(kind__name='Subdistrict')
             except: subdistritu = None
-            
+
             cells = [0 for cell in  range(data_form_type.cells.count())]
             cell_styles = ['cell_data' for cell in  range(data_form_type.cells.count())]
             fulan_style = 'cell_data'
@@ -362,14 +363,14 @@ def new(request):
                         inp = _dForm.CheckboxInput()
                     elif opti.count()==0 and dg.value=="Options - DATE":
                         inp = _dForm.DateInput()
-                        
+
                 cell.html = inp.render("c.%s" % (cell.spreadsheet_cell),'')
                 cell_dico[cell.spreadsheet_cell]=cell
             ## Now sending the actual cells to the template.
             fulan = tuple((n,n) for n in range(1,13))
             fulan = _dForm.Select(choices=fulan)
             fulan = fulan.render("fulan",'')
-            
+
             tinan = tuple((n,n) for n in range(datetime.now().year -1, datetime.now().year+2))
             tinan = _dForm.Select(choices=tinan)
             tinan = tinan.render("tinan",'')
@@ -377,7 +378,7 @@ def new(request):
             form_comment = _dForm.Textarea()
             form_comment = form_comment.render("form_commentario","")
 
-            context = { 
+            context = {
                     'user' : request.user,
                     'fulan' : fulan,
                     'fulan_style' : fulan_style,
@@ -400,7 +401,7 @@ def new(request):
             sheet = data_form_type.sheet_index+1
             if sheet < 10:
                 sheet = '0%s' % (sheet)
-            return render_to_response('forms/form_0%s.html' % (sheet), context,) 
+            return render_to_response('forms/form_0%s.html' % (sheet), context,)
         else:
             return render_to_response('catalpa/relatori/new.html',{
                 'form': form,
@@ -420,13 +421,13 @@ def edit(request, item_pk=None):
         if item_pk != None:
             cells = [cell.value for cell in  models.CellData.objects.filter(data_form=item_pk).order_by('cell__order')]
             data_form = models.DataForm.objects.get(pk=item_pk)
-            
+
             facility = data_form.facility
             cell_styles = ['cell_data' for cell in  range(data_form.cell_data.count())]
             fulan_style = 'cell_data'
             tinan_style = 'cell_data'
-        
-            context = { 
+
+            context = {
                     'user' : request.user,
                     'context_instance' : RequestContext(request),
                     'fulan' : data_form.month,
@@ -446,9 +447,9 @@ def edit(request, item_pk=None):
             sheet = data_form.data_form_type.sheet_index+1
             if sheet < 10:
                 sheet = '0%s' % (sheet)
-            return render_to_response('forms/form_0%s.html' % (sheet), context,) 
+            return render_to_response('forms/form_0%s.html' % (sheet), context,)
         else:
-            data = { 
+            data = {
                 'start_month' : datetime.now().month-1,
                 'end_month' : datetime.now().month,
                 'year' : datetime.now().year,
@@ -456,7 +457,7 @@ def edit(request, item_pk=None):
                 'data_form_type_pk' : models.DataFormType.objects.all()[0].pk,
                 }
             form = forms.QueryForm(data)
-            
+
             return render_to_response('catalpa/relatori/query.html',{
                 'user' : request.user,
                 'form': form,
@@ -467,10 +468,10 @@ def edit(request, item_pk=None):
         form = request.POST
 
         submit = form.get('submit')
-        
+
         if submit == 'Cancel':
             return HttpResponseRedirect('/relatori/new')
-        
+
         facility_id = form.get('facility')
         facility = Facility.objects.get(id=facility_id)  #TODO switch to pk?
 
@@ -496,9 +497,9 @@ def edit(request, item_pk=None):
             fulan_style = 'cell_data_error'
 
         if invalid is False:
-            data_form_count = models.DataForm.objects.filter(month=form.get('fulan'), 
-                                                    year=form.get('tinan'), 
-                                                    facility=form.get('facility'), 
+            data_form_count = models.DataForm.objects.filter(month=form.get('fulan'),
+                                                    year=form.get('tinan'),
+                                                    facility=form.get('facility'),
                                                     data_form_type = form.get('data_form_type')).count()
         else:
             data_form_count = 0
@@ -542,7 +543,7 @@ def edit(request, item_pk=None):
                 print "Value was not correct:"+cell.spreadsheet_cell
                 cell_styles.append('cell_data_error')
                 invalid = True
-                problem = cell.spreadsheet_cell 
+                problem = cell.spreadsheet_cell
 
             cell.html = inp.render("c.%s" % (cell.spreadsheet_cell),value)
             cell_dico[cell.spreadsheet_cell]=cell
@@ -550,11 +551,11 @@ def edit(request, item_pk=None):
         fulan = tuple((n,n) for n in range(1,13))
         fulan = _dForm.Select(choices=fulan)
         fulan = fulan.render("fulan",form.get('fulan'))
-            
+
         tinan = tuple((n,n) for n in range(datetime.now().year -1, datetime.now().year+2))
         tinan = _dForm.Select(choices=tinan)
         tinan = tinan.render("tinan",form.get('tinan'))
-        
+
         form_comment = _dForm.Textarea()
         form_comment = form_comment.render("form_commentario",form.get('form_commentario'))
 
@@ -575,12 +576,12 @@ def edit(request, item_pk=None):
             form_sucos.append(suco_f.render("form_suco %d"%n,"suco_form"))
             sub_options.append((n,sub.name))
             n+=1
-            
+
         sub_select = _dForm.Select(choices=tuple(sub_options))
         form_subdis = sub_select.render("form_subdis",'subdis')
         try: distritu = facility.area#.get_ancestors().get(kind__name='District')
         except: distritu = None
-            
+
         #########################################################
 #        for cell in data_form_type.cells.all():
 #            c.append(form.get('c.%s' % cell.spreadsheet_cell))
@@ -595,12 +596,12 @@ def edit(request, item_pk=None):
         if (data_form_count is not 0) and (data_form is u''):
             invalid = True
             fulan_style = 'cell_data_error'
-            tinan_style = 'cell_data_error'             
+            tinan_style = 'cell_data_error'
             messages.error(request, _(u'Form with this month and year already exists.'))
         if invalid:
             messages.error(request, _(u'Save failed. Please fix error.'))
-            
-            context = { 
+
+            context = {
                     'user' : request.user,
                     'context_instance' : RequestContext(request),
                     'fulan' : fulan,
@@ -625,9 +626,9 @@ def edit(request, item_pk=None):
             sheet = data_form_type.sheet_index+1
             if sheet < 10:
                 sheet = '0%s' % (sheet)
-            return render_to_response('forms/form_0%s.html' % (sheet), 
-                                        context, context_instance=RequestContext(request)) 
-        
+            return render_to_response('forms/form_0%s.html' % (sheet),
+                                        context, context_instance=RequestContext(request))
+
         if (data_form != u'') and (data_form != None):
             data_form = models.DataForm.objects.get(pk=data_form)
             data_form.month = form.get('fulan')
@@ -642,7 +643,7 @@ def edit(request, item_pk=None):
                 cell_data.save()
         else:
             data_form = models.DataForm(data_form_type = data_form_type,
-                                facility = facility, 
+                                facility = facility,
                                 year = form.get('tinan'),
                                 month = form.get('fulan')
                                 #creator = request.user
@@ -651,7 +652,7 @@ def edit(request, item_pk=None):
             op = Operation()
             op.create(request.user,data_form,'Initial entry')
             op.save()
-            
+
             for cell in data_form_type.cells.all():
                 cell_data = models.CellData(data_form = data_form,
                                             cell = cell,
@@ -660,7 +661,7 @@ def edit(request, item_pk=None):
                                             )
                 cell_data.save()
 
-       
+
         messages.success(request, _(u'Thank you, you successfully saved %(type)s (%(month)s/%(year)s) for %(facility)s.') % {'type': data_form.data_form_type, 'month': data_form.month, 'year': data_form.year, 'facility': data_form.facility})
 
         if submit == 'Save':
@@ -671,7 +672,7 @@ def edit(request, item_pk=None):
                 # otherwise it already exists and we'll redirect to the search page
                 return HttpResponseRedirect('/relatori/query')
 
-            context = { 
+            context = {
                     'user' : request.user,
                     'context_instance' : RequestContext(request),
                     'fulan' : form.get('fulan'),
@@ -688,7 +689,7 @@ def edit(request, item_pk=None):
             sheet = data_form_type.sheet_index+1
             if sheet < 10:
                 sheet = '0%s' % (sheet)
-            return render_to_response('forms/form_0%s.html' % (sheet), context,) 
+            return render_to_response('forms/form_0%s.html' % (sheet), context,)
 
 
 @login_required
@@ -698,9 +699,9 @@ def view(request, item_pk):
     data_form = models.DataForm.objects.get(pk=item_pk)
     data_form_type = data_form.data_form_type
     facility = data_form.facility
-    
+
     form = forms.DataFormExcelExportForm({'data_form' : item_pk})
-    context = { 
+    context = {
             'user' : request.user,
             'context_instance' : RequestContext(request),
             'fulan' : data_form.month,
@@ -719,7 +720,7 @@ def view(request, item_pk):
     sheet = data_form_type.sheet_index+1
     if sheet < 10:
         sheet = '0%s' % (sheet)
-    return render_to_response('forms/form_0%s.html' % (sheet), context,) 
+    return render_to_response('forms/form_0%s.html' % (sheet), context,)
 
 
 #def _export_csv(request, item_id):
@@ -738,19 +739,19 @@ def view(request, item_pk):
 #    report = models.DataForm.objects.get(pk=item_pk)
 #    workbook_for_reading = xlrd.open_workbook(settings.WORKBOOK_PATH)
 #    sheet_for_reading = workbook_for_reading.sheet_by_index(report.data_form_type.sheet_index)
-    
+
 #    workbook_for_writing = xlwt.Workbook()
 #    sheet_for_writing = workbook_for_writing.add_sheet(report.data_form_type.code, cell_overwrite_ok=True)
-    
+
     # we populate the new sheet with the conical sheet
 #    for row in range(sheet_for_reading.nrows):
 #        for col in range(sheet_for_reading.ncols):
 #            sheet_for_writing.write(row, col, sheet_for_reading.cell(row, col).value)
-    
+
     # we overwrite padded cells with actual data
 #    for cell_data in report.cell_data.all():
 #        sheet_for_writing.write(cell_data.cell.row, cell_data.cell.col, cell_data.value)
-    
+
     # Create the HttpResponse object with the appropriate xls header.
 #    response = HttpResponse(mimetype='application/vnd.ms-excel')
 #    response['Content-Disposition'] = 'attachment; filename=data_%s.xls' % report.data_form_type.code
@@ -764,27 +765,27 @@ def export_to_xls(request):
         form = forms.DataFormExcelExportForm(request.POST)
 
         if form.is_valid():
-        
+
             data_form = models.DataForm.objects.get(pk=form.cleaned_data['data_form'])
             workbook_for_reading = xlrd.open_workbook(settings.WORKBOOK_PATH)
             sheet_for_reading = workbook_for_reading.sheet_by_index(data_form.data_form_type.sheet_index)
-            
+
             workbook_for_writing = xlwt.Workbook()
             sheet_for_writing = workbook_for_writing.add_sheet(data_form.data_form_type.code, cell_overwrite_ok=True)
-            
+
             # we populate the new sheet with the conical sheet
             for row in range(sheet_for_reading.nrows):
                 for col in range(sheet_for_reading.ncols):
                     sheet_for_writing.write(row, col, sheet_for_reading.cell(row, col).value)
-            
+
             # we overwrite padded cells with actual data
             for cell_data in data_form.cell_data.all():
                 sheet_for_writing.write(cell_data.cell.row, cell_data.cell.col, cell_data.value)
-            
+
             # Create the HttpResponse object with the appropriate xls header.
             response = HttpResponse(mimetype='application/vnd.ms-excel')
             response['Content-Disposition'] = 'attachment; filename=data_%s.xls' % data_form.data_form_type.code
-        
+
             workbook_for_writing.save(response)
             return response
 
@@ -793,9 +794,9 @@ def export_aggregate_to_xls(request):
 
     if request.method.upper() == u'POST':
         form = forms.AggregateDataFormExcelExportForm(request.POST)
-        
+
         if form.is_valid():
-        
+
             data_form_type = models.DataFormType.objects.get(pk=form.cleaned_data['data_form_type'])
             facility_pk = form.cleaned_data['facility']
             facility = Facility.objects.get(pk=facility_pk)
@@ -804,15 +805,15 @@ def export_aggregate_to_xls(request):
             year = form.cleaned_data['year']
             workbook_for_reading = xlrd.open_workbook(settings.WORKBOOK_PATH)
             sheet_for_reading = workbook_for_reading.sheet_by_index(data_form_type.sheet_index)
-            
+
             workbook_for_writing = xlwt.Workbook()
             sheet_for_writing = workbook_for_writing.add_sheet(data_form_type.code, cell_overwrite_ok=True)
-            
+
             # we populate the new sheet with the conical sheet
             for row in range(sheet_for_reading.nrows):
                 for col in range(sheet_for_reading.ncols):
                     sheet_for_writing.write(row, col, sheet_for_reading.cell(row, col).value)
-            
+
             # Check to see if the facility if a Subdistrict Health Service or District Health Service
             # Heavy lifting done Here!  Within the date rage the aggregate value of each cell in the form is computed and stored in a list
             if facility.type.name == u'District Health Service':
@@ -833,19 +834,19 @@ def export_aggregate_to_xls(request):
                 cell_data_set = cell_data.filter(cell__order=cell)
                 value_sum = cell_data_set.aggregate(Sum('value')).get('value__sum')
                 sheet_for_writing.write(cell_data_set[0].cell.row, cell_data_set[0].cell.col, value_sum)
-            
+
             # Create the HttpResponse object with the appropriate xls header.
             response = HttpResponse(mimetype='application/vnd.ms-excel')
             response['Content-Disposition'] = u'attachment; filename=data_%s.xls' % data_form_type.code
-        
+
             workbook_for_writing.save(response)
             return response
-            
+
 
 @login_required
 def sync(request):
     if request.method.upper() == 'GET':
-        
+
         if request.GET.get('submit') == u'Export':
             date = datetime.now()
 
@@ -853,7 +854,7 @@ def sync(request):
             response = HttpResponse(open(db,'rb'),mimetype='application/x-sqlite3')
             response['Content-Disposition'] = u'attachment; filename=data_database_%s_%s_%s.db' % (date.year, date.month, date.day)
             return response
-            
+
         else:
             form = forms.SyncForm()
             return render_to_response('catalpa/relatori/sync.html',{
@@ -866,9 +867,9 @@ def sync(request):
 
         if form.is_valid():
             submit = request.POST['submit']
-            if submit==u'Import':      
+            if submit==u'Import':
                 if 'file' in request.FILES:
-                    f = request.FILES['file']   
+                    f = request.FILES['file']
                     filename = f.name
                     path = '%s/%s' % (MEDIA_ROOT, filename)
                     file_writer = open(path, 'wb')
@@ -880,7 +881,7 @@ def sync(request):
                             import_from_json(path)
                         elif path.endswith(".db"):
                             import_from_database(path)
-                        
+
                         translation.activate(LANGUAGE_CODE)
                         os.remove(path)
                         messages.success(request, _('Thank you %s, you synced your data' % (request.user)))
@@ -893,7 +894,7 @@ def sync(request):
                         except:
                             pass
                         messages.error(request, _('There was an error with your Database Sync. Please try again. %s' % (ex)))
-    
+
                     return render_to_response('catalpa/relatori/sync.html',{
                                 'user' : request.user,
                                 'context_instance' : RequestContext(request),})
